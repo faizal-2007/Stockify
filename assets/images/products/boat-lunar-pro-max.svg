@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#F7F8FA"/>
+  <!-- Watch body - round -->
+  <circle cx="100" cy="100" r="46" fill="#2D5A27"/>
+  <circle cx="100" cy="100" r="40" fill="#3A7A32"/>
+  <!-- Screen bezel -->
+  <circle cx="100" cy="100" r="36" fill="#1A1A1A"/>
+  <!-- Screen -->
+  <circle cx="100" cy="100" r="32" fill="#1B5E20"/>
+  <!-- Crown -->
+  <rect x="145" y="88" width="10" height="14" rx="5" fill="#2D5A27"/>
+  <!-- Band top -->
+  <rect x="84" y="12" width="32" height="42" rx="8" fill="#2D5A27"/>
+  <!-- Band bottom -->
+  <rect x="84" y="146" width="32" height="42" rx="8" fill="#2D5A27"/>
+  <circle cx="100" cy="170" r="2" fill="#1A3A18"/>
+  <circle cx="100" cy="176" r="2" fill="#1A3A18"/>
+  <text x="100" y="196" text-anchor="middle" font-family="system-ui" font-size="9" fill="#6B7280">boAt Lunar Pro Max</text>
+</svg>
+

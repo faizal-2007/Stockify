@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#F7F8FA"/>
+  <!-- Phone body -->
+  <rect x="65" y="18" width="70" height="164" rx="14" fill="#C0C0C0"/>
+  <rect x="69" y="26" width="62" height="142" rx="10" fill="#E8E8E8"/>
+  <!-- Camera bar -->
+  <rect x="69" y="26" width="62" height="52" rx="10" fill="#B8B8B8"/>
+  <!-- Cameras -->
+  <circle cx="88" cy="42" r="10" fill="#888" stroke="#666" stroke-width="1.5"/>
+  <circle cx="88" cy="42" r="5" fill="#444"/>
+  <circle cx="112" cy="42" r="10" fill="#888" stroke="#666" stroke-width="1.5"/>
+  <circle cx="112" cy="42" r="5" fill="#444"/>
+  <circle cx="88" cy="66" r="8" fill="#888" stroke="#666" stroke-width="1.5"/>
+  <circle cx="88" cy="66" r="4" fill="#444"/>
+  <circle cx="112" cy="66" r="6" fill="#888" stroke="#666" stroke-width="1.5"/>
+  <!-- S-Pen slot -->
+  <rect x="133" y="80" width="4" height="80" rx="2" fill="#999"/>
+  <!-- Screen -->
+  <rect x="73" y="82" width="54" height="74" rx="3" fill="#1A237E"/>
+  <!-- Punch hole -->
+  <circle cx="100" cy="30" r="4" fill="#888"/>
+  <!-- Side buttons -->
+  <rect x="61" y="68" width="4" height="22" rx="2" fill="#AAA"/>
+  <text x="100" y="186" text-anchor="middle" font-family="system-ui" font-size="9" fill="#6B7280">Galaxy S25 Ultra</text>
+</svg>
+

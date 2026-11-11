@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#F7F8FA"/>
+  <!-- Lenovo Tab - portrait, grey -->
+  <rect x="40" y="20" width="120" height="160" rx="10" fill="#607D8B"/>
+  <rect x="44" y="24" width="112" height="152" rx="7" fill="#455A64"/>
+  <!-- Screen -->
+  <rect x="48" y="28" width="104" height="144" rx="5" fill="#37474F"/>
+  <!-- Camera -->
+  <circle cx="100" cy="30" r="4" fill="#546E7A"/>
+  <!-- Volume side -->
+  <rect x="38" y="60" width="4" height="18" rx="2" fill="#546E7A"/>
+  <rect x="38" y="82" width="4" height="18" rx="2" fill="#546E7A"/>
+  <!-- Power button -->
+  <rect x="158" y="60" width="4" height="12" rx="2" fill="#546E7A"/>
+  <!-- Home indicator -->
+  <rect x="82" y="168" width="36" height="4" rx="2" fill="#546E7A"/>
+  <!-- Lenovo label hint -->
+  <rect x="80" y="90" width="40" height="6" rx="3" fill="#37474F" opacity="0.7"/>
+  <text x="100" y="196" text-anchor="middle" font-family="system-ui" font-size="9" fill="#6B7280">Lenovo Tab P12 Pro</text>
+</svg>
+

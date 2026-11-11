@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#F7F8FA"/>
+  <!-- Phone body -->
+  <rect x="68" y="20" width="64" height="160" rx="12" fill="#1A1A1A"/>
+  <rect x="72" y="28" width="56" height="140" rx="8" fill="#2C2C2E"/>
+  <!-- Camera island -->
+  <rect x="82" y="34" width="36" height="38" rx="8" fill="#1A1A1A"/>
+  <circle cx="96" cy="48" r="8" fill="#333" stroke="#555" stroke-width="1.5"/>
+  <circle cx="96" cy="48" r="4" fill="#1A1A1A"/>
+  <circle cx="110" cy="48" r="8" fill="#333" stroke="#555" stroke-width="1.5"/>
+  <circle cx="110" cy="48" r="4" fill="#1A1A1A"/>
+  <circle cx="103" cy="62" r="6" fill="#333" stroke="#555" stroke-width="1.5"/>
+  <!-- Screen area -->
+  <rect x="76" y="78" width="48" height="78" rx="4" fill="#1E3A5F"/>
+  <!-- Dynamic island -->
+  <rect x="92" y="32" width="16" height="6" rx="3" fill="#000"/>
+  <!-- Side buttons -->
+  <rect x="64" y="70" width="4" height="20" rx="2" fill="#333"/>
+  <rect x="132" y="60" width="4" height="14" rx="2" fill="#333"/>
+  <rect x="132" y="80" width="4" height="14" rx="2" fill="#333"/>
+  <!-- Brand text -->
+  <text x="100" y="175" text-anchor="middle" font-family="system-ui" font-size="10" fill="#6B7280">iPhone 17 Pro</text>
+</svg>
+

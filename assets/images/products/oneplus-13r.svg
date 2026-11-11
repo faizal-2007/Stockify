@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#F7F8FA"/>
+  <!-- Phone body -->
+  <rect x="68" y="22" width="64" height="156" rx="10" fill="#0D47A1"/>
+  <rect x="72" y="30" width="56" height="136" rx="7" fill="#1565C0"/>
+  <!-- Camera module -->
+  <rect x="76" y="36" width="30" height="30" rx="8" fill="#0A3A7A"/>
+  <circle cx="88" cy="48" r="8" fill="#0D2A5C" stroke="#2062C8" stroke-width="1.2"/>
+  <circle cx="88" cy="48" r="4" fill="#081E40"/>
+  <circle cx="102" cy="48" r="6" fill="#0D2A5C" stroke="#2062C8" stroke-width="1.2"/>
+  <!-- Screen -->
+  <rect x="76" y="72" width="48" height="80" rx="4" fill="#081E40"/>
+  <!-- Alert slider -->
+  <rect x="64" y="70" width="4" height="10" rx="2" fill="#1976D2"/>
+  <!-- Power button -->
+  <rect x="132" y="80" width="4" height="18" rx="2" fill="#1976D2"/>
+  <text x="100" y="178" text-anchor="middle" font-family="system-ui" font-size="10" fill="#6B7280">OnePlus 13R</text>
+</svg>
+

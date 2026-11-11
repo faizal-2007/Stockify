@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#F7F8FA"/>
+  <!-- Phone body -->
+  <rect x="68" y="20" width="64" height="160" rx="12" fill="#C8A45A"/>
+  <rect x="72" y="28" width="56" height="140" rx="8" fill="#D4B46A"/>
+  <!-- Camera island -->
+  <ellipse cx="88" cy="52" rx="12" ry="20" fill="#B8903A"/>
+  <circle cx="88" cy="44" r="7" fill="#8A6520" stroke="#C0923E" stroke-width="1.2"/>
+  <circle cx="88" cy="44" r="3.5" fill="#5A3E10"/>
+  <circle cx="88" cy="60" r="6" fill="#8A6520" stroke="#C0923E" stroke-width="1.2"/>
+  <circle cx="88" cy="60" r="3" fill="#5A3E10"/>
+  <!-- Screen -->
+  <rect x="76" y="78" width="48" height="78" rx="4" fill="#2E1A6B"/>
+  <!-- Side buttons -->
+  <rect x="132" y="72" width="4" height="22" rx="2" fill="#B8903A"/>
+  <rect x="64" y="68" width="4" height="16" rx="2" fill="#B8903A"/>
+  <text x="100" y="176" text-anchor="middle" font-family="system-ui" font-size="10" fill="#6B7280">Vivo V40 Pro</text>
+</svg>
+

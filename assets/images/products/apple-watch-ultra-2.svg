@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#F7F8FA"/>
+  <!-- Watch body -->
+  <rect x="72" y="50" width="56" height="100" rx="20" fill="#1A1A1A"/>
+  <rect x="78" y="58" width="44" height="84" rx="14" fill="#2C2C2E"/>
+  <!-- Screen -->
+  <rect x="82" y="62" width="36" height="76" rx="10" fill="#0A192F"/>
+  <!-- Crown -->
+  <rect x="128" y="82" width="8" height="16" rx="4" fill="#2C2C2E"/>
+  <circle cx="132" cy="90" r="3" fill="#444"/>
+  <!-- Action button -->
+  <rect x="128" y="104" width="8" height="10" rx="3" fill="#E05A00"/>
+  <!-- Band top -->
+  <rect x="82" y="20" width="36" height="34" rx="8" fill="#1A1A1A"/>
+  <!-- Band bottom -->
+  <rect x="82" y="146" width="36" height="34" rx="8" fill="#1A1A1A"/>
+  <!-- Band holes -->
+  <circle cx="100" cy="168" r="2" fill="#333"/>
+  <circle cx="100" cy="174" r="2" fill="#333"/>
+  <text x="100" y="196" text-anchor="middle" font-family="system-ui" font-size="9" fill="#6B7280">Apple Watch Ultra 2</text>
+</svg>
+

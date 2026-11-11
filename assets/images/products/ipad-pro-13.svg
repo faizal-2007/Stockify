@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#F7F8FA"/>
+  <!-- iPad body - portrait, thin bezels -->
+  <rect x="38" y="20" width="124" height="160" rx="14" fill="#C8C8C8"/>
+  <rect x="42" y="24" width="116" height="152" rx="11" fill="#E0E0E0"/>
+  <!-- Screen -->
+  <rect x="46" y="28" width="108" height="144" rx="8" fill="#1565C0"/>
+  <!-- Home indicator -->
+  <rect x="84" y="168" width="32" height="4" rx="2" fill="#A0A0A0"/>
+  <!-- Camera -->
+  <circle cx="100" cy="30" r="3" fill="#B0B0B0"/>
+  <!-- Side button -->
+  <rect x="162" y="60" width="4" height="20" rx="2" fill="#B0B0B0"/>
+  <!-- Volume buttons -->
+  <rect x="34" y="58" width="4" height="14" rx="2" fill="#B0B0B0"/>
+  <rect x="34" y="76" width="4" height="14" rx="2" fill="#B0B0B0"/>
+  <!-- Apple Pencil suggestion -->
+  <rect x="142" y="22" width="8" height="80" rx="4" fill="#D8D8D8" stroke="#B0B0B0" stroke-width="0.8"/>
+  <text x="100" y="196" text-anchor="middle" font-family="system-ui" font-size="9" fill="#6B7280">iPad Pro 13"</text>
+</svg>
+

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#F7F8FA"/>
+  <!-- Samsung Tab - portrait -->
+  <rect x="42" y="18" width="116" height="164" rx="12" fill="#424242"/>
+  <rect x="46" y="22" width="108" height="156" rx="9" fill="#212121"/>
+  <!-- Screen -->
+  <rect x="50" y="26" width="100" height="148" rx="6" fill="#003087"/>
+  <!-- Camera bar on top -->
+  <rect x="50" y="26" width="100" height="20" rx="6" fill="#1A1A1A"/>
+  <circle cx="100" cy="36" r="5" fill="#333" stroke="#555" stroke-width="1"/>
+  <!-- Side buttons -->
+  <rect x="158" y="58" width="4" height="22" rx="2" fill="#333"/>
+  <rect x="38" y="58" width="4" height="14" rx="2" fill="#333"/>
+  <rect x="38" y="76" width="4" height="14" rx="2" fill="#333"/>
+  <!-- S-Pen docking slot -->
+  <rect x="38" y="150" width="4" height="20" rx="2" fill="#222"/>
+  <text x="100" y="196" text-anchor="middle" font-family="system-ui" font-size="9" fill="#6B7280">Galaxy Tab S10+</text>
+</svg>
+

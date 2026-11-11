@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stockify — Login</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <style>
+    /* Apply theme early to avoid flash */
+    body { background: var(--bg-canvas); }
+  </style>
+</head>
+<body>
+
+<div class="login-page">
+  <div class="login-card">
+
+    <!-- Logo -->
+    <div class="login-card__logo">
+      <div class="login-card__logo-icon" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2"/>
+          <path d="M8 21h8M12 17v4"/>
+        </svg>
+      </div>
+      <div>
+        <div class="login-card__wordmark">Stockify</div>
+        <div class="login-card__tagline">Smart Inventory Management</div>
+      </div>
+    </div>
+
+    <h1 class="login-card__heading">Select a demo account</h1>
+    <p class="login-card__sub">
+      Choose a role to explore the system. No password required.
+    </p>
+
+    <!-- Error message (hidden by default) -->
+    <div id="login-error" role="alert" style="
+      display: none;
+      background: var(--danger-tint);
+      color: var(--danger);
+      border-radius: var(--radius-btn);
+      padding: 10px 16px;
+      font-size: var(--font-size-sm);
+      margin-bottom: 16px;
+    "></div>
+
+    <!-- User picker list -->
+    <div class="user-picker" id="user-picker" role="list" aria-label="Demo user accounts">
+      <!-- Populated by JS -->
+      <div class="skeleton" style="height:72px; border-radius:var(--radius-card);"></div>
+      <div class="skeleton" style="height:72px; border-radius:var(--radius-card);"></div>
+      <div class="skeleton" style="height:72px; border-radius:var(--radius-card);"></div>
+    </div>
+
+    <!-- Sign-in button -->
+    <button class="btn btn--primary w-full" id="login-btn" disabled
+            style="margin-top: 8px; height: 50px; font-size: 16px;">
+      Sign In
+    </button>
+
+    <!-- Theme toggle -->
+    <div style="display:flex; justify-content:center; margin-top:24px; gap:8px; align-items:center;">
+      <span style="font-size:var(--font-size-xs); color:var(--text-muted);">Theme:</span>
+      <button id="theme-toggle" class="btn btn--secondary btn--sm" style="gap:6px;">
+        <svg id="theme-icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg id="theme-icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             style="display:none;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <span id="theme-label">Dark Mode</span>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- Scripts — load in dependency order, no modules -->
+<script src="js/namespace.js"></script>
+<script src="js/events.js"></script>
+<script src="js/utils/format.js"></script>
+<script src="js/utils/dom.js"></script>
+<script src="js/utils/image.js"></script>
+<script src="js/utils/id.js"></script>
+<script src="js/utils/validate.js"></script>
+<script src="js/utils/csv.js"></script>
+<script src="js/store/storage.js"></script>
+<script src="js/store/seed.js"></script>
+<script src="js/store/selectors.js"></script>
+<script src="js/services/auth.js"></script>
+<script src="js/components/toast.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  const storage = window.Stockify.store.storage;
+  const seed    = window.Stockify.store.seed;
+  const auth    = window.Stockify.services.auth;
+  const fmt     = window.Stockify.utils.format;
+
+  // Role accent colours for the avatar
+  const ROLE_COLORS = {
+    head:     'linear-gradient(135deg,#4AA8F5,#2478D8)',
+    zone:     'linear-gradient(135deg,#A78BFA,#7C3AED)',
+    district: 'linear-gradient(135deg,#FCD34D,#D97706)',
+    store:    'linear-gradient(135deg,#4ADE80,#15803D)',
+  };
+
+  // ── Seed check ──
+  if (!storage.isSeeded()) {
+    seed.seed();
+  }
+
+  // ── Apply saved theme ──
+  function applyTheme() {
+    const settings = storage.get('settings') || {};
+    const theme = settings.theme || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    const sun  = document.getElementById('theme-icon-sun');
+    const moon = document.getElementById('theme-icon-moon');
+    const lbl  = document.getElementById('theme-label');
+    if (theme === 'dark') {
+      sun.style.display  = 'none';
+      moon.style.display = '';
+      lbl.textContent    = 'Light Mode';
+    } else {
+      sun.style.display  = '';
+      moon.style.display = 'none';
+      lbl.textContent    = 'Dark Mode';
+    }
+  }
+  applyTheme();
+
+  document.getElementById('theme-toggle').addEventListener('click', function () {
+    const settings = storage.get('settings') || {};
+    settings.theme = settings.theme === 'dark' ? 'light' : 'dark';
+    storage.set('settings', settings);
+    applyTheme();
+  });
+
+  // ── If already logged in, redirect ──
+  if (auth.isLoggedIn()) {
+    window.location.href = 'index.html#/dashboard';
+  }
+
+  // ── Render user picker ──
+  const picker   = document.getElementById('user-picker');
+  const loginBtn = document.getElementById('login-btn');
+  const errorEl  = document.getElementById('login-error');
+  let selectedId = null;
+
+  const users = auth.getDemoUsers();
+
+  // Clear skeletons
+  while (picker.firstChild) picker.removeChild(picker.firstChild);
+
+  users.forEach(function (user) {
+    const btn = document.createElement('button');
+    btn.className = 'user-picker__btn';
+    btn.setAttribute('role', 'listitem');
+    btn.setAttribute('aria-pressed', 'false');
+    btn.type = 'button';
+
+    const avatar = document.createElement('div');
+    avatar.className = 'user-picker__avatar';
+    avatar.style.background = ROLE_COLORS[user.role] || ROLE_COLORS.store;
+    avatar.textContent = user.initials || fmt.initials(user.name);
+
+    const info = document.createElement('div');
+    info.className = 'user-picker__info';
+
+    const name = document.createElement('div');
+    name.className = 'user-picker__name';
+    name.textContent = user.name;
+
+    const role = document.createElement('div');
+    role.className = 'user-picker__role';
+    role.textContent = user.roleLabel + (user.officeName ? ' · ' + user.officeName : '');
+
+    info.appendChild(name);
+    info.appendChild(role);
+    btn.appendChild(avatar);
+    btn.appendChild(info);
+
+    btn.addEventListener('click', function () {
+      // Deselect all
+      picker.querySelectorAll('.user-picker__btn').forEach(function (b) {
+        b.classList.remove('selected');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('selected');
+      btn.setAttribute('aria-pressed', 'true');
+      selectedId = user.id;
+      loginBtn.disabled = false;
+    });
+
+    picker.appendChild(btn);
+  });
+
+  // ── Login button ──
+  loginBtn.addEventListener('click', function () {
+    if (!selectedId) return;
+    try {
+      auth.login(selectedId);
+      window.location.href = 'index.html#/dashboard';
+    } catch (e) {
+      errorEl.textContent = 'Login failed: ' + e.message;
+      errorEl.style.display = 'block';
+    }
+  });
+
+  // ── Keyboard: Enter on selected user ──
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && selectedId && !loginBtn.disabled) {
+      loginBtn.click();
+    }
+  });
+
+})();
+</script>
+
+</body>
+</html>
+

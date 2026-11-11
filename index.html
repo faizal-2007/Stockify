@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stockify — Smart Inventory Management</title>
+
+  <!-- Apply theme before render to avoid FOUC -->
+  <script>
+    (function () {
+      try {
+        var raw = localStorage.getItem('stockify.settings');
+        if (raw) {
+          var settings = JSON.parse(raw);
+          if (settings && settings.theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          }
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     APP FRAME
+══════════════════════════════════════ -->
+<div class="app-canvas">
+  <div class="app-frame" id="app-frame">
+
+    <!--
+      Top bar is injected here by topbar.js
+    -->
+
+    <!-- App body: side rail + main content -->
+    <div class="app-body" id="app-body">
+
+      <!--
+        Side rail is injected here by sidebar.js
+      -->
+
+      <!-- Main content area -->
+      <main class="app-content" id="app-content" role="main" aria-label="Main content">
+        <!-- Router renders views here -->
+        <div class="empty-state" style="margin-top: 80px;">
+          <div class="skeleton" style="width:200px;height:24px;"></div>
+        </div>
+      </main>
+
+    </div><!-- /app-body -->
+
+  </div><!-- /app-frame -->
+</div><!-- /app-canvas -->
+
+<!-- Toast container is created by toast.js -->
+
+<!-- ══════════════════════════════════════
+     SCRIPTS — load in dependency order.
+     NO ES modules. Every file is an IIFE.
+══════════════════════════════════════ -->
+
+<!-- 1. Namespace (must be first) -->
+<script src="js/namespace.js"></script>
+
+<!-- 2. Events bus -->
+<script src="js/events.js"></script>
+
+<!-- 3. Utilities -->
+<script src="js/utils/format.js"></script>
+<script src="js/utils/dom.js"></script>
+<script src="js/utils/image.js"></script>
+<script src="js/utils/id.js"></script>
+<script src="js/utils/validate.js"></script>
+<script src="js/utils/csv.js"></script>
+
+<!-- 4. Store layer -->
+<script src="js/store/storage.js"></script>
+<script src="js/store/seed.js"></script>
+<script src="js/store/selectors.js"></script>
+
+<!-- 5. Services -->
+<script src="js/services/auth.js"></script>
+<script src="js/services/products.js"></script>
+<script src="js/services/stock.js"></script>
+<script src="js/services/allocations.js"></script>
+<script src="js/services/offices.js"></script>
+<script src="js/services/sales.js"></script>
+<script src="js/services/activity.js"></script>
+<script src="js/services/alerts.js"></script>
+<script src="js/services/dashboard.js"></script>
+<script src="js/services/reports.js"></script>
+
+<!-- 6. Components -->
+<script src="js/components/toast.js"></script>
+<script src="js/components/modal.js"></script>
+<script src="js/components/drawer.js"></script>
+<script src="js/components/topbar.js"></script>
+<script src="js/components/sidebar.js"></script>
+<script src="js/components/productThumb.js"></script>
+<script src="js/components/imageUploader.js"></script>
+<script src="js/components/kpiCard.js"></script>
+<script src="js/components/barChart.js"></script>
+<script src="js/components/gauge.js"></script>
+<script src="js/components/activityList.js"></script>
+<script src="js/components/alertList.js"></script>
+
+<!-- 7. Router -->
+<script src="js/router.js"></script>
+
+<!-- 8. Views -->
+<script src="js/views/dashboard.js"></script>
+<script src="js/views/inventory.js"></script>
+<script src="js/views/productDetail.js"></script>
+<script src="js/views/productForm.js"></script>
+<script src="js/views/stockIn.js"></script>
+<script src="js/views/allocations.js"></script>
+<script src="js/views/allocationForm.js"></script>
+<script src="js/views/allocationDetail.js"></script>
+<script src="js/views/network.js"></script>
+<script src="js/views/officeDetail.js"></script>
+<script src="js/views/sales.js"></script>
+<script src="js/views/reports.js"></script>
+<script src="js/views/activity.js"></script>
+<script src="js/views/settings.js"></script>
+<script src="js/views/stubs.js"></script>
+
+<!-- 9. App bootstrap (last) -->
+<script src="js/app.js"></script>
+
+</body>
+</html>
+

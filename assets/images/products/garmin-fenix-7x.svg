@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#F7F8FA"/>
+  <!-- Rugged watch body -->
+  <polygon points="100,45 148,68 148,132 100,155 52,132 52,68" fill="#4A4A4A"/>
+  <polygon points="100,52 142,72 142,128 100,148 58,128 58,72" fill="#6B6B6B"/>
+  <!-- Screen -->
+  <circle cx="100" cy="100" r="38" fill="#222"/>
+  <circle cx="100" cy="100" r="34" fill="#1A3A5C"/>
+  <!-- Crown/button -->
+  <rect x="148" y="82" width="8" height="12" rx="4" fill="#4A4A4A"/>
+  <rect x="148" y="106" width="8" height="12" rx="4" fill="#E05A00"/>
+  <!-- Band top -->
+  <rect x="84" y="12" width="32" height="38" rx="6" fill="#3A3A3A"/>
+  <!-- Band bottom -->
+  <rect x="84" y="150" width="32" height="38" rx="6" fill="#3A3A3A"/>
+  <text x="100" y="196" text-anchor="middle" font-family="system-ui" font-size="9" fill="#6B7280">Garmin Fenix 7X</text>
+</svg>
+
