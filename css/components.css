@@ -136,6 +136,8 @@
 .badge--head     { background: var(--info-tint);    color: var(--primary); }
 .badge--zone     { background: var(--purple-tint);  color: var(--purple);  }
 .badge--district { background: var(--warning-tint); color: var(--warning); }
+.badge--taluk    { background: rgba(99, 102, 241, 0.15); color: #6366f1; }
+.badge--teal     { background: rgba(20, 184, 166, 0.15); color: #0d9488; }
 .badge--store    { background: var(--success-tint); color: var(--success); }
 
 /* ══════════════════════════════════════

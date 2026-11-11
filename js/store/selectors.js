@@ -27,16 +27,25 @@
    * @returns {string[]}
    */
   function subtreeIds(officeId) {
-    const all    = getAllOffices();
+    const all = getAllOffices();
+    const childrenMap = new Map();
+    all.forEach(function (o) {
+      if (o.active !== false && o.parentId) {
+        if (!childrenMap.has(o.parentId)) childrenMap.set(o.parentId, []);
+        childrenMap.get(o.parentId).push(o.id);
+      }
+    });
+
     const result = [];
-    const queue  = [officeId];
+    const queue = [officeId];
 
     while (queue.length > 0) {
       const current = queue.shift();
       result.push(current);
-      all.forEach(function (o) {
-        if (o.parentId === current && o.active) queue.push(o.id);
-      });
+      const kids = childrenMap.get(current);
+      if (kids) {
+        for (let i = 0; i < kids.length; i++) queue.push(kids[i]);
+      }
     }
     return result;
   }
@@ -56,8 +65,8 @@
    * @returns {Object[]}
    */
   function getStoresInSubtree(officeId) {
-    const ids = subtreeIds(officeId);
-    return getAllOffices().filter(function (o) { return o.type === 'store' && ids.includes(o.id); });
+    const idSet = new Set(subtreeIds(officeId));
+    return getAllOffices().filter(function (o) { return o.type === 'store' && idSet.has(o.id); });
   }
 
   // ── Products ──
@@ -373,19 +382,23 @@
    * @returns {{ outOfStock: number, lowStock: number, inTransitLong: number, pendingRequests: number }}
    */
   function getAlertCounts(officeId, role) {
-    const ids      = subtreeIds(officeId);
+    const ids = new Set(subtreeIds(officeId));
     const products = getActiveProducts();
+    const prodMap = new Map();
+    products.forEach(function (p) { prodMap.set(p.id, p); });
+
     const settings = storage.get('settings') || {};
     const threshold = settings.transitDaysThreshold || 5;
 
     let outOfStock = 0, lowStock = 0;
-    products.forEach(function (p) {
-      ids.forEach(function (oid) {
-        const qty = getQty(oid, p.id);
-        const status = stockStatus(qty, p.reorderLevel);
-        if (status === 'out') outOfStock++;
-        else if (status === 'low') lowStock++;
-      });
+    const allStock = getAllStock();
+    allStock.forEach(function (s) {
+      if (!ids.has(s.officeId)) return;
+      const p = prodMap.get(s.productId);
+      if (!p) return;
+      const status = stockStatus(s.qty, p.reorderLevel);
+      if (status === 'out') outOfStock++;
+      else if (status === 'low') lowStock++;
     });
 
     const allocs = storage.get('allocations') || [];
@@ -393,7 +406,7 @@
     let inTransitLong = 0, pendingRequests = 0;
 
     allocs.forEach(function (a) {
-      if (!ids.includes(a.fromId) && !ids.includes(a.toId)) return;
+      if (!ids.has(a.fromId) && !ids.has(a.toId)) return;
       if (a.status === 'dispatched') {
         const dispatchedAt = a.timeline && a.timeline.find(function (t) { return t.status === 'dispatched'; });
         if (dispatchedAt) {
@@ -401,7 +414,7 @@
           if (daysInTransit > threshold) inTransitLong++;
         }
       }
-      if (a.status === 'requested' && ids.includes(a.toId)) {
+      if (a.status === 'requested' && ids.has(a.toId)) {
         pendingRequests++;
       }
     });

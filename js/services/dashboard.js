@@ -34,6 +34,12 @@
     }
 
     if (office.type === 'district') {
+      const talukCount = descendants.filter(function (o) { return o.type === 'taluk'; }).length;
+      const storeCount = descendants.filter(function (o) { return o.type === 'store'; }).length;
+      return office.name + " (" + talukCount + " taluks, " + storeCount + " stores)";
+    }
+
+    if (office.type === 'taluk') {
       const storeCount = descendants.filter(function (o) { return o.type === 'store'; }).length;
       return office.name + " (" + storeCount + " stores)";
     }

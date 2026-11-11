@@ -464,6 +464,10 @@
   border-left: 4px solid var(--teal-accent);
 }
 
+.tree-node-card--taluk {
+  border-left: 4px solid #6366f1;
+}
+
 .tree-node-card--store {
   border-left: 4px solid var(--warning);
 }
@@ -552,9 +556,10 @@
 .tree-level-2 { margin-left: var(--sp-6); }
 .tree-level-3 { margin-left: calc(var(--sp-6) * 2); }
 .tree-level-4 { margin-left: calc(var(--sp-6) * 3); }
+.tree-level-5 { margin-left: calc(var(--sp-6) * 4); }
 
 @media (max-width: 768px) {
-  .tree-level-2, .tree-level-3, .tree-level-4 { margin-left: var(--sp-3); }
+  .tree-level-2, .tree-level-3, .tree-level-4, .tree-level-5 { margin-left: var(--sp-3); }
   .tree-node-card__metrics { flex-direction: column; align-items: flex-start; gap: var(--sp-2); }
   .tree-metric-col { align-items: flex-start; }
 }

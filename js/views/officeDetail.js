@@ -12,8 +12,9 @@
 
   const TYPE_LABELS = {
     head: 'Head Office',
-    zone: 'Zonal Office',
+    zone: 'Zonal Division',
     district: 'District Office',
+    taluk: 'Taluk Office',
     store: 'Retail Store',
   };
 
@@ -21,6 +22,7 @@
     head: 'badge--info',
     zone: 'badge--purple',
     district: 'badge--teal',
+    taluk: 'badge--taluk',
     store: 'badge--warning',
   };
 

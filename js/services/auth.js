@@ -8,8 +8,9 @@
   // Role labels for display
   const ROLE_LABELS = {
     head:     'Head Office',
-    zone:     'Zonal Office',
+    zone:     'Zonal Division',
     district: 'District Office',
+    taluk:    'Taluk Office',
     store:    'Store',
   };
 

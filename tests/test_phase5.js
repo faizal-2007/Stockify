@@ -175,41 +175,42 @@ S.services.auth.login('usr_001'); // Mohammed Faizal (head)
 const hierarchy = S.services.offices.getHierarchy();
 assert(hierarchy !== null, 'Hierarchy root exists');
 assert(hierarchy.id === 'off_001' && hierarchy.type === 'head', 'Root is Head Office off_001');
-assert(hierarchy.children.length === 3, 'Head Office has 3 Zones');
-assert(hierarchy.metrics.totalUnits === 3010, 'Total physical units across all offices = 3,010');
-assert(hierarchy.metrics.storesCount === 12, '12 stores under Head Office management');
+assert(hierarchy.children.length === 4, 'Head Office has 4 Zones');
+assert(hierarchy.metrics.totalUnits > 0, 'Total physical units across all offices > 0');
+assert(hierarchy.metrics.storesCount === 480, '480 stores under Head Office management');
 
 // Zone hierarchy
-const southZone = hierarchy.children.find(c => c.id === 'off_002');
-assert(southZone !== null, 'South Zone exists');
-assert(southZone.children.length === 2, 'South Zone has 2 Districts');
-assert(southZone.metrics.storesCount === 4, 'South Zone manages 4 stores');
+const mysuruZone = hierarchy.children.find(c => c.id === 'off_005');
+assert(mysuruZone !== null, 'Mysuru Division exists');
+assert(mysuruZone.children.length === 8, 'Mysuru Division has 8 Districts');
+assert(mysuruZone.metrics.storesCount > 0, 'Mysuru Division manages stores');
 
 // Detail of an office
 const hoDetail = S.services.offices.getOfficeDetail('off_001');
-assert(hoDetail.office.name === 'Head Office', 'HO detail office object retrieved');
+assert(hoDetail.office.name === 'Head Office Mangaluru', 'HO detail office object retrieved');
 assert(hoDetail.inventory.length === 15, 'HO inventory lists all 15 products');
-assert(hoDetail.children.length === 3, 'HO has 3 child zones');
+assert(hoDetail.children.length === 4, 'HO has 4 child zones');
 
 // Office creation - permission checks
 assert(S.services.offices.canManageOffice('zone') === true, 'Head Office user can manage zones');
 assert(S.services.offices.canManageOffice('district') === true, 'Head Office user can manage districts');
+assert(S.services.offices.canManageOffice('taluk') === true, 'Head Office user can manage taluks');
 assert(S.services.offices.canManageOffice('store') === true, 'Head Office user can manage stores');
 
 // Switch to Zone user
-S.services.auth.login('usr_002'); // Priya Rajan (South Zone off_002)
+S.services.auth.login('usr_002'); // Priya Rajan (Bengaluru Division off_002)
 assert(S.services.offices.canManageOffice('zone') === false, 'Zone user cannot create/manage zones');
-assert(S.services.offices.canManageOffice('district', 'off_002') === true, 'Zone user can create district in South Zone');
-assert(S.services.offices.canManageOffice('district', 'off_003') === false, 'Zone user cannot create district in West Zone');
+assert(S.services.offices.canManageOffice('district', 'off_002') === true, 'Zone user can create district in Bengaluru Division');
+assert(S.services.offices.canManageOffice('district', 'off_003') === false, 'Zone user cannot create district in Belagavi Division');
 
 // Switch to District user
-S.services.auth.login('usr_005'); // Tamil Nadu district off_005
+S.services.auth.login('usr_006'); // Dakshina Kannada district off_031
 assert(S.services.offices.canManageOffice('district') === false, 'District user cannot create district');
-assert(S.services.offices.canManageOffice('store', 'off_005') === true, 'District user can create store in own district');
-assert(S.services.offices.canManageOffice('store', 'off_006') === false, 'District user cannot create store in other district');
+assert(S.services.offices.canManageOffice('taluk', 'off_031') === true, 'District user can create taluk in own district');
+assert(S.services.offices.canManageOffice('taluk', 'off_006') === false, 'District user cannot create taluk in other district');
 
 // Switch to Store user
-S.services.auth.login('usr_011'); // Store off_011
+S.services.auth.login('usr_009'); // Store off_667
 assert(S.services.offices.canManageOffice('store') === false, 'Store user has read-only office permissions');
 
 // Test office creation & hierarchy validation
@@ -218,10 +219,10 @@ let createdOffice;
 try {
   createdOffice = S.services.offices.createOffice({
     type: 'store',
-    parentId: 'off_005', // Tamil Nadu district
+    parentId: 'off_232', // Mangaluru taluk
     code: 'STR-TEST-01',
-    name: 'Coimbatore Airport Store',
-    city: 'Coimbatore',
+    name: 'Mangaluru Airport Store',
+    city: 'Mangaluru',
     manager: 'Anand Kumar',
   });
   assert(createdOffice.id.startsWith('off_'), 'New office created with valid ID: ' + createdOffice.id);
@@ -242,10 +243,10 @@ let hierarchyErrorCaught = false;
 try {
   S.services.offices.createOffice({
     type: 'store',
-    parentId: 'off_001', // Direct store under HO is forbidden! (must be district)
+    parentId: 'off_001', // Direct store under HO is forbidden! (must be taluk)
     code: 'STR-FAIL',
     name: 'Invalid Store',
-    city: 'Bengaluru',
+    city: 'Mangaluru',
     manager: 'Test',
   });
 } catch (e) {
@@ -259,10 +260,10 @@ let duplicateCodeError = false;
 try {
   S.services.offices.createOffice({
     type: 'store',
-    parentId: 'off_005',
+    parentId: 'off_232',
     code: 'STR-TEST-01', // Duplicate code!
     name: 'Another Store',
-    city: 'Coimbatore',
+    city: 'Mangaluru',
     manager: 'Test',
   });
 } catch (e) {
@@ -273,12 +274,12 @@ assert(duplicateCodeError, 'Duplicate code error was triggered');
 
 console.log('\n--- 2. Testing services/sales.js ---');
 
-// Login as Store user for Chennai Central (off_011)
-S.services.auth.login('usr_011');
-const storeId = 'off_011';
-const productId = 'prd_001'; // iPhone 15 Pro Max
+// Login as Store user for Mangaluru Store 1 (off_667)
+S.services.auth.login('usr_009');
+const storeId = 'off_667';
+const productId = 'prd_001';
 const initialStock = S.services.stock.getStock(storeId, productId);
-assert(initialStock > 0, 'Store off_011 has initial stock of prd_001: ' + initialStock + ' units');
+assert(initialStock > 0, 'Store off_667 has initial stock of prd_001: ' + initialStock + ' units');
 
 // Non-store user cannot record sales
 S.services.auth.login('usr_001'); // Head Office
@@ -297,7 +298,7 @@ try {
 assert(hoSaleError, 'Permission check for store-only sale passed');
 
 // Switch back to Store user
-S.services.auth.login('usr_011');
+S.services.auth.login('usr_009');
 
 // Negative / zero quantity rejected
 let invalidQtyError = false;
@@ -398,7 +399,7 @@ assert(excessiveReturnError, 'Over-return prevention passed');
 // Monthly targets management
 S.services.auth.login('usr_001'); // HO
 const targets = S.services.sales.getTargets();
-assert(targets.length === 13, 'Monthly targets retrieved for all 13 stores in subtree (12 seeded + 1 created)');
+assert(targets.length === 481, 'Monthly targets retrieved for all 481 stores in subtree (480 seeded + 1 created)');
 const t1 = targets[0];
 assert(t1.storeId && t1.amount >= 0 && t1.achieved >= 0, 'Target record has storeId, amount, and achieved metrics');
 

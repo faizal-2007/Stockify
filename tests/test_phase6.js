@@ -191,16 +191,17 @@ console.log('\n--- 1. Testing services/reports.js ---');
 S.services.auth.login('usr_001'); // HO Faizal
 
 // Report 1: Stock by Office and Category
+const expectedPhysicalUnits = S.store.storage.get('stock').reduce((s, r) => s + r.qty, 0);
 const rep1 = S.services.reports.stockByOfficeAndCategory();
-assert(rep1.rows.length === 22, 'Stock by Office covers all 22 offices in HO subtree');
-assert(rep1.totals.totalUnits === 3010, 'Total stock units sum to 3,010 physical units');
-assert(rep1.totals.spUnits + rep1.totals.swUnits + rep1.totals.tbUnits === 3010, 'Category unit breakdown reconciles to totalUnits');
+assert(rep1.rows.length === 756, 'Stock by Office covers all 756 offices in HO subtree');
+assert(rep1.totals.totalUnits === expectedPhysicalUnits, 'Total stock units sum to physical units (' + expectedPhysicalUnits + ')');
+assert(rep1.totals.spUnits + rep1.totals.swUnits + rep1.totals.tbUnits === expectedPhysicalUnits, 'Category unit breakdown reconciles to totalUnits');
 assert(rep1.totals.totalValue > 0, 'Total stock value is non-zero: ' + rep1.totals.totalValue);
 
 // Report 2: Stock Ageing
 const rep2 = S.services.reports.stockAgeing();
 assert(rep2.rows.length > 0, 'Stock Ageing lists items with physical stock on hand');
-assert(rep2.totals.totalUnits === 3010, 'Ageing total units equals total physical units (3,010)');
+assert(rep2.totals.totalUnits === expectedPhysicalUnits, 'Ageing total units equals total physical units (' + expectedPhysicalUnits + ')');
 assert(rep2.rows.every(r => r.daysOld >= 0), 'Days inactive is non-negative for all rows');
 assert(rep2.rows.every(r => ['0-30 days', '31-60 days', '61-90 days', '90+ days'].includes(r.bracket)), 'Valid ageing bracket assigned to all rows');
 

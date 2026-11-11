@@ -1,12 +1,9 @@
-// store/seed.js — Demo offices, products, users, stock, movements, sales, targets
+// store/seed.js — Karnataka hierarchy demo data: Head Office in Mangaluru, 4 Divisions, 31 Districts, 240 Taluks, 480 Stores
 (function () {
   'use strict';
 
   const storage = window.Stockify.store.storage;
 
-  // ─────────────────────────────────────────
-  // HELPERS (defined first — used by data literals below)
-  // ─────────────────────────────────────────
   function ago(days) {
     const d = new Date(Date.now() - days * 86400000);
     return d.toISOString();
@@ -21,73 +18,321 @@
   }
 
   // ─────────────────────────────────────────
-  // OFFICES (1 HO, 3 Zones, 6 Districts, 12 Stores)
+  // KARNATAKA ADMINISTRATIVE DATA
+  // 4 Divisions, 31 Districts, 240 Taluks
   // ─────────────────────────────────────────
-  const OFFICES = [
-    // Head Office
-    { id: 'off_001', code: 'HO-BLR', name: 'Head Office', type: 'head', parentId: null, city: 'Bengaluru', manager: 'Mohammed Faizal', active: true },
-
-    // Zones
-    { id: 'off_002', code: 'ZN-SOUTH', name: 'South Zone', type: 'zone', parentId: 'off_001', city: 'Chennai', manager: 'Priya Rajan', active: true },
-    { id: 'off_003', code: 'ZN-WEST', name: 'West Zone', type: 'zone', parentId: 'off_001', city: 'Mumbai', manager: 'Rahul Mehta', active: true },
-    { id: 'off_004', code: 'ZN-NORTH', name: 'North Zone', type: 'zone', parentId: 'off_001', city: 'Delhi', manager: 'Anjali Singh', active: true },
-
-    // South Districts
-    { id: 'off_005', code: 'DS-TN', name: 'Tamil Nadu District', type: 'district', parentId: 'off_002', city: 'Chennai', manager: 'Karthik Suresh', active: true },
-    { id: 'off_006', code: 'DS-KA', name: 'Karnataka District', type: 'district', parentId: 'off_002', city: 'Bengaluru', manager: 'Deepa Nair', active: true },
-
-    // West Districts
-    { id: 'off_007', code: 'DS-MH', name: 'Maharashtra District', type: 'district', parentId: 'off_003', city: 'Mumbai', manager: 'Suresh Patil', active: true },
-    { id: 'off_008', code: 'DS-GJ', name: 'Gujarat District', type: 'district', parentId: 'off_003', city: 'Ahmedabad', manager: 'Neha Shah', active: true },
-
-    // North Districts
-    { id: 'off_009', code: 'DS-DL', name: 'Delhi District', type: 'district', parentId: 'off_004', city: 'New Delhi', manager: 'Vikram Sharma', active: true },
-    { id: 'off_010', code: 'DS-UP', name: 'UP District', type: 'district', parentId: 'off_004', city: 'Lucknow', manager: 'Pooja Gupta', active: true },
-
-    // Stores — Tamil Nadu
-    { id: 'off_011', code: 'ST-CHN1', name: 'Chennai Central', type: 'store', parentId: 'off_005', city: 'Chennai', manager: 'Arjun Kumar', active: true },
-    { id: 'off_012', code: 'ST-MDR1', name: 'Madurai Store', type: 'store', parentId: 'off_005', city: 'Madurai', manager: 'Meena Pandian', active: true },
-
-    // Stores — Karnataka
-    { id: 'off_013', code: 'ST-BLR1', name: 'Bengaluru MG Road', type: 'store', parentId: 'off_006', city: 'Bengaluru', manager: 'Rohan Gowda', active: true },
-    { id: 'off_014', code: 'ST-MYS1', name: 'Mysuru Store', type: 'store', parentId: 'off_006', city: 'Mysuru', manager: 'Lakshmi Reddy', active: true },
-
-    // Stores — Maharashtra
-    { id: 'off_015', code: 'ST-MUM1', name: 'Mumbai Bandra', type: 'store', parentId: 'off_007', city: 'Mumbai', manager: 'Nikhil Joshi', active: true },
-    { id: 'off_016', code: 'ST-PUN1', name: 'Pune Store', type: 'store', parentId: 'off_007', city: 'Pune', manager: 'Sneha Kulkarni', active: true },
-
-    // Stores — Gujarat
-    { id: 'off_017', code: 'ST-AMD1', name: 'Ahmedabad CG Road', type: 'store', parentId: 'off_008', city: 'Ahmedabad', manager: 'Ravi Patel', active: true },
-    { id: 'off_018', code: 'ST-SRT1', name: 'Surat Store', type: 'store', parentId: 'off_008', city: 'Surat', manager: 'Hetal Desai', active: true },
-
-    // Stores — Delhi
-    { id: 'off_019', code: 'ST-DEL1', name: 'Delhi Connaught Place', type: 'store', parentId: 'off_009', city: 'New Delhi', manager: 'Amit Verma', active: true },
-    { id: 'off_020', code: 'ST-GGN1', name: 'Gurgaon Store', type: 'store', parentId: 'off_009', city: 'Gurgaon', manager: 'Priya Kapoor', active: true },
-
-    // Stores — UP
-    { id: 'off_021', code: 'ST-LKO1', name: 'Lucknow Store', type: 'store', parentId: 'off_010', city: 'Lucknow', manager: 'Rohit Mishra', active: true },
-    { id: 'off_022', code: 'ST-AGR1', name: 'Agra Store', type: 'store', parentId: 'off_010', city: 'Agra', manager: 'Sunita Yadav', active: true },
-  ];
-
-  // ─────────────────────────────────────────
-  // USERS
-  // ─────────────────────────────────────────
-  const USERS = [
-    { id: 'usr_001', name: 'Mohammed Faizal', role: 'head', officeId: 'off_001', initials: 'MF' },
-    { id: 'usr_002', name: 'Priya Rajan', role: 'zone', officeId: 'off_002', initials: 'PR' },
-    { id: 'usr_003', name: 'Rahul Mehta', role: 'zone', officeId: 'off_003', initials: 'RM' },
-    { id: 'usr_004', name: 'Anjali Singh', role: 'zone', officeId: 'off_004', initials: 'AS' },
-    { id: 'usr_005', name: 'Karthik Suresh', role: 'district', officeId: 'off_005', initials: 'KS' },
-    { id: 'usr_006', name: 'Deepa Nair', role: 'district', officeId: 'off_006', initials: 'DN' },
-    { id: 'usr_007', name: 'Suresh Patil', role: 'district', officeId: 'off_007', initials: 'SP' },
-    { id: 'usr_008', name: 'Neha Shah', role: 'district', officeId: 'off_008', initials: 'NS' },
-    { id: 'usr_009', name: 'Vikram Sharma', role: 'district', officeId: 'off_009', initials: 'VS' },
-    { id: 'usr_010', name: 'Pooja Gupta', role: 'district', officeId: 'off_010', initials: 'PG' },
-    { id: 'usr_011', name: 'Arjun Kumar', role: 'store', officeId: 'off_011', initials: 'AK' },
-    { id: 'usr_012', name: 'Meena Pandian', role: 'store', officeId: 'off_012', initials: 'MP' },
-    // Extra store user (second store user per request)
-    { id: 'usr_013', name: 'Rohan Gowda', role: 'store', officeId: 'off_013', initials: 'RG' },
-  ];
+  const KARNATAKA_HIERARCHY = {
+  "Bengaluru Division": {
+    "Bengaluru Urban": [
+      "Bengaluru North",
+      "Bengaluru South",
+      "Bengaluru East",
+      "Yelahanka",
+      "Anekal"
+    ],
+    "Bengaluru Rural": [
+      "Nelamangala",
+      "Doddaballapura",
+      "Devanahalli",
+      "Hosakote"
+    ],
+    "Chikkaballapura": [
+      "Chikkaballapura",
+      "Bagepalli",
+      "Chintamani",
+      "Gauribidanuru",
+      "Gudibanda",
+      "Sidlaghatta",
+      "Cheluru",
+      "Manchenahalli"
+    ],
+    "Chitradurga": [
+      "Chitradurga",
+      "Challakere",
+      "Hiriyur",
+      "Holalkere",
+      "Hosadurga",
+      "Molakalmuru"
+    ],
+    "Davanagere": [
+      "Davanagere",
+      "Harihara",
+      "Channagiri",
+      "Honnali",
+      "Nyamathi",
+      "Jagaluru"
+    ],
+    "Kolar": [
+      "Kolar",
+      "Bangarapete",
+      "Maluru",
+      "Mulabagilu",
+      "Srinivasapura",
+      "Kolar Gold Fields (Robertsonpete)"
+    ],
+    "Ramanagara": [
+      "Ramanagara",
+      "Magadi",
+      "Kanakapura",
+      "Channapattana",
+      "Harohalli"
+    ],
+    "Shivamogga": [
+      "Shivamogga",
+      "Sagara",
+      "Bhadravathi",
+      "Hosanagara",
+      "Shikaripura",
+      "Soraba",
+      "Tirthahalli"
+    ],
+    "Tumakuru": [
+      "Tumakuru",
+      "Chikkanayakanahalli",
+      "Kunigal",
+      "Madhugiri",
+      "Sira",
+      "Tipturu",
+      "Gubbi",
+      "Koratagere",
+      "Pavagada",
+      "Turuvekere"
+    ]
+  },
+  "Belagavi Division": {
+    "Bagalkote": [
+      "Bagalkote",
+      "Terdal",
+      "Mudhola",
+      "Badami",
+      "Bilagi",
+      "Hunagunda",
+      "Ilkal",
+      "Rabkavi Banhatti",
+      "Guledgudda",
+      "Jamakhandi"
+    ],
+    "Belagavi": [
+      "Belagavi",
+      "Athani",
+      "Bailhongal",
+      "Chikkodi",
+      "Gokak",
+      "Khanapura",
+      "Mudalgi",
+      "Nippani",
+      "Rayabaga",
+      "Savadatti",
+      "Ramadurga",
+      "Kagawada",
+      "Hukkeri",
+      "Kitturu",
+      "Yargatti"
+    ],
+    "Dharwad": [
+      "Dharwad",
+      "Hubballi (Rural)",
+      "Hubballi (Urban)",
+      "Kalghatgi",
+      "Kundagolu",
+      "Navalgunda",
+      "Alnavara",
+      "Annigeri"
+    ],
+    "Gadag": [
+      "Gadag",
+      "Naragunda",
+      "Mundaragi",
+      "Rona",
+      "Gajendragada",
+      "Lakshmeshwara",
+      "Shirahatti"
+    ],
+    "Haveri": [
+      "Haveri",
+      "Ranibennur",
+      "Byadgi",
+      "Hangala",
+      "Savanuru",
+      "Hirekeruru",
+      "Shiggavi",
+      "Rattihalli"
+    ],
+    "Uttara Kannada": [
+      "Karwara",
+      "Sirsi",
+      "Joida",
+      "Dandeli",
+      "Bhatkal",
+      "Kumta",
+      "Ankola",
+      "Haliyal",
+      "Honnavara",
+      "Mundagodu",
+      "Siddapura",
+      "Yellapura"
+    ],
+    "Vijayapura": [
+      "Vijayapura",
+      "Indi",
+      "Basavana Bagewadi",
+      "Sindgi",
+      "Muddebihala",
+      "Talikote",
+      "Devara Hipparagi",
+      "Chadchana",
+      "Tikote",
+      "Babaleshwara",
+      "Kolhara",
+      "Nidagundi",
+      "Alamela"
+    ]
+  },
+  "Kalaburagi Division": {
+    "Ballari": [
+      "Ballari",
+      "Kurugodu",
+      "Kampli",
+      "Sanduru",
+      "Siraguppa"
+    ],
+    "Bidar": [
+      "Bidar",
+      "Aurad",
+      "Basavakalyana",
+      "Bhalki",
+      "Chitgoppa",
+      "Hulsuru",
+      "Humnabad",
+      "Kamalanagara"
+    ],
+    "Kalaburagi": [
+      "Kalaburagi",
+      "Afzalpura",
+      "Alanda",
+      "Chincholi",
+      "Chitapura",
+      "Jevargi",
+      "Sedam",
+      "Kamalapura",
+      "Shahabad",
+      "Kalgi",
+      "Yedrami"
+    ],
+    "Koppala": [
+      "Koppala",
+      "Gangavathi",
+      "Kushtagi",
+      "Yelaburga",
+      "Kanakagiri",
+      "Karatagi",
+      "Kukanuru"
+    ],
+    "Raichuru": [
+      "Raichuru",
+      "Sindhanuru",
+      "Manvi",
+      "Devadurga",
+      "Lingasaguru",
+      "Mudgal",
+      "Maski",
+      "Sirawara"
+    ],
+    "Vijayanagara": [
+      "Hosapete",
+      "Hagaribommanahalli",
+      "Harapanahalli",
+      "Hoovina Hadagali",
+      "Kudligi",
+      "Kotturu"
+    ],
+    "Yadagiri": [
+      "Yadagiri",
+      "Shahapura",
+      "Surapura",
+      "Gurmitkala",
+      "Vadagera",
+      "Hunsagi"
+    ]
+  },
+  "Mysuru Division": {
+    "Chamarajanagara": [
+      "Chamarajanagara",
+      "Gundlupete",
+      "Kollegala",
+      "Yelanduru",
+      "Hanuru"
+    ],
+    "Chikkamagaluru": [
+      "Chikkamagaluru",
+      "Kaduru",
+      "Koppa",
+      "Mudigere",
+      "Narasimharajapura",
+      "Sringeri",
+      "Tarikere",
+      "Ajjampura",
+      "Kalasa"
+    ],
+    "Dakshina Kannada": [
+      "Mangaluru",
+      "Ullal",
+      "Mulki",
+      "Moodbidri",
+      "Bantwala",
+      "Belathangadi",
+      "Putturu",
+      "Sulya",
+      "Kadaba"
+    ],
+    "Hassan": [
+      "Hassan",
+      "Arasikere",
+      "Channarayapattana",
+      "Holenarsipura",
+      "Sakleshpura",
+      "Aluru",
+      "Arakalagudu",
+      "Beluru"
+    ],
+    "Kodagu": [
+      "Madikeri",
+      "Somawarapete",
+      "Virajapete",
+      "Ponnammapete",
+      "Kushalnagara"
+    ],
+    "Mandya": [
+      "Mandya",
+      "Madduru",
+      "Malavalli",
+      "Srirangapattana",
+      "Krishnarajapete",
+      "Nagamangala",
+      "Pandavapura"
+    ],
+    "Mysuru": [
+      "Mysuru",
+      "Hunasuru",
+      "Krishnarajanagara",
+      "Nanjanagodu",
+      "Heggadadevanakote",
+      "Piriyapattana",
+      "Tirumakudalu Narasipura",
+      "Saraguru",
+      "Saligrama"
+    ],
+    "Udupi": [
+      "Udupi",
+      "Kapu",
+      "Bynduru",
+      "Karkala",
+      "Kundapura",
+      "Hebri",
+      "Brahmavara"
+    ]
+  }
+};
 
   // ─────────────────────────────────────────
   // PRODUCTS (15: 5 phones, 5 watches, 5 tablets)
@@ -149,53 +394,53 @@
       category: 'smartwatch', variant: { caseSize: '44mm', color: 'Gray' },
       costPrice: 22000, price: 29999, reorderLevel: 8,
       image: 'assets/images/products/samsung-galaxy-watch-7.svg',
-      description: 'Samsung Galaxy Watch 7 with advanced health sensors, BioActive Sensor.',
+      description: 'Samsung Galaxy Watch 7 with BioActive sensor, sapphire crystal glass.',
       active: true, createdAt: ago(320), createdBy: 'usr_001',
     },
     {
-      id: 'prd_008', sku: 'SW-GAR-FEN7X-51-SLT', name: 'Garmin Fenix 7X', brand: 'Garmin',
-      category: 'smartwatch', variant: { caseSize: '51mm', color: 'Slate Gray' },
-      costPrice: 55000, price: 74990, reorderLevel: 4,
-      image: 'assets/images/products/garmin-fenix-7x.svg',
-      description: 'Garmin Fenix 7X Pro Solar with multi-band GPS, solar charging.',
+      id: 'prd_008', sku: 'SW-GAR-F7P-47-SLV', name: 'Garmin Fenix 7 Pro', brand: 'Garmin',
+      category: 'smartwatch', variant: { caseSize: '47mm', color: 'Silver' },
+      costPrice: 62000, price: 81990, reorderLevel: 4,
+      image: 'assets/images/products/garmin-fenix-7-pro.svg',
+      description: 'Garmin Fenix 7 Pro multisport GPS smartwatch with solar charging lens.',
+      active: true, createdAt: ago(310), createdBy: 'usr_001',
+    },
+    {
+      id: 'prd_009', sku: 'SW-FIT-CH6-00-BLK', name: 'Fitbit Charge 6', brand: 'Fitbit',
+      category: 'smartwatch', variant: { caseSize: 'Standard', color: 'Obsidian' },
+      costPrice: 11000, price: 14999, reorderLevel: 10,
+      image: 'assets/images/products/fitbit-charge-6.svg',
+      description: 'Fitbit Charge 6 with Google apps, built-in GPS, 40+ exercise modes.',
       active: true, createdAt: ago(290), createdBy: 'usr_001',
     },
     {
-      id: 'prd_009', sku: 'SW-FIT-VRS6-40-BLK', name: 'Fitbit Versa 6', brand: 'Fitbit',
-      category: 'smartwatch', variant: { caseSize: '40mm', color: 'Black' },
-      costPrice: 12000, price: 17999, reorderLevel: 10,
-      image: 'assets/images/products/fitbit-versa-6.svg',
-      description: 'Fitbit Versa 6 with 6-day battery, built-in GPS, stress management.',
+      id: 'prd_010', sku: 'SW-NOI-CL2-00-BLU', name: 'Noise ColorFit Pro 5', brand: 'Noise',
+      category: 'smartwatch', variant: { caseSize: '1.85-inch', color: 'Jet Blue' },
+      costPrice: 2800, price: 3999, reorderLevel: 20,
+      image: 'assets/images/products/noise-colorfit-pro-5.svg',
+      description: 'Noise ColorFit Pro 5 with AMOLED display, Bluetooth calling, SOS.',
       active: true, createdAt: ago(260), createdBy: 'usr_001',
-    },
-    {
-      id: 'prd_010', sku: 'SW-AMZ-HAL3-44-GRN', name: 'boAt Lunar Pro Max', brand: 'boAt',
-      category: 'smartwatch', variant: { caseSize: '44mm', color: 'Forest Green' },
-      costPrice: 3500, price: 4999, reorderLevel: 20,
-      image: 'assets/images/products/boat-lunar-pro-max.svg',
-      description: 'boAt Lunar Pro Max with AMOLED display, 100+ sport modes.',
-      active: true, createdAt: ago(220), createdBy: 'usr_001',
     },
 
     // ── Tablets (5) ──
     {
-      id: 'prd_011', sku: 'TB-APL-IPP13-256-SLV', name: 'iPad Pro 13"', brand: 'Apple',
-      category: 'tablet', variant: { storage: '256GB', color: 'Silver', ram: '16GB' },
-      costPrice: 95000, price: 119900, reorderLevel: 5,
-      image: 'assets/images/products/ipad-pro-13.svg',
-      description: 'iPad Pro 13-inch with M4 chip, Ultra Retina XDR OLED, Apple Pencil Pro.',
+      id: 'prd_011', sku: 'TB-APL-IPA11-128-SGR', name: 'iPad Air 11-inch M2', brand: 'Apple',
+      category: 'tablet', variant: { storage: '128GB', color: 'Space Gray', ram: '8GB' },
+      costPrice: 48000, price: 59900, reorderLevel: 6,
+      image: 'assets/images/products/ipad-air-11-m2.svg',
+      description: 'Apple iPad Air 11-inch with Apple M2 chip, Liquid Retina display.',
       active: true, createdAt: ago(340), createdBy: 'usr_001',
     },
     {
-      id: 'prd_012', sku: 'TB-SAM-TS10-256-GRY', name: 'Samsung Galaxy Tab S10+', brand: 'Samsung',
+      id: 'prd_012', sku: 'TB-SAM-ST9-256-GRY', name: 'Samsung Galaxy Tab S9', brand: 'Samsung',
       category: 'tablet', variant: { storage: '256GB', color: 'Graphite', ram: '12GB' },
-      costPrice: 68000, price: 89999, reorderLevel: 6,
-      image: 'assets/images/products/samsung-galaxy-tab-s10.svg',
-      description: 'Samsung Galaxy Tab S10+ with Dynamic AMOLED 2X, Snapdragon 8 Gen 3.',
-      active: true, createdAt: ago(310), createdBy: 'usr_001',
+      costPrice: 56000, price: 72999, reorderLevel: 5,
+      image: 'assets/images/products/samsung-galaxy-tab-s9.svg',
+      description: 'Samsung Galaxy Tab S9 with Dynamic AMOLED 2X, S-Pen included, IP68.',
+      active: true, createdAt: ago(330), createdBy: 'usr_001',
     },
     {
-      id: 'prd_013', sku: 'TB-LNV-P12P-128-GRY', name: 'Lenovo Tab P12 Pro', brand: 'Lenovo',
+      id: 'prd_013', sku: 'TB-LEN-P12-128-STG', name: 'Lenovo Tab P12 Pro', brand: 'Lenovo',
       category: 'tablet', variant: { storage: '128GB', color: 'Storm Grey', ram: '8GB' },
       costPrice: 36000, price: 49999, reorderLevel: 8,
       image: 'assets/images/products/lenovo-tab-p12-pro.svg',
@@ -221,440 +466,440 @@
   ];
 
   // ─────────────────────────────────────────
-  // STOCK (qty per office per product)
-  // HO holds the bulk; cascaded down realistically
+  // BUILD OFFICES (1 HO Mangaluru, 4 Zones, 31 Districts, 240 Taluks, 480 Stores)
   // ─────────────────────────────────────────
-  // Format: [officeId, productId, qty]
-  const STOCK_DATA = [
-    // HO stock (buffer)
-    ['off_001', 'prd_001', 45], ['off_001', 'prd_002', 38], ['off_001', 'prd_003', 30],
-    ['off_001', 'prd_004', 60], ['off_001', 'prd_005', 48], ['off_001', 'prd_006', 20],
-    ['off_001', 'prd_007', 35], ['off_001', 'prd_008', 15], ['off_001', 'prd_009', 42],
-    ['off_001', 'prd_010', 80], ['off_001', 'prd_011', 18], ['off_001', 'prd_012', 22],
-    ['off_001', 'prd_013', 30], ['off_001', 'prd_014', 12], ['off_001', 'prd_015', 55],
+  function buildKarnatakaOffices() {
+    const offices = [];
+    let seq = 1;
+    function nextId() { return 'off_' + String(seq++).padStart(3, '0'); }
 
-    // South Zone
-    ['off_002', 'prd_001', 30], ['off_002', 'prd_002', 24], ['off_002', 'prd_003', 18],
-    ['off_002', 'prd_004', 40], ['off_002', 'prd_005', 32], ['off_002', 'prd_006', 12],
-    ['off_002', 'prd_007', 20], ['off_002', 'prd_008', 8], ['off_002', 'prd_009', 28],
-    ['off_002', 'prd_010', 55], ['off_002', 'prd_011', 10], ['off_002', 'prd_012', 14],
-    ['off_002', 'prd_013', 20], ['off_002', 'prd_014', 6], ['off_002', 'prd_015', 38],
+    // 1. Head Office in Mangaluru
+    const ho = {
+      id: nextId(),
+      code: 'HO-MNG',
+      name: 'Head Office Mangaluru',
+      type: 'head',
+      parentId: null,
+      city: 'Mangaluru',
+      manager: 'Mohammed Faizal',
+      active: true,
+    };
+    offices.push(ho);
 
-    // West Zone
-    ['off_003', 'prd_001', 28], ['off_003', 'prd_002', 20], ['off_003', 'prd_003', 16],
-    ['off_003', 'prd_004', 35], ['off_003', 'prd_005', 28], ['off_003', 'prd_006', 10],
-    ['off_003', 'prd_007', 18], ['off_003', 'prd_008', 6], ['off_003', 'prd_009', 24],
-    ['off_003', 'prd_010', 48], ['off_003', 'prd_011', 9], ['off_003', 'prd_012', 12],
-    ['off_003', 'prd_013', 18], ['off_003', 'prd_014', 5], ['off_003', 'prd_015', 32],
-
-    // North Zone
-    ['off_004', 'prd_001', 25], ['off_004', 'prd_002', 18], ['off_004', 'prd_003', 14],
-    ['off_004', 'prd_004', 30], ['off_004', 'prd_005', 24], ['off_004', 'prd_006', 8],
-    ['off_004', 'prd_007', 15], ['off_004', 'prd_008', 5], ['off_004', 'prd_009', 20],
-    ['off_004', 'prd_010', 40], ['off_004', 'prd_011', 7], ['off_004', 'prd_012', 10],
-    ['off_004', 'prd_013', 15], ['off_004', 'prd_014', 4], ['off_004', 'prd_015', 28],
-
-    // Tamil Nadu District
-    ['off_005', 'prd_001', 15], ['off_005', 'prd_002', 12], ['off_005', 'prd_003', 9],
-    ['off_005', 'prd_004', 20], ['off_005', 'prd_005', 16], ['off_005', 'prd_006', 5],
-    ['off_005', 'prd_007', 10], ['off_005', 'prd_008', 3], ['off_005', 'prd_009', 14],
-    ['off_005', 'prd_010', 28], ['off_005', 'prd_011', 5], ['off_005', 'prd_012', 7],
-    ['off_005', 'prd_013', 10], ['off_005', 'prd_014', 3], ['off_005', 'prd_015', 19],
-
-    // Karnataka District
-    ['off_006', 'prd_001', 12], ['off_006', 'prd_002', 10], ['off_006', 'prd_003', 8],
-    ['off_006', 'prd_004', 18], ['off_006', 'prd_005', 14], ['off_006', 'prd_006', 4],
-    ['off_006', 'prd_007', 9], ['off_006', 'prd_008', 2], ['off_006', 'prd_009', 12],
-    ['off_006', 'prd_010', 24], ['off_006', 'prd_011', 4], ['off_006', 'prd_012', 6],
-    ['off_006', 'prd_013', 9], ['off_006', 'prd_014', 2], ['off_006', 'prd_015', 16],
-
-    // Maharashtra District
-    ['off_007', 'prd_001', 14], ['off_007', 'prd_002', 11], ['off_007', 'prd_003', 8],
-    ['off_007', 'prd_004', 19], ['off_007', 'prd_005', 15], ['off_007', 'prd_006', 5],
-    ['off_007', 'prd_007', 10], ['off_007', 'prd_008', 3], ['off_007', 'prd_009', 13],
-    ['off_007', 'prd_010', 26], ['off_007', 'prd_011', 4], ['off_007', 'prd_012', 6],
-    ['off_007', 'prd_013', 10], ['off_007', 'prd_014', 2], ['off_007', 'prd_015', 17],
-
-    // Gujarat District
-    ['off_008', 'prd_001', 10], ['off_008', 'prd_002', 8], ['off_008', 'prd_003', 6],
-    ['off_008', 'prd_004', 14], ['off_008', 'prd_005', 11], ['off_008', 'prd_006', 3],
-    ['off_008', 'prd_007', 7], ['off_008', 'prd_008', 2], ['off_008', 'prd_009', 9],
-    ['off_008', 'prd_010', 18], ['off_008', 'prd_011', 3], ['off_008', 'prd_012', 4],
-    ['off_008', 'prd_013', 7], ['off_008', 'prd_014', 1], ['off_008', 'prd_015', 12],
-
-    // Delhi District
-    ['off_009', 'prd_001', 13], ['off_009', 'prd_002', 10], ['off_009', 'prd_003', 7],
-    ['off_009', 'prd_004', 18], ['off_009', 'prd_005', 14], ['off_009', 'prd_006', 4],
-    ['off_009', 'prd_007', 9], ['off_009', 'prd_008', 3], ['off_009', 'prd_009', 12],
-    ['off_009', 'prd_010', 24], ['off_009', 'prd_011', 4], ['off_009', 'prd_012', 5],
-    ['off_009', 'prd_013', 9], ['off_009', 'prd_014', 2], ['off_009', 'prd_015', 16],
-
-    // UP District
-    ['off_010', 'prd_001', 10], ['off_010', 'prd_002', 7], ['off_010', 'prd_003', 5],
-    ['off_010', 'prd_004', 14], ['off_010', 'prd_005', 10], ['off_010', 'prd_006', 3],
-    ['off_010', 'prd_007', 6], ['off_010', 'prd_008', 1], ['off_010', 'prd_009', 8],
-    ['off_010', 'prd_010', 18], ['off_010', 'prd_011', 2], ['off_010', 'prd_012', 4],
-    ['off_010', 'prd_013', 6], ['off_010', 'prd_014', 1], ['off_010', 'prd_015', 12],
-
-    // Stores — lower stock, some low/out situations for alerts
-    ['off_011', 'prd_001', 6], ['off_011', 'prd_002', 5], ['off_011', 'prd_003', 4],
-    ['off_011', 'prd_004', 10], ['off_011', 'prd_005', 8], ['off_011', 'prd_006', 2],
-    ['off_011', 'prd_007', 5], ['off_011', 'prd_008', 1], ['off_011', 'prd_009', 7],
-    ['off_011', 'prd_010', 14], ['off_011', 'prd_011', 2], ['off_011', 'prd_012', 3],
-    ['off_011', 'prd_013', 5], ['off_011', 'prd_014', 0], ['off_011', 'prd_015', 8],
-
-    ['off_012', 'prd_001', 5], ['off_012', 'prd_002', 4], ['off_012', 'prd_003', 3],
-    ['off_012', 'prd_004', 8], ['off_012', 'prd_005', 6], ['off_012', 'prd_006', 1],
-    ['off_012', 'prd_007', 3], ['off_012', 'prd_008', 0], ['off_012', 'prd_009', 5],
-    ['off_012', 'prd_010', 10], ['off_012', 'prd_011', 1], ['off_012', 'prd_012', 2],
-    ['off_012', 'prd_013', 3], ['off_012', 'prd_014', 0], ['off_012', 'prd_015', 6],
-
-    ['off_013', 'prd_001', 7], ['off_013', 'prd_002', 5], ['off_013', 'prd_003', 4],
-    ['off_013', 'prd_004', 9], ['off_013', 'prd_005', 7], ['off_013', 'prd_006', 2],
-    ['off_013', 'prd_007', 4], ['off_013', 'prd_008', 1], ['off_013', 'prd_009', 6],
-    ['off_013', 'prd_010', 12], ['off_013', 'prd_011', 2], ['off_013', 'prd_012', 3],
-    ['off_013', 'prd_013', 4], ['off_013', 'prd_014', 1], ['off_013', 'prd_015', 7],
-
-    ['off_014', 'prd_001', 4], ['off_014', 'prd_002', 3], ['off_014', 'prd_003', 2],
-    ['off_014', 'prd_004', 6], ['off_014', 'prd_005', 5], ['off_014', 'prd_006', 1],
-    ['off_014', 'prd_007', 2], ['off_014', 'prd_008', 0], ['off_014', 'prd_009', 4],
-    ['off_014', 'prd_010', 8], ['off_014', 'prd_011', 1], ['off_014', 'prd_012', 2],
-    ['off_014', 'prd_013', 2], ['off_014', 'prd_014', 0], ['off_014', 'prd_015', 4],
-
-    ['off_015', 'prd_001', 6], ['off_015', 'prd_002', 5], ['off_015', 'prd_003', 4],
-    ['off_015', 'prd_004', 9], ['off_015', 'prd_005', 7], ['off_015', 'prd_006', 2],
-    ['off_015', 'prd_007', 5], ['off_015', 'prd_008', 1], ['off_015', 'prd_009', 6],
-    ['off_015', 'prd_010', 13], ['off_015', 'prd_011', 2], ['off_015', 'prd_012', 3],
-    ['off_015', 'prd_013', 4], ['off_015', 'prd_014', 1], ['off_015', 'prd_015', 7],
-
-    ['off_016', 'prd_001', 5], ['off_016', 'prd_002', 4], ['off_016', 'prd_003', 3],
-    ['off_016', 'prd_004', 7], ['off_016', 'prd_005', 5], ['off_016', 'prd_006', 1],
-    ['off_016', 'prd_007', 3], ['off_016', 'prd_008', 0], ['off_016', 'prd_009', 4],
-    ['off_016', 'prd_010', 9], ['off_016', 'prd_011', 1], ['off_016', 'prd_012', 2],
-    ['off_016', 'prd_013', 3], ['off_016', 'prd_014', 0], ['off_016', 'prd_015', 5],
-
-    ['off_017', 'prd_001', 5], ['off_017', 'prd_002', 4], ['off_017', 'prd_003', 3],
-    ['off_017', 'prd_004', 7], ['off_017', 'prd_005', 5], ['off_017', 'prd_006', 1],
-    ['off_017', 'prd_007', 3], ['off_017', 'prd_008', 1], ['off_017', 'prd_009', 4],
-    ['off_017', 'prd_010', 9], ['off_017', 'prd_011', 1], ['off_017', 'prd_012', 2],
-    ['off_017', 'prd_013', 3], ['off_017', 'prd_014', 0], ['off_017', 'prd_015', 5],
-
-    ['off_018', 'prd_001', 3], ['off_018', 'prd_002', 2], ['off_018', 'prd_003', 2],
-    ['off_018', 'prd_004', 5], ['off_018', 'prd_005', 4], ['off_018', 'prd_006', 1],
-    ['off_018', 'prd_007', 2], ['off_018', 'prd_008', 0], ['off_018', 'prd_009', 3],
-    ['off_018', 'prd_010', 7], ['off_018', 'prd_011', 1], ['off_018', 'prd_012', 1],
-    ['off_018', 'prd_013', 2], ['off_018', 'prd_014', 0], ['off_018', 'prd_015', 3],
-
-    ['off_019', 'prd_001', 6], ['off_019', 'prd_002', 5], ['off_019', 'prd_003', 4],
-    ['off_019', 'prd_004', 9], ['off_019', 'prd_005', 7], ['off_019', 'prd_006', 2],
-    ['off_019', 'prd_007', 5], ['off_019', 'prd_008', 1], ['off_019', 'prd_009', 6],
-    ['off_019', 'prd_010', 12], ['off_019', 'prd_011', 2], ['off_019', 'prd_012', 3],
-    ['off_019', 'prd_013', 4], ['off_019', 'prd_014', 1], ['off_019', 'prd_015', 7],
-
-    ['off_020', 'prd_001', 5], ['off_020', 'prd_002', 4], ['off_020', 'prd_003', 3],
-    ['off_020', 'prd_004', 7], ['off_020', 'prd_005', 5], ['off_020', 'prd_006', 1],
-    ['off_020', 'prd_007', 3], ['off_020', 'prd_008', 1], ['off_020', 'prd_009', 4],
-    ['off_020', 'prd_010', 9], ['off_020', 'prd_011', 1], ['off_020', 'prd_012', 2],
-    ['off_020', 'prd_013', 3], ['off_020', 'prd_014', 0], ['off_020', 'prd_015', 5],
-
-    ['off_021', 'prd_001', 4], ['off_021', 'prd_002', 3], ['off_021', 'prd_003', 2],
-    ['off_021', 'prd_004', 6], ['off_021', 'prd_005', 4], ['off_021', 'prd_006', 1],
-    ['off_021', 'prd_007', 2], ['off_021', 'prd_008', 0], ['off_021', 'prd_009', 3],
-    ['off_021', 'prd_010', 7], ['off_021', 'prd_011', 1], ['off_021', 'prd_012', 1],
-    ['off_021', 'prd_013', 2], ['off_021', 'prd_014', 0], ['off_021', 'prd_015', 4],
-
-    ['off_022', 'prd_001', 3], ['off_022', 'prd_002', 2], ['off_022', 'prd_003', 2],
-    ['off_022', 'prd_004', 5], ['off_022', 'prd_005', 3], ['off_022', 'prd_006', 1],
-    ['off_022', 'prd_007', 2], ['off_022', 'prd_008', 0], ['off_022', 'prd_009', 3],
-    ['off_022', 'prd_010', 6], ['off_022', 'prd_011', 1], ['off_022', 'prd_012', 1],
-    ['off_022', 'prd_013', 2], ['off_022', 'prd_014', 0], ['off_022', 'prd_015', 3],
-  ];
-
-  // Store IDs for generating sales/movements
-  const STORE_IDS = [
-    'off_011', 'off_012', 'off_013', 'off_014', 'off_015',
-    'off_016', 'off_017', 'off_018', 'off_019', 'off_020', 'off_021', 'off_022',
-  ];
-
-  const PRODUCT_IDS = PRODUCTS.map(function (p) { return p.id; });
-
-  // ─────────────────────────────────────────
-  // MOVEMENTS (12 months of history)
-  // ─────────────────────────────────────────
-  function generateMovements() {
-    const movements = [];
-    let movCount = 1;
-    function movId() { return 'mov_' + String(movCount++).padStart(5, '0'); }
-
-    // Initial stock-in at HO (12 months ago)
-    PRODUCTS.forEach(function (p) {
-      movements.push({
-        id: movId(), at: ago(365), type: 'stock_in',
-        productId: p.id, qty: 500, fromId: null, toId: 'off_001',
-        refType: 'manual', refId: null, by: 'usr_001',
-      });
-    });
-
-    // Monthly allocation events (simplified)
-    const months = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
-    months.forEach(function (m) {
-      const prdSample = PRODUCT_IDS.slice(0, 5); // 5 products per month
-      prdSample.forEach(function (pId) {
-        // HO → Zone dispatch
-        ['off_002', 'off_003', 'off_004'].forEach(function (zId) {
-          movements.push({
-            id: movId(), at: ago(m * 30 + 2), type: 'dispatch',
-            productId: pId, qty: randInt(10, 25),
-            fromId: 'off_001', toId: zId,
-            refType: 'allocation', refId: null, by: 'usr_001',
-          });
-          movements.push({
-            id: movId(), at: ago(m * 30 + 1), type: 'receive',
-            productId: pId, qty: randInt(10, 25),
-            fromId: 'off_001', toId: zId,
-            refType: 'allocation', refId: null, by: 'usr_002',
-          });
-        });
-      });
-    });
-
-    return movements;
-  }
-
-  // ─────────────────────────────────────────
-  // SALES (last 12 months)
-  // ─────────────────────────────────────────
-  function generateSales() {
-    const sales = [];
-    let saleCount = 1;
-    function saleId() { return 'sal_' + String(saleCount++).padStart(4, '0'); }
-
-    const payments = ['cash', 'upi', 'card'];
-    const userMap = {
-      'off_011': 'usr_011', 'off_012': 'usr_012', 'off_013': 'usr_013',
-      'off_014': 'usr_013', 'off_015': 'usr_011', 'off_016': 'usr_012',
-      'off_017': 'usr_013', 'off_018': 'usr_011', 'off_019': 'usr_012',
-      'off_020': 'usr_013', 'off_021': 'usr_011', 'off_022': 'usr_012',
+    const divCodes = {
+      'Bengaluru Division': 'ZN-BLR',
+      'Belagavi Division': 'ZN-BGV',
+      'Kalaburagi Division': 'ZN-KLB',
+      'Mysuru Division': 'ZN-MYS'
+    };
+    const divManagers = {
+      'Bengaluru Division': 'Priya Rajan',
+      'Belagavi Division': 'Rahul Mehta',
+      'Kalaburagi Division': 'Anjali Singh',
+      'Mysuru Division': 'Karthik Suresh'
     };
 
-    // Higher sales for top products
-    const popularPrds = ['prd_001', 'prd_002', 'prd_004', 'prd_010', 'prd_006'];
+    const codeSet = new Set(['HO-MNG', 'ZN-BLR', 'ZN-BGV', 'ZN-KLB', 'ZN-MYS']);
+    function cleanCode(s) { return s.replace(/[^a-zA-Z0-9]/g, '').toUpperCase().slice(0, 4); }
 
-    for (let monthsAgo = 11; monthsAgo >= 0; monthsAgo--) {
-      STORE_IDS.forEach(function (storeId) {
-        // 8-20 sales per store per month
-        const count = randInt(8, 20);
-        for (let i = 0; i < count; i++) {
-          const pId = monthsAgo < 3
-            ? pick(popularPrds)         // recent months favor popular products
-            : pick(PRODUCT_IDS);
-          const prd = PRODUCTS.find(function (p) { return p.id === pId; });
-          const daysOffset = randInt(0, 28);
-          const totalDaysAgo = monthsAgo * 30 + daysOffset;
-          sales.push({
-            id: saleId(),
-            storeId: storeId,
-            productId: pId,
-            qty: randInt(1, 3),
-            unitPrice: prd.price,
-            payment: pick(payments),
-            customer: { name: '', phone: '' },
-            type: 'sale',
-            at: ago(totalDaysAgo),
-            by: userMap[storeId] || 'usr_011',
-          });
-        }
-      });
+    const zones = [];
+    for (const divName of Object.keys(KARNATAKA_HIERARCHY)) {
+      const z = {
+        id: nextId(),
+        code: divCodes[divName] || ('ZN-' + cleanCode(divName)),
+        name: divName,
+        type: 'zone',
+        parentId: ho.id,
+        city: divName.replace(' Division', ''),
+        manager: divManagers[divName] || 'Zonal Manager',
+        active: true,
+        divName: divName
+      };
+      zones.push(z);
+      offices.push(z);
     }
-    return sales;
+
+    const districts = [];
+    for (const z of zones) {
+      for (const distName of Object.keys(KARNATAKA_HIERARCHY[z.divName])) {
+        let dCode = 'DIS-' + cleanCode(distName);
+        let c = 1;
+        while (codeSet.has(dCode)) dCode = 'DIS-' + cleanCode(distName) + (c++);
+        codeSet.add(dCode);
+        const d = {
+          id: nextId(),
+          code: dCode,
+          name: distName + ' District',
+          type: 'district',
+          parentId: z.id,
+          city: distName,
+          manager: distName + ' Manager',
+          active: true,
+          divName: z.divName,
+          distName: distName
+        };
+        districts.push(d);
+        offices.push(d);
+      }
+    }
+
+    const taluks = [];
+    for (const d of districts) {
+      for (const talukName of KARNATAKA_HIERARCHY[d.divName][d.distName]) {
+        let tCode = 'TLK-' + cleanCode(talukName);
+        let c = 1;
+        while (codeSet.has(tCode)) tCode = 'TLK-' + cleanCode(talukName) + (c++);
+        codeSet.add(tCode);
+        const t = {
+          id: nextId(),
+          code: tCode,
+          name: talukName + ' Taluk',
+          type: 'taluk',
+          parentId: d.id,
+          city: talukName,
+          manager: talukName + ' Officer',
+          active: true,
+          talukName: talukName,
+          distName: d.distName
+        };
+        taluks.push(t);
+        offices.push(t);
+      }
+    }
+
+    const stores = [];
+    for (const t of taluks) {
+      for (let s = 1; s <= 2; s++) {
+        let sCode = 'ST-' + cleanCode(t.talukName) + s;
+        let c = 1;
+        while (codeSet.has(sCode)) sCode = 'ST-' + cleanCode(t.talukName) + s + '_' + (c++);
+        codeSet.add(sCode);
+        const str = {
+          id: nextId(),
+          code: sCode,
+          name: t.talukName + ' Store ' + s,
+          type: 'store',
+          parentId: t.id,
+          city: t.city,
+          manager: t.talukName + ' Store ' + s + ' Lead',
+          active: true,
+          talukName: t.talukName,
+          distName: t.distName
+        };
+        stores.push(str);
+        offices.push(str);
+      }
+    }
+
+    // Clean internal helper tags before storing
+    offices.forEach(function (o) {
+      delete o.divName;
+      delete o.distName;
+      delete o.talukName;
+    });
+
+    return { offices: offices, zones: zones, districts: districts, taluks: taluks, stores: stores };
   }
 
   // ─────────────────────────────────────────
-  // TARGETS (current month per store)
+  // USERS (Multi-tier demo accounts across Karnataka)
   // ─────────────────────────────────────────
-  function generateTargets() {
-    const now = new Date();
-    const month = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
-    return STORE_IDS.map(function (storeId) {
-      return { storeId: storeId, month: month, amount: randInt(400000, 1200000) };
-    });
-  }
+  const USERS = [
+    { id: 'usr_001', name: 'Mohammed Faizal', role: 'head', officeId: 'off_001', initials: 'MF' },
+    { id: 'usr_002', name: 'Priya Rajan', role: 'zone', officeId: 'off_002', initials: 'PR' },
+    { id: 'usr_003', name: 'Rahul Mehta', role: 'zone', officeId: 'off_003', initials: 'RM' },
+    { id: 'usr_004', name: 'Anjali Singh', role: 'zone', officeId: 'off_004', initials: 'AS' },
+    { id: 'usr_005', name: 'Karthik Suresh', role: 'zone', officeId: 'off_005', initials: 'KS' },
+    { id: 'usr_006', name: 'Deepa Nair', role: 'district', officeId: 'off_031', initials: 'DN' },
+    { id: 'usr_007', name: 'Vikram Sharma', role: 'district', officeId: 'off_006', initials: 'VS' },
+    { id: 'usr_008', name: 'Rohan Gowda', role: 'taluk', officeId: 'off_232', initials: 'RG' },
+    { id: 'usr_009', name: 'Arjun Kumar', role: 'store', officeId: 'off_667', initials: 'AK' },
+    { id: 'usr_010', name: 'Meena Pandian', role: 'store', officeId: 'off_668', initials: 'MP' },
+    { id: 'usr_011', name: 'Suresh Patil', role: 'store', officeId: 'off_277', initials: 'SP' },
+  ];
 
   // ─────────────────────────────────────────
   // SEED FUNCTION
   // ─────────────────────────────────────────
-  /**
-   * Write all seed data to storage. Called only if not already seeded.
-   */
   function seed() {
-    // Reset counters to avoid conflicts
-    storage.set('counters', {
-      user: USERS.length,
-      office: OFFICES.length,
-      product: PRODUCTS.length,
-      allocation: 0,
-      movement: 0,
-      sale: 0,
+    const built = buildKarnatakaOffices();
+    const offices = built.offices;
+    const stores = built.stores;
+
+    // Build stock for all 756 offices and 15 products
+    const stock = [];
+    const physicalByPrd = {};
+    PRODUCTS.forEach(function (p) { physicalByPrd[p.id] = 0; });
+
+    offices.forEach(function (o, oIdx) {
+      PRODUCTS.forEach(function (p, pIdx) {
+        let qty = 0;
+        if (o.type === 'head') {
+          qty = 100;
+        } else if (o.type === 'zone') {
+          qty = 30;
+        } else if (o.type === 'district') {
+          qty = 12;
+        } else if (o.type === 'taluk') {
+          qty = 6;
+        } else {
+          // Stores
+          if (o.id === 'off_667' || o.id === 'off_668' || o.id === 'off_277') {
+            qty = 10; // Ensure active demo stores have plenty of stock on hand
+          } else {
+            qty = ((oIdx * 13 + pIdx * 7) % 11);
+          }
+        }
+        stock.push({ officeId: o.id, productId: p.id, qty: qty });
+        physicalByPrd[p.id] += qty;
+      });
     });
 
-    storage.set('offices', OFFICES);
-    storage.set('users', USERS);
-    storage.set('products', PRODUCTS);
-
-    // Build stock array from STOCK_DATA
-    const stock = STOCK_DATA.map(function (row) {
-      return { officeId: row[0], productId: row[1], qty: row[2] };
-    });
-    storage.set('stock', stock);
-
-    // Seed a realistic mix of initial allocations (Reconciled with movements & stock)
+    // Seed realistic allocations adhering to strict parent-child routing
     const seedAllocations = [
-      // 1. Received allocation (Past completed push HO -> South Zone)
+      // 1. Completed push allocation: HO Mangaluru (off_001) -> Mysuru Division (off_005)
       {
         id: 'alc_0001',
         code: 'ALC-0001',
         type: 'push',
         fromId: 'off_001',
-        toId: 'off_002',
+        toId: 'off_005',
         status: 'received',
         items: [
           { productId: 'prd_001', qtyRequested: 20, qtyDispatched: 20, qtyReceived: 20 },
           { productId: 'prd_002', qtyRequested: 15, qtyDispatched: 15, qtyReceived: 15 }
         ],
-        note: 'Monthly regular replenishment consignment.',
+        note: 'Monthly regular replenishment consignment for Mysuru Division.',
         discrepancyNote: '',
         hasDiscrepancy: false,
         discrepancyAcknowledged: false,
         createdBy: 'usr_001',
         createdAt: ago(25),
         timeline: [
-          { status: 'dispatched', at: ago(25), by: 'usr_001', note: 'Dispatched from Head Office' },
-          { status: 'received', at: ago(23), by: 'usr_002', note: 'Verified and received in full at South Zone' }
+          { status: 'dispatched', at: ago(25), by: 'usr_001', note: 'Dispatched from Head Office Mangaluru' },
+          { status: 'received', at: ago(23), by: 'usr_005', note: 'Verified and received in full at Mysuru Division' }
         ]
       },
-      // 2. Active in-transit allocation (Dispatched HO -> West Zone, 2 days ago)
+      // 2. Active in-transit push allocation: HO Mangaluru (off_001) -> Bengaluru Division (off_002), 2 days ago
       {
         id: 'alc_0002',
         code: 'ALC-0002',
         type: 'push',
         fromId: 'off_001',
-        toId: 'off_003',
+        toId: 'off_002',
         status: 'dispatched',
         items: [
           { productId: 'prd_004', qtyRequested: 10, qtyDispatched: 10, qtyReceived: 0 },
           { productId: 'prd_006', qtyRequested: 5, qtyDispatched: 5, qtyReceived: 0 }
         ],
-        note: 'New launch units allocation.',
+        note: 'New flagship launch consignment.',
         discrepancyNote: '',
         hasDiscrepancy: false,
         discrepancyAcknowledged: false,
         createdBy: 'usr_001',
         createdAt: ago(2),
         timeline: [
-          { status: 'dispatched', at: ago(2), by: 'usr_001', note: 'Dispatched from Head Office' }
+          { status: 'dispatched', at: ago(2), by: 'usr_001', note: 'Dispatched from Head Office Mangaluru' }
         ]
       },
-      // 3. Overdue in-transit allocation (Dispatched HO -> North Zone, 8 days ago > 5 days threshold)
+      // 3. Overdue in-transit push allocation: HO Mangaluru (off_001) -> Belagavi Division (off_003), 8 days ago
       {
         id: 'alc_0003',
         code: 'ALC-0003',
         type: 'push',
         fromId: 'off_001',
-        toId: 'off_004',
+        toId: 'off_003',
         status: 'dispatched',
         items: [
           { productId: 'prd_011', qtyRequested: 6, qtyDispatched: 6, qtyReceived: 0 }
         ],
-        note: 'High-priority tablets for corporate demo.',
+        note: 'High-priority institutional tablets.',
         discrepancyNote: '',
         hasDiscrepancy: false,
         discrepancyAcknowledged: false,
         createdBy: 'usr_001',
         createdAt: ago(8),
         timeline: [
-          { status: 'dispatched', at: ago(8), by: 'usr_001', note: 'Dispatched from Head Office' }
+          { status: 'dispatched', at: ago(8), by: 'usr_001', note: 'Dispatched from Head Office Mangaluru' }
         ]
       },
-      // 4. Pending stock request (Requested by Chennai Central store off_011 -> Tamil Nadu district off_005)
+      // 4. Pending stock request: Mangaluru Taluk (off_232) -> Dakshina Kannada District (off_031)
       {
         id: 'alc_0004',
         code: 'ALC-0004',
         type: 'request',
-        fromId: 'off_005',
-        toId: 'off_011',
+        fromId: 'off_031',
+        toId: 'off_232',
         status: 'requested',
         items: [
           { productId: 'prd_007', qtyRequested: 8, qtyDispatched: 0, qtyReceived: 0 },
           { productId: 'prd_009', qtyRequested: 10, qtyDispatched: 0, qtyReceived: 0 }
         ],
-        note: 'Customer pre-orders surge at Chennai Central store.',
+        note: 'Pre-order festival demand surge across coastal Mangaluru stores.',
         discrepancyNote: '',
         hasDiscrepancy: false,
         discrepancyAcknowledged: false,
-        createdBy: 'usr_011',
+        createdBy: 'usr_008',
         createdAt: ago(1),
         timeline: [
-          { status: 'requested', at: ago(1), by: 'usr_011', note: 'Stock request submitted by store' }
+          { status: 'requested', at: ago(1), by: 'usr_008', note: 'Stock request submitted by Mangaluru Taluk Office' }
         ]
       },
-      // 5. Allocation with delivery discrepancy (Received with shortfall: dispatched 10, received 8, 2 missing)
+      // 5. Completed allocation with discrepancy: Mangaluru Taluk (off_232) -> Mangaluru Store 1 (off_667)
       {
         id: 'alc_0005',
         code: 'ALC-0005',
         type: 'push',
-        fromId: 'off_005',
-        toId: 'off_012',
+        fromId: 'off_232',
+        toId: 'off_667',
         status: 'received',
         items: [
           { productId: 'prd_010', qtyRequested: 10, qtyDispatched: 10, qtyReceived: 8 }
         ],
-        note: 'Stock transfer to Madurai store.',
-        discrepancyNote: 'Carton arrived damaged; 2 units broken in transit.',
+        note: 'Weekend replenishment transfer.',
+        discrepancyNote: 'Carton damaged in courier transit; 2 units broken.',
         hasDiscrepancy: true,
         discrepancyAcknowledged: false,
-        createdBy: 'usr_005',
+        createdBy: 'usr_008',
         createdAt: ago(4),
         timeline: [
-          { status: 'dispatched', at: ago(4), by: 'usr_005', note: 'Dispatched from Tamil Nadu District' },
-          { status: 'received', at: ago(3), by: 'usr_012', note: 'Received with discrepancy: Carton arrived damaged; 2 units broken in transit.' }
+          { status: 'dispatched', at: ago(4), by: 'usr_008', note: 'Dispatched from Mangaluru Taluk Office' },
+          { status: 'received', at: ago(3), by: 'usr_009', note: 'Received with discrepancy: Carton damaged in courier transit; 2 units broken.' }
         ]
       }
     ];
 
-    storage.set('allocations', seedAllocations);
-    storage.set('counters', {
-      user: USERS.length,
-      office: OFFICES.length,
-      product: PRODUCTS.length,
-      allocation: seedAllocations.length,
-      movement: 0,
-      sale: 0,
+    // In-transit accounting for reconciliation
+    const inTransitByPrd = {
+      'prd_004': 10,
+      'prd_006': 5,
+      'prd_011': 6
+    };
+
+    // Sales generation across retail stores (past 12 months)
+    const sales = [];
+    let saleSeq = 1;
+    const salesByPrd = {};
+    PRODUCTS.forEach(function (p) { salesByPrd[p.id] = 0; });
+
+    const payments = ['cash', 'upi', 'card'];
+    const popularPrds = ['prd_001', 'prd_002', 'prd_004', 'prd_010', 'prd_006'];
+
+    // Generate ~300 realistic sales across sample stores
+    for (let i = 0; i < 300; i++) {
+      const store = stores[i % stores.length];
+      const pId = (i % 2 === 0) ? popularPrds[i % popularPrds.length] : PRODUCTS[i % PRODUCTS.length].id;
+      const prd = PRODUCTS.find(function (p) { return p.id === pId; });
+      const qty = 1 + (i % 3);
+      const daysAgo = (i % 360);
+
+      sales.push({
+        id: 'sal_' + String(saleSeq++).padStart(4, '0'),
+        storeId: store.id,
+        productId: pId,
+        qty: qty,
+        unitPrice: prd.price,
+        payment: payments[i % payments.length],
+        customer: { name: '', phone: '' },
+        type: 'sale',
+        at: ago(daysAgo),
+        by: 'usr_009'
+      });
+      salesByPrd[pId] += qty;
+    }
+
+    // Movements generation
+    const movements = [];
+    let movSeq = 1;
+    function movId() { return 'mov_' + String(movSeq++).padStart(5, '0'); }
+
+    // Initial stock_in movements at HO Mangaluru (off_001)
+    // Exactly calculated so: totalPhysical + totalInTransit == totalStockIn - totalSales
+    PRODUCTS.forEach(function (p) {
+      const requiredStockIn = physicalByPrd[p.id] + (inTransitByPrd[p.id] || 0) + (salesByPrd[p.id] || 0);
+      movements.push({
+        id: movId(),
+        at: ago(365),
+        type: 'stock_in',
+        productId: p.id,
+        qty: requiredStockIn,
+        fromId: null,
+        toId: 'off_001',
+        refType: 'manual',
+        refId: null,
+        by: 'usr_001'
+      });
     });
 
-    // Generate movements and sales
-    storage.set('movements', generateMovements());
-    storage.set('sales', generateSales());
-    storage.set('targets', generateTargets());
+    // Historic allocation movements
+    movements.push({
+      id: movId(), at: ago(25), type: 'dispatch', productId: 'prd_001', qty: 20, fromId: 'off_001', toId: 'off_005', refType: 'allocation', refId: 'alc_0001', by: 'usr_001'
+    });
+    movements.push({
+      id: movId(), at: ago(23), type: 'receive', productId: 'prd_001', qty: 20, fromId: 'off_001', toId: 'off_005', refType: 'allocation', refId: 'alc_0001', by: 'usr_005'
+    });
+    movements.push({
+      id: movId(), at: ago(2), type: 'dispatch', productId: 'prd_004', qty: 10, fromId: 'off_001', toId: 'off_002', refType: 'allocation', refId: 'alc_0002', by: 'usr_001'
+    });
+    movements.push({
+      id: movId(), at: ago(2), type: 'dispatch', productId: 'prd_006', qty: 5, fromId: 'off_001', toId: 'off_002', refType: 'allocation', refId: 'alc_0002', by: 'usr_001'
+    });
+    movements.push({
+      id: movId(), at: ago(8), type: 'dispatch', productId: 'prd_011', qty: 6, fromId: 'off_001', toId: 'off_003', refType: 'allocation', refId: 'alc_0003', by: 'usr_001'
+    });
+    movements.push({
+      id: movId(), at: ago(4), type: 'dispatch', productId: 'prd_010', qty: 10, fromId: 'off_232', toId: 'off_667', refType: 'allocation', refId: 'alc_0005', by: 'usr_008'
+    });
+    movements.push({
+      id: movId(), at: ago(3), type: 'receive', productId: 'prd_010', qty: 8, fromId: 'off_232', toId: 'off_667', refType: 'allocation', refId: 'alc_0005', by: 'usr_009'
+    });
+    movements.push({
+      id: movId(), at: ago(3), type: 'discrepancy', productId: 'prd_010', qty: 2, fromId: 'off_232', toId: 'off_667', refType: 'allocation', refId: 'alc_0005', by: 'usr_009'
+    });
 
-    // Settings defaults
+    // Targets for current month per store
+    const now = new Date();
+    const curMonth = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+    const targets = stores.map(function (str, idx) {
+      return {
+        storeId: str.id,
+        month: curMonth,
+        amount: 500000 + ((idx * 17) % 500000)
+      };
+    });
+
+    // Save everything to storage
+    storage.set('offices', offices);
+    storage.set('users', USERS);
+    storage.set('products', PRODUCTS);
+    storage.set('stock', stock);
+    storage.set('allocations', seedAllocations);
+    storage.set('sales', sales);
+    storage.set('movements', movements);
+    storage.set('targets', targets);
+
+    storage.set('counters', {
+      user: USERS.length,
+      office: offices.length,
+      product: PRODUCTS.length,
+      allocation: seedAllocations.length,
+      movement: movements.length,
+      sale: sales.length,
+    });
+
+    // Default settings
     storage.set('settings', {
       theme: 'light',
       reorderDefault: 10,
       transitDaysThreshold: 5,
     });
 
-    // Session starts empty (requires login)
     storage.remove('session');
-
-    // Mark as seeded
     storage.markSeeded();
 
-    console.info('[Seed] Demo data loaded successfully.');
+    console.info('[Seed] Karnataka hierarchy loaded successfully: ' + offices.length + ' offices.');
   }
 
-  /**
-   * Re-seed: clear everything and seed fresh.
-   */
   function reseed() {
     storage.clearAll();
     seed();

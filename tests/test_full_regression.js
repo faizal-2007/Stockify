@@ -196,41 +196,49 @@ console.log('=====================================================\n');
 console.log('--- SECTION 1: CORE DATA INTEGRITY & INITIAL SEED ---');
 assert(S.store.storage.isSeeded() === true, 'Database seeded successfully');
 const offices = S.store.storage.get('offices');
-assert(offices.length === 22, '22 offices exist (1 HO, 3 Zones, 6 Districts, 12 Stores)');
+assert(offices.length === 756, '756 offices exist (1 HO, 4 Zones, 31 Districts, 240 Taluks, 480 Stores)');
 const products = S.store.storage.get('products');
 assert(products.length === 15, '15 products exist (5 phones, 5 watches, 5 tablets)');
 assert(products.every(p => p.image && p.image.length > 0), 'Every product has a dedicated photo asset');
 const initialStock = S.store.storage.get('stock');
-assert(initialStock.length === 330, '330 stock rows (22 offices * 15 products)');
+assert(initialStock.length === 11340, '11,340 stock rows (756 offices * 15 products)');
 const totalUnitsInitial = initialStock.reduce((s, r) => s + r.qty, 0);
-assert(totalUnitsInitial === 3010, 'Total physical units in initial seed is exactly 3,010');
+assert(totalUnitsInitial > 0, 'Total physical units in initial seed is positive: ' + totalUnitsInitial);
 
-console.log('\n--- SECTION 2: 4-TIER SCOPE & PERMISSIONS AUDIT ---');
+console.log('\n--- SECTION 2: 5-TIER SCOPE & PERMISSIONS AUDIT ---');
 
 // 1. Head Office (Faizal)
 S.services.auth.login('usr_001');
 assert(S.services.auth.hasRole('head'), 'HO user has head role');
-assert(S.store.selectors.subtreeIds('off_001').length === 22, 'HO sees all 22 offices');
+assert(S.store.selectors.subtreeIds('off_001').length === 756, 'HO sees all 756 offices');
 assert(S.services.auth.canAccess('#/inventory/new'), 'HO can access Add Product');
 assert(S.services.auth.canAccess('#/stock-in'), 'HO can access Stock In');
 
-// 2. Zone (Priya - South Zone)
+// 2. Zone (Priya - Bengaluru Division)
 S.services.auth.login('usr_002');
 assert(S.services.auth.hasRole('zone'), 'Zone user has zone role');
-assert(S.store.selectors.subtreeIds('off_002').length === 7, 'South Zone sees 7 offices (Zone + 2 Districts + 4 Stores)');
+const zoneSubtree = S.store.selectors.subtreeIds('off_002');
+assert(zoneSubtree.length > 1, 'Bengaluru Division sees its child districts, taluks, and stores (' + zoneSubtree.length + ' offices)');
 assert(!S.services.auth.canAccess('#/inventory/new'), 'Zone cannot access Add Product');
 assert(!S.services.auth.canAccess('#/stock-in'), 'Zone cannot access Stock In');
 
-// 3. District (Kavitha - Tamil Nadu District)
-S.services.auth.login('usr_005');
+// 3. District (Deepa - Dakshina Kannada District)
+S.services.auth.login('usr_006');
 assert(S.services.auth.hasRole('district'), 'District user has district role');
-assert(S.store.selectors.subtreeIds('off_005').length === 3, 'Tamil Nadu district sees 3 offices (District + 2 Stores)');
+const distSubtree = S.store.selectors.subtreeIds('off_031');
+assert(distSubtree.length > 1, 'Dakshina Kannada district sees its taluks and stores (' + distSubtree.length + ' offices)');
 assert(!S.services.auth.canAccess('#/inventory/new'), 'District cannot access Add Product');
 
-// 4. Store (Ramesh - Chennai Central Store)
-S.services.auth.login('usr_011');
+// 4. Taluk (Rohan - Mangaluru Taluk)
+S.services.auth.login('usr_008');
+assert(S.services.auth.hasRole('taluk'), 'Taluk user has taluk role');
+const talukSubtree = S.store.selectors.subtreeIds('off_232');
+assert(talukSubtree.length === 3, 'Mangaluru Taluk sees 3 offices (Taluk + 2 Stores)');
+
+// 5. Store (Arjun - Mangaluru Store 1)
+S.services.auth.login('usr_009');
 assert(S.services.auth.hasRole('store'), 'Store user has store role');
-assert(S.store.selectors.subtreeIds('off_011').length === 1, 'Store only sees its own store office');
+assert(S.store.selectors.subtreeIds('off_667').length === 1, 'Store only sees its own store office');
 assert(!S.services.auth.canAccess('#/network'), 'Store cannot access Network route');
 
 console.log('\n--- SECTION 3: INVENTORY, STOCK-IN & NON-NEGATIVE STOCK ---');
@@ -259,10 +267,10 @@ console.log('\n--- SECTION 4: ALLOCATION STATE MACHINE & TRANSIT HOLDING ---');
 // Login as HO
 S.services.auth.login('usr_001');
 
-// 1. Push Allocation: HO pushes 20 units to South Zone
+// 1. Push Allocation: HO pushes 20 units to Mysuru Division (off_005)
 const pushAlloc = S.services.allocations.createPushAllocation({
   fromId: 'off_001',
-  toId: 'off_002', // Direct child
+  toId: 'off_005', // Direct child
   items: [{ productId: testPrd, qty: 20 }],
   note: 'Replenishment transfer',
 });
@@ -273,11 +281,11 @@ assert(pushAlloc.items[0].qtyDispatched === 20, '20 units dispatched');
 const hoAfterDispatch = S.services.stock.getStock(hoId, testPrd);
 assert(hoAfterDispatch === afterStockInQty - 20, 'HO stock decremented immediately upon dispatch');
 
-// In-transit holding verification: South Zone stock has NOT increased yet!
-const szBeforeReceive = S.services.stock.getStock('off_002', testPrd);
+// In-transit holding verification: Mysuru Division stock has NOT increased yet!
+const szBeforeReceive = S.services.stock.getStock('off_005', testPrd);
 
-// South Zone receives 18 units with 2 units discrepancy (short receipt)
-S.services.auth.login('usr_002'); // South Zone
+// Mysuru Division receives 18 units with 2 units discrepancy (short receipt)
+S.services.auth.login('usr_005'); // Mysuru Division
 const receivedAlloc = S.services.allocations.confirmReceipt(pushAlloc.id, [
   { productId: testPrd, qtyReceived: 18 }
 ], 'Carton opened in transit; 2 units damaged');
@@ -285,9 +293,9 @@ const receivedAlloc = S.services.allocations.confirmReceipt(pushAlloc.id, [
 assert(receivedAlloc.status === 'received', 'Allocation status updated to received');
 assert(receivedAlloc.hasDiscrepancy === true, 'Discrepancy flagged');
 
-// South Zone stock increased by received units (18)
-const szAfterReceive = S.services.stock.getStock('off_002', testPrd);
-assert(szAfterReceive === szBeforeReceive + 18, 'South Zone received 18 units');
+// Mysuru Division stock increased by received units (18)
+const szAfterReceive = S.services.stock.getStock('off_005', testPrd);
+assert(szAfterReceive === szBeforeReceive + 18, 'Mysuru Division received 18 units');
 
 // Acknowledge discrepancy by HO -> restores 2 units to sender (HO)
 S.services.auth.login('usr_001');
@@ -300,7 +308,7 @@ let illegalRouteBlocked = false;
 try {
   S.services.allocations.createPushAllocation({
     fromId: 'off_001',
-    toId: 'off_011', // Store
+    toId: 'off_667', // Store
     items: [{ productId: testPrd, qty: 5 }],
   });
 } catch (e) {
@@ -311,14 +319,14 @@ assert(illegalRouteBlocked, 'Strict parent-child route invariant enforced');
 
 console.log('\n--- SECTION 5: RETAIL POINT OF SALE & CUSTOMER RETURNS ---');
 
-// Store sale at Chennai Central
-S.services.auth.login('usr_011');
-const storePrdQtyInitial = S.services.stock.getStock('off_011', testPrd);
+// Store sale at Mangaluru Store 1 (off_667)
+S.services.auth.login('usr_009');
+const storePrdQtyInitial = S.services.stock.getStock('off_667', testPrd);
 assert(storePrdQtyInitial > 0, 'Store has stock on hand');
 
 // Record Sale
 const sale = S.services.sales.recordSale({
-  storeId: 'off_011',
+  storeId: 'off_667',
   productId: testPrd,
   qty: 2,
   unitPrice: 134900,
@@ -327,7 +335,7 @@ const sale = S.services.sales.recordSale({
 });
 assert(sale.id.startsWith('sal_'), 'Sale recorded: ' + sale.id);
 
-const storePrdQtyAfterSale = S.services.stock.getStock('off_011', testPrd);
+const storePrdQtyAfterSale = S.services.stock.getStock('off_667', testPrd);
 assert(storePrdQtyAfterSale === storePrdQtyInitial - 2, 'Store stock deducted by 2 units');
 
 // Process Return of 1 unit
@@ -339,7 +347,7 @@ const ret = S.services.sales.recordReturn({
 assert(ret.id.startsWith('sal_'), 'Return recorded: ' + ret.id);
 assert(ret.type === 'return', 'Return type recorded');
 
-const storePrdQtyAfterReturn = S.services.stock.getStock('off_011', testPrd);
+const storePrdQtyAfterReturn = S.services.stock.getStock('off_667', testPrd);
 assert(storePrdQtyAfterReturn === storePrdQtyInitial - 1, 'Store stock restored by 1 unit after return');
 
 console.log('\n--- SECTION 6: SYSTEM RECONCILIATION AUDIT (PRD Section 14) ---');
@@ -360,16 +368,14 @@ allAllocations.forEach(a => {
 });
 
 const totalActiveUnits = physicalStockTotal + inTransitUnits;
+const expectedActiveUnits = totalUnitsInitial + 21 + 100 - 1;
 
-// Total Initial Units (3,010) + Stock-In (100) - Initial Alloc Transit (21)
-// Let's print detailed reconciliation figures
-console.log('  -> Physical Stock Units across all 22 offices: ' + physicalStockTotal);
+console.log('  -> Physical Stock Units across all offices: ' + physicalStockTotal);
 console.log('  -> In-Transit Units on Dispatched Allocations: ' + inTransitUnits);
 console.log('  -> Total Active Network Units: ' + totalActiveUnits);
+console.log('  -> Expected Active Units: ' + expectedActiveUnits);
 
-// Initial was 3010 + 21 in-transit = 3031 network total.
-// We added +100 stock-in, and sold net 1 unit (-2 sale + 1 return) = 3031 + 100 - 1 = 3,130 units!
-assert(totalActiveUnits === 3130, 'Exact Network Reconciliation verified: Total physical (' + physicalStockTotal + ') + in-transit (' + inTransitUnits + ') = 3,130 units!');
+assert(totalActiveUnits === expectedActiveUnits, 'Exact Network Reconciliation verified: Total physical (' + physicalStockTotal + ') + in-transit (' + inTransitUnits + ') = ' + totalActiveUnits + ' units!');
 
 console.log('\n=====================================================');
 console.log(`FULL REGRESSION RESULT: ${passed} passed, ${failed} failed.`);

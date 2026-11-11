@@ -8,12 +8,13 @@
   const idGen     = window.Stockify.utils.id;
   const events    = window.Stockify.events;
 
-  const VALID_TYPES = ['head', 'zone', 'district', 'store'];
+  const VALID_TYPES = ['head', 'zone', 'district', 'taluk', 'store'];
   const TYPE_HIERARCHY = {
     head: null,
     zone: 'head',
     district: 'zone',
-    store: 'district',
+    taluk: 'district',
+    store: 'taluk',
   };
 
   /**
@@ -33,11 +34,12 @@
 
   /**
    * Determine whether a user can manage (add/edit) offices at a given level.
-   * - head: can manage zones, districts, stores
-   * - zone: can manage districts and stores in their zone
-   * - district: can manage stores in their district
+   * - head: can manage zones, districts, taluks, stores
+   * - zone: can manage districts, taluks, and stores in their zone
+   * - district: can manage taluks and stores in their district
+   * - taluk: can manage stores in their taluk
    * - store: read-only
-   * @param {string} targetType - 'zone' | 'district' | 'store'
+   * @param {string} targetType - 'zone' | 'district' | 'taluk' | 'store'
    * @param {string} [parentOfficeId]
    * @returns {boolean}
    */
@@ -48,7 +50,7 @@
     if (user.role === 'head') return true;
 
     if (user.role === 'zone') {
-      if (targetType !== 'district' && targetType !== 'store') return false;
+      if (targetType !== 'district' && targetType !== 'taluk' && targetType !== 'store') return false;
       if (parentOfficeId) {
         return selectors.subtreeIds(user.officeId).includes(parentOfficeId);
       }
@@ -56,6 +58,14 @@
     }
 
     if (user.role === 'district') {
+      if (targetType !== 'taluk' && targetType !== 'store') return false;
+      if (parentOfficeId) {
+        return selectors.subtreeIds(user.officeId).includes(parentOfficeId);
+      }
+      return true;
+    }
+
+    if (user.role === 'taluk') {
       if (targetType !== 'store') return false;
       if (parentOfficeId) {
         return selectors.subtreeIds(user.officeId).includes(parentOfficeId);
@@ -136,9 +146,51 @@
       childrenMap.get(pId).push(o);
     });
 
+    // Pre-aggregate stock by office for fast O(N) post-order tree evaluation
+    const stock = storage.get('stock') || [];
+    const products = storage.get('products') || [];
+    const productMap = new Map();
+    products.forEach(function (p) { productMap.set(p.id, p); });
+
+    const officeMetricsMap = new Map();
+    stock.forEach(function (row) {
+      let m = officeMetricsMap.get(row.officeId);
+      if (!m) {
+        m = { totalUnits: 0, totalValue: 0, healthy: 0, low: 0, out: 0 };
+        officeMetricsMap.set(row.officeId, m);
+      }
+      m.totalUnits += row.qty;
+      const p = productMap.get(row.productId);
+      if (p) {
+        m.totalValue += row.qty * (p.costPrice || 0);
+        const reorder = p.reorderLevel || 10;
+        if (row.qty === 0) m.out++;
+        else if (row.qty <= reorder) m.low++;
+        else m.healthy++;
+      }
+    });
+
     function buildNode(office) {
       const children = (childrenMap.get(office.id) || []).map(buildNode);
-      const metrics = computeSubtreeMetrics(office.id);
+      const ownM = officeMetricsMap.get(office.id) || { totalUnits: 0, totalValue: 0, healthy: 0, low: 0, out: 0 };
+
+      let totalUnits = ownM.totalUnits;
+      let totalValue = ownM.totalValue;
+      let healthy = ownM.healthy;
+      let low = ownM.low;
+      let out = ownM.out;
+      let storesCount = office.type === 'store' ? 1 : 0;
+
+      for (let i = 0; i < children.length; i++) {
+        const cm = children[i].metrics;
+        totalUnits += cm.totalUnits;
+        totalValue += cm.totalValue;
+        healthy += cm.healthy;
+        low += cm.low;
+        out += cm.out;
+        storesCount += cm.storesCount;
+      }
+
       return {
         id: office.id,
         code: office.code,
@@ -148,7 +200,14 @@
         city: office.city,
         manager: office.manager,
         active: office.active !== false,
-        metrics: metrics,
+        metrics: {
+          totalUnits: totalUnits,
+          totalValue: totalValue,
+          healthy: healthy,
+          low: low,
+          out: out,
+          storesCount: storesCount,
+        },
         children: children,
       };
     }
@@ -293,7 +352,7 @@
     let code = (data.code || '').trim().toUpperCase();
     if (!code) {
       // Auto-suggest code if not provided
-      const prefix = type === 'zone' ? 'ZN' : (type === 'district' ? 'DIS' : 'STR');
+      const prefix = type === 'zone' ? 'ZN' : (type === 'district' ? 'DIS' : (type === 'taluk' ? 'TLK' : 'STR'));
       const citySlug = city.slice(0, 3).toUpperCase();
       const count = offices.filter(function (o) { return o.type === type; }).length + 1;
       code = prefix + '-' + citySlug + '-' + String(count).padStart(2, '0');

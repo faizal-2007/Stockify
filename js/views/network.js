@@ -12,8 +12,9 @@
 
   const TYPE_LABELS = {
     head: 'Head Office',
-    zone: 'Zonal Office',
+    zone: 'Zonal Division',
     district: 'District Office',
+    taluk: 'Taluk Office',
     store: 'Retail Store',
   };
 
@@ -21,6 +22,7 @@
     head: 'badge--info',
     zone: 'badge--purple',
     district: 'badge--teal',
+    taluk: 'badge--taluk',
     store: 'badge--warning',
   };
 
@@ -69,8 +71,9 @@
     const types = [
       { id: 'all', label: 'All Offices' },
       { id: 'head', label: 'Head Office' },
-      { id: 'zone', label: 'Zones' },
+      { id: 'zone', label: 'Divisions' },
       { id: 'district', label: 'Districts' },
+      { id: 'taluk', label: 'Taluks' },
       { id: 'store', label: 'Stores' },
     ];
     let selectedType = 'all';
@@ -112,7 +115,7 @@
      */
     function renderNode(node, level, parentEl) {
       const nodeWrap = dom.h('div', {
-        className: 'tree-node-wrap tree-level-' + Math.min(level, 4),
+        className: 'tree-node-wrap tree-level-' + Math.min(level, 5),
         dataset: {
           id: node.id,
           type: node.type,
@@ -247,12 +250,15 @@
     // Determine allowed types
     const allowedTypes = [];
     if (user.role === 'head') {
-      if (!isEdit) allowedTypes.push('zone', 'district', 'store');
+      if (!isEdit) allowedTypes.push('zone', 'district', 'taluk', 'store');
       else allowedTypes.push(existingOffice.type);
     } else if (user.role === 'zone') {
-      if (!isEdit) allowedTypes.push('district', 'store');
+      if (!isEdit) allowedTypes.push('district', 'taluk', 'store');
       else allowedTypes.push(existingOffice.type);
     } else if (user.role === 'district') {
+      if (!isEdit) allowedTypes.push('taluk', 'store');
+      else allowedTypes.push(existingOffice.type);
+    } else if (user.role === 'taluk') {
       if (!isEdit) allowedTypes.push('store');
       else allowedTypes.push(existingOffice.type);
     }
@@ -286,7 +292,7 @@
     function populateParents() {
       parentSelect.innerHTML = '';
       const chosenType = typeSelect.value;
-      const expectedParentType = chosenType === 'zone' ? 'head' : (chosenType === 'district' ? 'zone' : 'district');
+      const expectedParentType = chosenType === 'zone' ? 'head' : (chosenType === 'district' ? 'zone' : (chosenType === 'taluk' ? 'district' : 'taluk'));
 
       const validParents = allOffices.filter(function (o) {
         return o.type === expectedParentType && o.active !== false;

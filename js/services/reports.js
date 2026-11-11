@@ -33,8 +33,14 @@
 
     const offices = allOffices.filter(function (o) { return scopedIds.has(o.id) && o.active !== false; });
 
+    const stockByOffice = new Map();
+    stock.forEach(function (s) {
+      if (!stockByOffice.has(s.officeId)) stockByOffice.set(s.officeId, []);
+      stockByOffice.get(s.officeId).push(s);
+    });
+
     const rows = offices.map(function (office) {
-      const officeStock = stock.filter(function (s) { return s.officeId === office.id; });
+      const officeStock = stockByOffice.get(office.id) || [];
       let spUnits = 0, spValue = 0;
       let swUnits = 0, swValue = 0;
       let tbUnits = 0, tbValue = 0;
