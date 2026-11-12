@@ -160,19 +160,18 @@
     brandSelect.className = 'select';
     brandSelect.style.width = '140px';
     brandSelect.style.height = '36px';
-    brandSelect.innerHTML =
-      '<option value="all">All Brands</option>' +
-      '<option value="Apple">Apple</option>' +
-      '<option value="Samsung">Samsung</option>' +
-      '<option value="Google">Google</option>' +
-      '<option value="OnePlus">OnePlus</option>' +
-      '<option value="Vivo">Vivo</option>' +
-      '<option value="Garmin">Garmin</option>' +
-      '<option value="Fitbit">Fitbit</option>' +
-      '<option value="boAt">boAt</option>' +
-      '<option value="Lenovo">Lenovo</option>' +
-      '<option value="Microsoft">Microsoft</option>' +
-      '<option value="Realme">Realme</option>';
+
+    const allBrands = Array.from(new Set(
+      (storage.get('products') || [])
+        .map(function (p) { return p.brand; })
+        .filter(Boolean)
+    )).sort();
+
+    let brandOpts = '<option value="all">All Brands</option>';
+    allBrands.forEach(function (b) {
+      brandOpts += '<option value="' + fmt.escapeHtml(b) + '">' + fmt.escapeHtml(b) + '</option>';
+    });
+    brandSelect.innerHTML = brandOpts;
 
     brandSelect.addEventListener('change', function () {
       currentBrand = this.value;

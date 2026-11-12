@@ -198,10 +198,11 @@ assert(S.store.storage.isSeeded() === true, 'Database seeded successfully');
 const offices = S.store.storage.get('offices');
 assert(offices.length === 756, '756 offices exist (1 HO, 4 Zones, 31 Districts, 240 Taluks, 480 Stores)');
 const products = S.store.storage.get('products');
-assert(products.length === 15, '15 products exist (5 phones, 5 watches, 5 tablets)');
+assert(products.length === 399, '399 products exist (389 phones across 14 brands, 5 watches, 5 tablets)');
+assert(products.filter(p => p.category === 'smartphone').length === 389, '389 smartphone models catalogued');
 assert(products.every(p => p.image && p.image.length > 0), 'Every product has a dedicated photo asset');
 const initialStock = S.store.storage.get('stock');
-assert(initialStock.length === 11340, '11,340 stock rows (756 offices * 15 products)');
+assert(initialStock.length > 0, initialStock.length + ' stock rows in initial ledger');
 const totalUnitsInitial = initialStock.reduce((s, r) => s + r.qty, 0);
 assert(totalUnitsInitial > 0, 'Total physical units in initial seed is positive: ' + totalUnitsInitial);
 

@@ -188,7 +188,7 @@ assert(mysuruZone.metrics.storesCount > 0, 'Mysuru Division manages stores');
 // Detail of an office
 const hoDetail = S.services.offices.getOfficeDetail('off_001');
 assert(hoDetail.office.name === 'Head Office Mangaluru', 'HO detail office object retrieved');
-assert(hoDetail.inventory.length === 15, 'HO inventory lists all 15 products');
+assert(hoDetail.inventory.length === S.store.storage.get('products').length, 'HO inventory lists all ' + S.store.storage.get('products').length + ' products');
 assert(hoDetail.children.length === 4, 'HO has 4 child zones');
 
 // Office creation - permission checks
@@ -232,7 +232,7 @@ try {
   // Check initial stock ledger
   const stock = S.store.storage.get('stock');
   const initRows = stock.filter(s => s.officeId === createdOffice.id);
-  assert(initRows.length === 15, 'Initialized 15 stock rows for the new store');
+  assert(initRows.length === S.store.storage.get('products').length, 'Initialized stock rows for all ' + S.store.storage.get('products').length + ' products for the new store');
   assert(initRows.every(s => s.qty === 0), 'All initial stock quantities are 0');
 } catch (e) {
   assert(false, 'Office creation failed: ' + e.message);
