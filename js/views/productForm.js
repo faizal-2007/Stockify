@@ -136,8 +136,9 @@
       '<label class="form-label">Category <span class="required">*</span></label>' +
       '<div class="seg-control mt-1" id="cat-segment">' +
         '<button type="button" class="seg-control__btn' + ((!existing || existing.category === 'smartphone') ? ' active' : '') + '" data-cat="smartphone">Smartphone</button>' +
-        '<button type="button" class="seg-control__btn' + (existing && existing.category === 'smartwatch' ? ' active' : '') + '" data-cat="smartwatch">Smartwatch</button>' +
+        '<button type="button" class="seg-control__btn' + (existing && existing.category === 'laptop' ? ' active' : '') + '" data-cat="laptop">Laptop</button>' +
         '<button type="button" class="seg-control__btn' + (existing && existing.category === 'tablet' ? ' active' : '') + '" data-cat="tablet">Tablet</button>' +
+        '<button type="button" class="seg-control__btn' + (existing && existing.category === 'smartwatch' ? ' active' : '') + '" data-cat="smartwatch">Smartwatch</button>' +
       '</div>';
     form.appendChild(catGroup);
 
@@ -241,7 +242,7 @@
       variantContainer.innerHTML = '';
       const existingVar = existing ? existing.variant : {};
 
-      if (currentCategory === 'smartphone' || currentCategory === 'tablet') {
+      if (currentCategory === 'smartphone' || currentCategory === 'tablet' || currentCategory === 'laptop') {
         variantContainer.innerHTML =
           '<div class="form-group">' +
             '<label class="form-label">Storage</label>' +

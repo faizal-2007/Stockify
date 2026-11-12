@@ -44,6 +44,7 @@
       let spUnits = 0, spValue = 0;
       let swUnits = 0, swValue = 0;
       let tbUnits = 0, tbValue = 0;
+      let lpUnits = 0, lpValue = 0;
 
       officeStock.forEach(function (row) {
         const p = prdMap.get(row.productId);
@@ -58,11 +59,14 @@
         } else if (p.category === 'tablet') {
           tbUnits += row.qty;
           tbValue += val;
+        } else if (p.category === 'laptop') {
+          lpUnits += row.qty;
+          lpValue += val;
         }
       });
 
-      const totalUnits = spUnits + swUnits + tbUnits;
-      const totalValue = spValue + swValue + tbValue;
+      const totalUnits = spUnits + swUnits + tbUnits + lpUnits;
+      const totalValue = spValue + swValue + tbValue + lpValue;
 
       return {
         officeId: office.id,
@@ -73,6 +77,7 @@
         smartphones: { units: spUnits, value: spValue },
         smartwatches: { units: swUnits, value: swValue },
         tablets: { units: tbUnits, value: tbValue },
+        laptops: { units: lpUnits, value: lpValue },
         totalUnits: totalUnits,
         totalValue: totalValue,
       };
@@ -86,10 +91,12 @@
       acc.swValue += r.smartwatches.value;
       acc.tbUnits += r.tablets.units;
       acc.tbValue += r.tablets.value;
+      acc.lpUnits += (r.laptops ? r.laptops.units : 0);
+      acc.lpValue += (r.laptops ? r.laptops.value : 0);
       acc.totalUnits += r.totalUnits;
       acc.totalValue += r.totalValue;
       return acc;
-    }, { spUnits: 0, spValue: 0, swUnits: 0, swValue: 0, tbUnits: 0, tbValue: 0, totalUnits: 0, totalValue: 0 });
+    }, { spUnits: 0, spValue: 0, swUnits: 0, swValue: 0, tbUnits: 0, tbValue: 0, lpUnits: 0, lpValue: 0, totalUnits: 0, totalValue: 0 });
 
     return { rows, totals };
   }

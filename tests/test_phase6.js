@@ -195,7 +195,7 @@ const expectedPhysicalUnits = S.store.storage.get('stock').reduce((s, r) => s + 
 const rep1 = S.services.reports.stockByOfficeAndCategory();
 assert(rep1.rows.length === 756, 'Stock by Office covers all 756 offices in HO subtree');
 assert(rep1.totals.totalUnits === expectedPhysicalUnits, 'Total stock units sum to physical units (' + expectedPhysicalUnits + ')');
-assert(rep1.totals.spUnits + rep1.totals.swUnits + rep1.totals.tbUnits === expectedPhysicalUnits, 'Category unit breakdown reconciles to totalUnits');
+assert(rep1.totals.spUnits + rep1.totals.swUnits + rep1.totals.tbUnits + (rep1.totals.lpUnits || 0) === expectedPhysicalUnits, 'Category unit breakdown reconciles to totalUnits');
 assert(rep1.totals.totalValue > 0, 'Total stock value is non-zero: ' + rep1.totals.totalValue);
 
 // Report 2: Stock Ageing

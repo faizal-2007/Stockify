@@ -97,8 +97,9 @@
     const catSelect = dom.h('select', { className: 'select' },
       dom.h('option', { value: '' }, 'All Categories'),
       dom.h('option', { value: 'smartphone' }, 'Smartphones'),
-      dom.h('option', { value: 'smartwatch' }, 'Smartwatches'),
-      dom.h('option', { value: 'tablet' }, 'Tablets')
+      dom.h('option', { value: 'laptop' }, 'Laptops'),
+      dom.h('option', { value: 'tablet' }, 'Tablets'),
+      dom.h('option', { value: 'smartwatch' }, 'Smartwatches')
     );
     catFilterWrap.appendChild(catSelect);
     filterCard.appendChild(catFilterWrap);
@@ -197,8 +198,9 @@
           dom.h('th', {}, 'Type'),
           dom.h('th', {}, 'City'),
           dom.h('th', { style: 'text-align: right;' }, 'Smartphones (Units / ₹)'),
-          dom.h('th', { style: 'text-align: right;' }, 'Smartwatches (Units / ₹)'),
+          dom.h('th', { style: 'text-align: right;' }, 'Laptops (Units / ₹)'),
           dom.h('th', { style: 'text-align: right;' }, 'Tablets (Units / ₹)'),
+          dom.h('th', { style: 'text-align: right;' }, 'Smartwatches (Units / ₹)'),
           dom.h('th', { style: 'text-align: right;' }, 'Total Units'),
           dom.h('th', { style: 'text-align: right;' }, 'Total Value')
         )
@@ -214,8 +216,9 @@
           dom.h('td', { style: 'text-transform: capitalize; color: var(--text-muted);' }, r.officeType),
           dom.h('td', { style: 'color: var(--text-muted);' }, r.city),
           dom.h('td', { style: 'text-align: right;' }, format.number(r.smartphones.units) + ' (' + format.currency(r.smartphones.value) + ')'),
-          dom.h('td', { style: 'text-align: right;' }, format.number(r.smartwatches.units) + ' (' + format.currency(r.smartwatches.value) + ')'),
+          dom.h('td', { style: 'text-align: right;' }, format.number(r.laptops ? r.laptops.units : 0) + ' (' + format.currency(r.laptops ? r.laptops.value : 0) + ')'),
           dom.h('td', { style: 'text-align: right;' }, format.number(r.tablets.units) + ' (' + format.currency(r.tablets.value) + ')'),
+          dom.h('td', { style: 'text-align: right;' }, format.number(r.smartwatches.units) + ' (' + format.currency(r.smartwatches.value) + ')'),
           dom.h('td', { style: 'text-align: right; font-weight: 600;' }, format.number(r.totalUnits)),
           dom.h('td', { style: 'text-align: right; font-weight: 600; color: var(--primary);' }, format.currency(r.totalValue))
         ));
@@ -232,10 +235,12 @@
             'City': r.city,
             'Smartphone Units': r.smartphones.units,
             'Smartphone Value (INR)': r.smartphones.value,
-            'Smartwatch Units': r.smartwatches.units,
-            'Smartwatch Value (INR)': r.smartwatches.value,
+            'Laptop Units': r.laptops ? r.laptops.units : 0,
+            'Laptop Value (INR)': r.laptops ? r.laptops.value : 0,
             'Tablet Units': r.tablets.units,
             'Tablet Value (INR)': r.tablets.value,
+            'Smartwatch Units': r.smartwatches.units,
+            'Smartwatch Value (INR)': r.smartwatches.value,
             'Total Stock Units': r.totalUnits,
             'Total Stock Value (INR)': r.totalValue,
           };

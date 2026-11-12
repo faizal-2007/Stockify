@@ -1,5 +1,5 @@
 // store/seed.js — Karnataka hierarchy demo data: Head Office in Mangaluru, 4 Divisions, 31 Districts, 240 Taluks, 480 Stores
-// Includes complete smartphones catalogue (389 models across 14 brands), smartwatches (5), and tablets (5).
+// Includes complete catalogue: Smartphones (389), Laptops (79), Tablets (93), and Smartwatches (5).
 (function () {
   'use strict';
 
@@ -330,7 +330,9 @@
   // ─────────────────────────────────────────
 
   // ─────────────────────────────────────────
-  // PRODUCTS (399: 389 smartphones across 14 brands, 5 watches, 5 tablets)
+
+  // ─────────────────────────────────────────
+  // PRODUCTS (566: 389 smartphones, 79 laptops, 93 tablets, 5 smartwatches)
   // ─────────────────────────────────────────
   const PRODUCTS = [
   {
@@ -8307,6 +8309,3504 @@
     "active": true,
     "createdAt": "2025-06-01T00:00:00.000Z",
     "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_400",
+    "sku": "TB-ACE-ZTT01SI0-128",
+    "name": "Iconia Tab 12 5G (8GB/128GB)",
+    "brand": "Acer",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Slate Gray"
+    },
+    "costPrice": 22959,
+    "price": 27999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/acer-iconia-tab-12-5g-8gb-128gb.svg",
+    "description": "Acer Iconia Tab 12 5G (8GB/128GB) featuring MediaTek MT8755, 12.2-inch 2.4K IPS LCD, 90Hz, 10000mAh battery, and 16MP + 2MP Macro camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_401",
+    "sku": "TB-ACE-ZTT01SI0-256",
+    "name": "Iconia Tab 12 5G (8GB/256GB)",
+    "brand": "Acer",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "color": "Slate Gray"
+    },
+    "costPrice": 27879,
+    "price": 33999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/acer-iconia-tab-12-5g-8gb-256gb.svg",
+    "description": "Acer Iconia Tab 12 5G (8GB/256GB) featuring MediaTek MT8755, 12.2-inch 2.4K IPS LCD, 90Hz, 10000mAh battery, and 16MP + 2MP Macro camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_402",
+    "sku": "TB-ACE-ZTT01SI0-1",
+    "name": "Iconia Tab 11 5G (8GB/128GB)",
+    "brand": "Acer",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Slate Gray"
+    },
+    "costPrice": 18859,
+    "price": 22999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/acer-iconia-tab-11-5g-8gb-128gb.svg",
+    "description": "Acer Iconia Tab 11 5G (8GB/128GB) featuring MediaTek MT8755, 10.95-inch FHD IPS LCD, 90Hz, 7400mAh battery, and 13MP camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_403",
+    "sku": "TB-ACE-ZTT01SI0-2",
+    "name": "Iconia Tab 11 5G (8GB/256GB)",
+    "brand": "Acer",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "color": "Slate Gray"
+    },
+    "costPrice": 22139,
+    "price": 26999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/acer-iconia-tab-11-5g-8gb-256gb.svg",
+    "description": "Acer Iconia Tab 11 5G (8GB/256GB) featuring MediaTek MT8755, 10.95-inch FHD IPS LCD, 90Hz, 7400mAh battery, and 13MP camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_404",
+    "sku": "TB-ACE-IM1122M5-128",
+    "name": "Iconia iM11-22M5G (8GB/128GB)",
+    "brand": "Acer",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Silver"
+    },
+    "costPrice": 20909,
+    "price": 25499,
+    "reorderLevel": 8,
+    "image": "assets/images/products/acer-iconia-im11-22m5g-8gb-128gb.svg",
+    "description": "Acer Iconia iM11-22M5G (8GB/128GB) featuring MediaTek Dimensity 7050 (MT8791), 11.45-inch 2.2K IPS LCD, 90Hz, 7400mAh battery, and 16MP camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_405",
+    "sku": "TB-ACE-IM1112M-128",
+    "name": "Iconia Tab iM11-12M (6GB/128GB)",
+    "brand": "Acer",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "6GB",
+      "color": "Blue"
+    },
+    "costPrice": 15572,
+    "price": 18990,
+    "reorderLevel": 8,
+    "image": "assets/images/products/acer-iconia-tab-im11-12m-6gb-128gb.svg",
+    "description": "Acer Iconia Tab iM11-12M (6GB/128GB) featuring MediaTek Helio G99, 11.45-inch 2.2K IPS LCD, 90Hz, 7400mAh battery, and 16MP + 2MP camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_406",
+    "sku": "TB-ACE-ZTT01SI0-3",
+    "name": "Iconia Tab iM11-12M (8GB/128GB)",
+    "brand": "Acer",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Blue"
+    },
+    "costPrice": 17219,
+    "price": 20999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/acer-iconia-tab-im11-12m-8gb-128gb.svg",
+    "description": "Acer Iconia Tab iM11-12M (8GB/128GB) featuring MediaTek Helio G99, 11.45-inch 2.2K IPS LCD, 90Hz, 7400mAh battery, and 16MP + 2MP camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_407",
+    "sku": "TB-ACE-ZTT01SI0-4",
+    "name": "Iconia Tab iM11-12M (8GB/256GB)",
+    "brand": "Acer",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "color": "Blue"
+    },
+    "costPrice": 20499,
+    "price": 24999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/acer-iconia-tab-im11-12m-8gb-256gb.svg",
+    "description": "Acer Iconia Tab iM11-12M (8GB/256GB) featuring MediaTek Helio G99, 11.45-inch 2.2K IPS LCD, 90Hz, 7400mAh battery, and 16MP + 2MP camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_408",
+    "sku": "TB-ACE-NTLFSEY0-128",
+    "name": "Iconia Tab P10 (4GB/128GB)",
+    "brand": "Acer",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "4GB",
+      "color": "Iron Gray"
+    },
+    "costPrice": 12292,
+    "price": 14990,
+    "reorderLevel": 8,
+    "image": "assets/images/products/acer-iconia-tab-p10-4gb-128gb.svg",
+    "description": "Acer Iconia Tab P10 (4GB/128GB) featuring MediaTek Helio G99, 10.4-inch 2K QLED IPS, 90Hz, 8000mAh battery, and 13MP camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_409",
+    "sku": "TB-ACE-P1021Q87-128",
+    "name": "Iconia Tab P10 (6GB/128GB)",
+    "brand": "Acer",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "6GB",
+      "color": "Iron Gray"
+    },
+    "costPrice": 14759,
+    "price": 17999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/acer-iconia-tab-p10-6gb-128gb.svg",
+    "description": "Acer Iconia Tab P10 (6GB/128GB) featuring MediaTek Helio G99, 10.4-inch 2K QLED IPS, 90Hz, 8000mAh battery, and 13MP camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_410",
+    "sku": "TB-ACE-IM1022-128",
+    "name": "Iconia Tab iM10-22 (6GB/128GB)",
+    "brand": "Acer",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "6GB",
+      "color": "Silver"
+    },
+    "costPrice": 13939,
+    "price": 16999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/acer-iconia-tab-im10-22-6gb-128gb.svg",
+    "description": "Acer Iconia Tab iM10-22 (6GB/128GB) featuring MediaTek Helio G99, 10.36-inch 2K IPS LCD, 60Hz, 7400mAh battery, and 16MP camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_411",
+    "sku": "TB-ACE-IM1022-1",
+    "name": "Iconia Tab iM10-22 (8GB/128GB)",
+    "brand": "Acer",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Silver"
+    },
+    "costPrice": 16399,
+    "price": 19999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/acer-iconia-tab-im10-22-8gb-128gb.svg",
+    "description": "Acer Iconia Tab iM10-22 (8GB/128GB) featuring MediaTek Helio G99, 10.36-inch 2K IPS LCD, 60Hz, 7400mAh battery, and 16MP camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_412",
+    "sku": "TB-ACE-IM1022-256",
+    "name": "Iconia Tab iM10-22 (8GB/256GB)",
+    "brand": "Acer",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "color": "Silver"
+    },
+    "costPrice": 18039,
+    "price": 21999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/acer-iconia-tab-im10-22-8gb-256gb.svg",
+    "description": "Acer Iconia Tab iM10-22 (8GB/256GB) featuring MediaTek Helio G99, 10.36-inch 2K IPS LCD, 60Hz, 7400mAh battery, and 16MP camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_413",
+    "sku": "TB-ACE-IM912M-64",
+    "name": "Iconia Tab iM9-12M (4GB/64GB)",
+    "brand": "Acer",
+    "category": "tablet",
+    "variant": {
+      "storage": "64GB",
+      "ram": "4GB",
+      "color": "Silver"
+    },
+    "costPrice": 9839,
+    "price": 11999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/acer-iconia-tab-im9-12m-4gb-64gb.svg",
+    "description": "Acer Iconia Tab iM9-12M (4GB/64GB) featuring MediaTek Helio P22T, 8.7-inch HD+ IPS LCD, 60Hz, 5100mAh battery, and 8MP camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_414",
+    "sku": "TB-ACE-UT287SI0-64",
+    "name": "Acer One 10 T9-1212L (4GB/64GB)",
+    "brand": "Acer",
+    "category": "tablet",
+    "variant": {
+      "storage": "64GB",
+      "ram": "4GB",
+      "color": "Space Gray"
+    },
+    "costPrice": 13529,
+    "price": 16499,
+    "reorderLevel": 8,
+    "image": "assets/images/products/acer-acer-one-10-t9-1212l-4gb-64gb.svg",
+    "description": "Acer Acer One 10 T9-1212L (4GB/64GB) featuring MediaTek MT8768, 10.1-inch WUXGA IPS LCD, 60Hz, 7100mAh battery, and 13MP camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_415",
+    "sku": "TB-ACE-T91212L-128",
+    "name": "Acer One 10 T9-1212L (6GB/128GB)",
+    "brand": "Acer",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "6GB",
+      "color": "Space Gray"
+    },
+    "costPrice": 15982,
+    "price": 19490,
+    "reorderLevel": 8,
+    "image": "assets/images/products/acer-acer-one-10-t9-1212l-6gb-128gb.svg",
+    "description": "Acer Acer One 10 T9-1212L (6GB/128GB) featuring MediaTek MT8768, 10.1-inch WUXGA IPS LCD, 60Hz, 7100mAh battery, and 13MP camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_416",
+    "sku": "TB-ACE-T9422L-64",
+    "name": "Acer One 8 T9-422L (4GB/64GB)",
+    "brand": "Acer",
+    "category": "tablet",
+    "variant": {
+      "storage": "64GB",
+      "ram": "4GB",
+      "color": "Silver"
+    },
+    "costPrice": 10652,
+    "price": 12990,
+    "reorderLevel": 8,
+    "image": "assets/images/products/acer-acer-one-8-t9-422l-4gb-64gb.svg",
+    "description": "Acer Acer One 8 T9-422L (4GB/64GB) featuring MediaTek MT8768, 8.7-inch HD IPS LCD, 60Hz, 5100mAh battery, and 8MP camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_417",
+    "sku": "TB-APP-A3360-256",
+    "name": "iPad Pro 13-inch (M5, Wi-Fi)",
+    "brand": "Apple",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "12GB",
+      "color": "Space Black"
+    },
+    "costPrice": 139318,
+    "price": 169900,
+    "reorderLevel": 8,
+    "image": "assets/images/products/apple-ipad-pro-13-inch-m5-wi-fi.svg",
+    "description": "Apple iPad Pro 13-inch (M5, Wi-Fi) featuring Apple M5, 13.0-inch Ultra Retina XDR Tandem OLED, 120Hz, 10290mAh battery, and 12MP Wide + LiDAR camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_418",
+    "sku": "TB-APP-A3361-256",
+    "name": "iPad Pro 13-inch (M5, Wi-Fi + Cellular)",
+    "brand": "Apple",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "12GB",
+      "color": "Space Black"
+    },
+    "costPrice": 163918,
+    "price": 199900,
+    "reorderLevel": 8,
+    "image": "assets/images/products/apple-ipad-pro-13-inch-m5-wi-fi-cellular.svg",
+    "description": "Apple iPad Pro 13-inch (M5, Wi-Fi + Cellular) featuring Apple M5, 13.0-inch Ultra Retina XDR Tandem OLED, 120Hz, 10290mAh battery, and 12MP Wide + LiDAR camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_419",
+    "sku": "TB-APP-A3357-256",
+    "name": "iPad Pro 11-inch (M5, Wi-Fi)",
+    "brand": "Apple",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "12GB",
+      "color": "Space Black"
+    },
+    "costPrice": 106838,
+    "price": 130290,
+    "reorderLevel": 8,
+    "image": "assets/images/products/apple-ipad-pro-11-inch-m5-wi-fi.svg",
+    "description": "Apple iPad Pro 11-inch (M5, Wi-Fi) featuring Apple M5, 11.0-inch Ultra Retina XDR Tandem OLED, 120Hz, 8160mAh battery, and 12MP Wide + LiDAR camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_420",
+    "sku": "TB-APP-A3358-256",
+    "name": "iPad Pro 11-inch (M5, Wi-Fi + Cellular)",
+    "brand": "Apple",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "12GB",
+      "color": "Space Black"
+    },
+    "costPrice": 134398,
+    "price": 163900,
+    "reorderLevel": 8,
+    "image": "assets/images/products/apple-ipad-pro-11-inch-m5-wi-fi-cellular.svg",
+    "description": "Apple iPad Pro 11-inch (M5, Wi-Fi + Cellular) featuring Apple M5, 11.0-inch Ultra Retina XDR Tandem OLED, 120Hz, 8160mAh battery, and 12MP Wide + LiDAR camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_421",
+    "sku": "TB-APP-A2925-256",
+    "name": "iPad Pro 13-inch (M4, Wi-Fi)",
+    "brand": "Apple",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "color": "Space Black"
+    },
+    "costPrice": 79868,
+    "price": 97400,
+    "reorderLevel": 8,
+    "image": "assets/images/products/apple-ipad-pro-13-inch-m4-wi-fi.svg",
+    "description": "Apple iPad Pro 13-inch (M4, Wi-Fi) featuring Apple M4, 13.0-inch Ultra Retina XDR Tandem OLED, 120Hz, 10290mAh battery, and 12MP Wide + LiDAR camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_422",
+    "sku": "TB-APP-A2836-256",
+    "name": "iPad Pro 11-inch (M4, Wi-Fi)",
+    "brand": "Apple",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "color": "Space Black"
+    },
+    "costPrice": 66748,
+    "price": 81400,
+    "reorderLevel": 8,
+    "image": "assets/images/products/apple-ipad-pro-11-inch-m4-wi-fi.svg",
+    "description": "Apple iPad Pro 11-inch (M4, Wi-Fi) featuring Apple M4, 11.0-inch Ultra Retina XDR Tandem OLED, 120Hz, 8160mAh battery, and 12MP Wide + LiDAR camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_423",
+    "sku": "TB-APP-A3268-128",
+    "name": "iPad Air 13-inch (M4, Wi-Fi)",
+    "brand": "Apple",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "12GB",
+      "color": "Space Grey"
+    },
+    "costPrice": 98318,
+    "price": 119900,
+    "reorderLevel": 8,
+    "image": "assets/images/products/apple-ipad-air-13-inch-m4-wi-fi.svg",
+    "description": "Apple iPad Air 13-inch (M4, Wi-Fi) featuring Apple M4, 13.0-inch Liquid Retina IPS LCD, 60Hz, 9889mAh battery, and 12MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_424",
+    "sku": "TB-APP-A3269-128",
+    "name": "iPad Air 13-inch (M4, Wi-Fi + Cellular)",
+    "brand": "Apple",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "12GB",
+      "color": "Space Grey"
+    },
+    "costPrice": 113078,
+    "price": 137900,
+    "reorderLevel": 8,
+    "image": "assets/images/products/apple-ipad-air-13-inch-m4-wi-fi-cellular.svg",
+    "description": "Apple iPad Air 13-inch (M4, Wi-Fi + Cellular) featuring Apple M4, 13.0-inch Liquid Retina IPS LCD, 60Hz, 9889mAh battery, and 12MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_425",
+    "sku": "TB-APP-A3266-128",
+    "name": "iPad Air 11-inch (M4, Wi-Fi)",
+    "brand": "Apple",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "12GB",
+      "color": "Space Grey"
+    },
+    "costPrice": 68708,
+    "price": 83790,
+    "reorderLevel": 8,
+    "image": "assets/images/products/apple-ipad-air-11-inch-m4-wi-fi.svg",
+    "description": "Apple iPad Air 11-inch (M4, Wi-Fi) featuring Apple M4, 11.0-inch Liquid Retina IPS LCD, 60Hz, 7606mAh battery, and 12MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_426",
+    "sku": "TB-APP-A3267-128",
+    "name": "iPad Air 11-inch (M4, Wi-Fi + Cellular)",
+    "brand": "Apple",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "12GB",
+      "color": "Space Grey"
+    },
+    "costPrice": 84378,
+    "price": 102900,
+    "reorderLevel": 8,
+    "image": "assets/images/products/apple-ipad-air-11-inch-m4-wi-fi-cellular.svg",
+    "description": "Apple iPad Air 11-inch (M4, Wi-Fi + Cellular) featuring Apple M4, 11.0-inch Liquid Retina IPS LCD, 60Hz, 7606mAh battery, and 12MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_427",
+    "sku": "TB-APP-A3266-1",
+    "name": "iPad Air 11-inch (M3, Wi-Fi)",
+    "brand": "Apple",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Space Grey"
+    },
+    "costPrice": 45018,
+    "price": 54900,
+    "reorderLevel": 8,
+    "image": "assets/images/products/apple-ipad-air-11-inch-m3-wi-fi.svg",
+    "description": "Apple iPad Air 11-inch (M3, Wi-Fi) featuring Apple M3, 11.0-inch Liquid Retina IPS LCD, 60Hz, 7606mAh battery, and 12MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_428",
+    "sku": "TB-APP-A3354-128",
+    "name": "iPad 11-inch (A16, Wi-Fi)",
+    "brand": "Apple",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "6GB",
+      "color": "Silver"
+    },
+    "costPrice": 39286,
+    "price": 47910,
+    "reorderLevel": 8,
+    "image": "assets/images/products/apple-ipad-11-inch-a16-wi-fi.svg",
+    "description": "Apple iPad 11-inch (A16, Wi-Fi) featuring Apple A16, 11.0-inch Liquid Retina IPS LCD, 60Hz, 7606mAh battery, and 12MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_429",
+    "sku": "TB-APP-A3355-128",
+    "name": "iPad 11-inch (A16, Wi-Fi + Cellular)",
+    "brand": "Apple",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "6GB",
+      "color": "Silver"
+    },
+    "costPrice": 49118,
+    "price": 59900,
+    "reorderLevel": 8,
+    "image": "assets/images/products/apple-ipad-11-inch-a16-wi-fi-cellular.svg",
+    "description": "Apple iPad 11-inch (A16, Wi-Fi + Cellular) featuring Apple A16, 11.0-inch Liquid Retina IPS LCD, 60Hz, 7606mAh battery, and 12MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_430",
+    "sku": "TB-APP-A2993-128",
+    "name": "iPad mini (A17 Pro, Wi-Fi)",
+    "brand": "Apple",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Space Grey"
+    },
+    "costPrice": 38458,
+    "price": 46900,
+    "reorderLevel": 8,
+    "image": "assets/images/products/apple-ipad-mini-a17-pro-wi-fi.svg",
+    "description": "Apple iPad mini (A17 Pro, Wi-Fi) featuring Apple A17 Pro, 8.3-inch Liquid Retina IPS LCD, 60Hz, 5078mAh battery, and 12MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_431",
+    "sku": "TB-APP-A2995-128",
+    "name": "iPad mini (A17 Pro, Wi-Fi + Cellular)",
+    "brand": "Apple",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Space Grey"
+    },
+    "costPrice": 50758,
+    "price": 61900,
+    "reorderLevel": 8,
+    "image": "assets/images/products/apple-ipad-mini-a17-pro-wi-fi-cellular.svg",
+    "description": "Apple iPad mini (A17 Pro, Wi-Fi + Cellular) featuring Apple A17 Pro, 8.3-inch Liquid Retina IPS LCD, 60Hz, 5078mAh battery, and 12MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_432",
+    "sku": "TB-LEN-ZAHD0731-256",
+    "name": "Lenovo Idea Tab Pro Gen 2 (Wi-Fi)",
+    "brand": "Lenovo",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "color": "Luna Grey"
+    },
+    "costPrice": 32799,
+    "price": 39999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/lenovo-lenovo-idea-tab-pro-gen-2-wi-fi.svg",
+    "description": "Lenovo Lenovo Idea Tab Pro Gen 2 (Wi-Fi) featuring Qualcomm Snapdragon 8s Gen 4, 13.0-inch 3.5K LTPS LCD, 144Hz, 10200mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_433",
+    "sku": "TB-LEN-ZAE40196-128",
+    "name": "Lenovo Idea Tab Pro (Wi-Fi)",
+    "brand": "Lenovo",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Luna Grey"
+    },
+    "costPrice": 22959,
+    "price": 27999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/lenovo-lenovo-idea-tab-pro-wi-fi.svg",
+    "description": "Lenovo Lenovo Idea Tab Pro (Wi-Fi) featuring MediaTek Dimensity 8300, 12.7-inch 3K LTPS LCD, 144Hz, 10200mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_434",
+    "sku": "TB-LEN-ZAG70046-256",
+    "name": "Lenovo Idea Tab Plus (5G)",
+    "brand": "Lenovo",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "12GB",
+      "color": "Luna Grey"
+    },
+    "costPrice": 26239,
+    "price": 31999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/lenovo-lenovo-idea-tab-plus-5g.svg",
+    "description": "Lenovo Lenovo Idea Tab Plus (5G) featuring MediaTek Dimensity 6400, 12.1-inch 2.5K LCD, 90Hz, 10200mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_435",
+    "sku": "TB-LEN-ZAG40012-256",
+    "name": "Lenovo Idea Tab (Wi-Fi)",
+    "brand": "Lenovo",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "color": "Luna Grey"
+    },
+    "costPrice": 16399,
+    "price": 19999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/lenovo-lenovo-idea-tab-wi-fi.svg",
+    "description": "Lenovo Lenovo Idea Tab (Wi-Fi) featuring MediaTek Dimensity 6300, 11.0-inch IPS LCD, 90Hz, 7040mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_436",
+    "sku": "TB-LEN-ZAHT0118-128",
+    "name": "Lenovo Tab Plus Gen 2 (Wi-Fi)",
+    "brand": "Lenovo",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Celestial White"
+    },
+    "costPrice": 25419,
+    "price": 30999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/lenovo-lenovo-tab-plus-gen-2-wi-fi.svg",
+    "description": "Lenovo Lenovo Tab Plus Gen 2 (Wi-Fi) featuring MediaTek Dimensity 7400, 12.1-inch 2.5K IGZO LCD, 120Hz, 10200mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_437",
+    "sku": "TB-LEN-ZADX0099-256",
+    "name": "Lenovo Tab Plus (Wi-Fi)",
+    "brand": "Lenovo",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "color": "Luna Grey"
+    },
+    "costPrice": 18858,
+    "price": 22998,
+    "reorderLevel": 8,
+    "image": "assets/images/products/lenovo-lenovo-tab-plus-wi-fi.svg",
+    "description": "Lenovo Lenovo Tab Plus (Wi-Fi) featuring MediaTek Helio G99, 11.5-inch 2K IPS LCD, 90Hz, 8600mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_438",
+    "sku": "TB-LEN-ZAEG0042-256",
+    "name": "Lenovo Yoga Tab Plus (Wi-Fi)",
+    "brand": "Lenovo",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "16GB",
+      "color": "Tidal Teal"
+    },
+    "costPrice": 50019,
+    "price": 60999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/lenovo-lenovo-yoga-tab-plus-wi-fi.svg",
+    "description": "Lenovo Lenovo Yoga Tab Plus (Wi-Fi) featuring Qualcomm Snapdragon 8 Gen 3, 12.7-inch 3K PureSight Pro LCD, 144Hz, 10200mAh battery, and 13MP Wide + 2MP Macro camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_439",
+    "sku": "TB-LEN-ZACW0029-256",
+    "name": "Lenovo Legion Tab Gen 2 (Wi-Fi)",
+    "brand": "Lenovo",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "12GB",
+      "color": "Storm Grey"
+    },
+    "costPrice": 22139,
+    "price": 26999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/lenovo-lenovo-legion-tab-gen-2-wi-fi.svg",
+    "description": "Lenovo Lenovo Legion Tab Gen 2 (Wi-Fi) featuring Qualcomm Snapdragon 8+ Gen 1, 8.8-inch QHD+ PureSight LCD, 144Hz, 6550mAh battery, and 13MP Wide + 2MP Macro camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_440",
+    "sku": "TB-LEN-ZACH0070-128",
+    "name": "Lenovo Tab P12 (Wi-Fi)",
+    "brand": "Lenovo",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Storm Grey"
+    },
+    "costPrice": 20417,
+    "price": 24899,
+    "reorderLevel": 8,
+    "image": "assets/images/products/lenovo-lenovo-tab-p12-wi-fi.svg",
+    "description": "Lenovo Lenovo Tab P12 (Wi-Fi) featuring MediaTek Dimensity 7050, 12.7-inch 3K LTPS LCD, 60Hz, 10200mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_441",
+    "sku": "TB-LEN-ZAD90024-128",
+    "name": "Lenovo Tab K11 (Wi-Fi)",
+    "brand": "Lenovo",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Luna Grey"
+    },
+    "costPrice": 18498,
+    "price": 22559,
+    "reorderLevel": 8,
+    "image": "assets/images/products/lenovo-lenovo-tab-k11-wi-fi.svg",
+    "description": "Lenovo Lenovo Tab K11 (Wi-Fi) featuring MediaTek Helio G88, 11.0-inch FHD IPS LCD, 90Hz, 7040mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_442",
+    "sku": "TB-LEN-ZADA0182-128",
+    "name": "Lenovo Tab M11 (Wi-Fi)",
+    "brand": "Lenovo",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Luna Grey"
+    },
+    "costPrice": 12913,
+    "price": 15748,
+    "reorderLevel": 8,
+    "image": "assets/images/products/lenovo-lenovo-tab-m11-wi-fi.svg",
+    "description": "Lenovo Lenovo Tab M11 (Wi-Fi) featuring MediaTek Helio G88, 11.0-inch FHD IPS LCD, 90Hz, 7040mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_443",
+    "sku": "TB-LEN-ZACT0030-128",
+    "name": "Lenovo Tab M10 5G",
+    "brand": "Lenovo",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "6GB",
+      "color": "Abyss Blue"
+    },
+    "costPrice": 14759,
+    "price": 17999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/lenovo-lenovo-tab-m10-5g.svg",
+    "description": "Lenovo Lenovo Tab M10 5G featuring Qualcomm Snapdragon 695, 10.61-inch 2K IPS LCD, 90Hz, 7700mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_444",
+    "sku": "TB-LEN-ZAEH0048-64",
+    "name": "Lenovo Tab (Wi-Fi)",
+    "brand": "Lenovo",
+    "category": "tablet",
+    "variant": {
+      "storage": "64GB",
+      "ram": "4GB",
+      "color": "Luna Grey"
+    },
+    "costPrice": 9019,
+    "price": 10999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/lenovo-lenovo-tab-wi-fi.svg",
+    "description": "Lenovo Lenovo Tab (Wi-Fi) featuring MediaTek Helio G85, 10.1-inch FHD IPS LCD, 60Hz, 5100mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_445",
+    "sku": "TB-LEN-ZAEJ0056-128",
+    "name": "Lenovo Tab (LTE)",
+    "brand": "Lenovo",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "4GB",
+      "color": "Luna Grey"
+    },
+    "costPrice": 10659,
+    "price": 12999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/lenovo-lenovo-tab-lte.svg",
+    "description": "Lenovo Lenovo Tab (LTE) featuring MediaTek Helio G85, 10.1-inch FHD IPS LCD, 60Hz, 5100mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_446",
+    "sku": "TB-ONE-OPD2601-256",
+    "name": "OnePlus Pad 4 (Wi-Fi)",
+    "brand": "OnePlus",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "color": "Dune Glow"
+    },
+    "costPrice": 51659,
+    "price": 62999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/oneplus-oneplus-pad-4-wi-fi.svg",
+    "description": "OnePlus OnePlus Pad 4 (Wi-Fi) featuring Qualcomm Snapdragon 8 Elite Gen 5, 13.2-inch 3.4K LCD, 144Hz, 13380mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_447",
+    "sku": "TB-ONE-OPD2415-256",
+    "name": "OnePlus Pad 3 (Wi-Fi)",
+    "brand": "OnePlus",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "12GB",
+      "color": "Storm Blue"
+    },
+    "costPrice": 40999,
+    "price": 49999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/oneplus-oneplus-pad-3-wi-fi.svg",
+    "description": "OnePlus OnePlus Pad 3 (Wi-Fi) featuring Qualcomm Snapdragon 8 Elite, 13.2-inch 3.4K LCD, 144Hz, 12140mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_448",
+    "sku": "TB-ONE-OPD2403-128",
+    "name": "OnePlus Pad 2 (Wi-Fi)",
+    "brand": "OnePlus",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Nimbus Gray"
+    },
+    "costPrice": 30339,
+    "price": 36999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/oneplus-oneplus-pad-2-wi-fi.svg",
+    "description": "OnePlus OnePlus Pad 2 (Wi-Fi) featuring Qualcomm Snapdragon 8 Gen 3, 12.1-inch 3K IPS LCD, 144Hz, 9510mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_449",
+    "sku": "TB-ONE-OPD2203-128",
+    "name": "OnePlus Pad (Wi-Fi)",
+    "brand": "OnePlus",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Halo Green"
+    },
+    "costPrice": 27879,
+    "price": 33999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/oneplus-oneplus-pad-wi-fi.svg",
+    "description": "OnePlus OnePlus Pad (Wi-Fi) featuring MediaTek Dimensity 9000, 11.61-inch 2.8K IPS LCD, 144Hz, 9510mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_450",
+    "sku": "TB-ONE-OPD2504-128",
+    "name": "OnePlus Pad Go 2 (Wi-Fi)",
+    "brand": "OnePlus",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Shadow Black"
+    },
+    "costPrice": 24147,
+    "price": 29447,
+    "reorderLevel": 8,
+    "image": "assets/images/products/oneplus-oneplus-pad-go-2-wi-fi.svg",
+    "description": "OnePlus OnePlus Pad Go 2 (Wi-Fi) featuring MediaTek Dimensity 7300 Ultra, 12.1-inch 2.8K LCD, 120Hz, 10050mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_451",
+    "sku": "TB-ONE-OPD2504-256",
+    "name": "OnePlus Pad Go 2 (5G)",
+    "brand": "OnePlus",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "color": "Shadow Black"
+    },
+    "costPrice": 29519,
+    "price": 35999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/oneplus-oneplus-pad-go-2-5g.svg",
+    "description": "OnePlus OnePlus Pad Go 2 (5G) featuring MediaTek Dimensity 7300 Ultra, 12.1-inch 2.8K LCD, 120Hz, 10050mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_452",
+    "sku": "TB-ONE-OPD2304-128",
+    "name": "OnePlus Pad Go (Wi-Fi)",
+    "brand": "OnePlus",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Twin Mint"
+    },
+    "costPrice": 13275,
+    "price": 16189,
+    "reorderLevel": 8,
+    "image": "assets/images/products/oneplus-oneplus-pad-go-wi-fi.svg",
+    "description": "OnePlus OnePlus Pad Go (Wi-Fi) featuring MediaTek Helio G99, 11.35-inch 2.4K IPS LCD, 90Hz, 8000mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_453",
+    "sku": "TB-ONE-OPD2305-128",
+    "name": "OnePlus Pad Go (LTE)",
+    "brand": "OnePlus",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Twin Mint"
+    },
+    "costPrice": 14759,
+    "price": 17999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/oneplus-oneplus-pad-go-lte.svg",
+    "description": "OnePlus OnePlus Pad Go (LTE) featuring MediaTek Helio G99, 11.35-inch 2.4K IPS LCD, 90Hz, 8000mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_454",
+    "sku": "TB-ONE-OPD2480-128",
+    "name": "OnePlus Pad Lite (Wi-Fi)",
+    "brand": "OnePlus",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "6GB",
+      "color": "Aero Blue"
+    },
+    "costPrice": 14874,
+    "price": 18139,
+    "reorderLevel": 8,
+    "image": "assets/images/products/oneplus-oneplus-pad-lite-wi-fi.svg",
+    "description": "OnePlus OnePlus Pad Lite (Wi-Fi) featuring MediaTek Helio G100, 11.0-inch FHD+ LCD, 90Hz, 9340mAh battery, and 5MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_455",
+    "sku": "TB-ONE-OPD2481-128",
+    "name": "OnePlus Pad Lite (LTE)",
+    "brand": "OnePlus",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Aero Blue"
+    },
+    "costPrice": 16235,
+    "price": 19799,
+    "reorderLevel": 8,
+    "image": "assets/images/products/oneplus-oneplus-pad-lite-lte.svg",
+    "description": "OnePlus OnePlus Pad Lite (LTE) featuring MediaTek Helio G100, 11.0-inch FHD+ LCD, 90Hz, 9340mAh battery, and 5MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_456",
+    "sku": "TB-SAM-SMX930-256",
+    "name": "Galaxy Tab S11 Ultra (Wi-Fi)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "12GB",
+      "color": "Gray"
+    },
+    "costPrice": 102499,
+    "price": 124999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-s11-ultra-wi-fi.svg",
+    "description": "Samsung Galaxy Tab S11 Ultra (Wi-Fi) featuring MediaTek Dimensity 9400+, 14.6-inch Dynamic AMOLED 2X, 120Hz, 11600mAh battery, and 13MP Wide + 8MP Ultrawide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_457",
+    "sku": "TB-SAM-SMX936-256",
+    "name": "Galaxy Tab S11 Ultra (5G)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "12GB",
+      "color": "Gray"
+    },
+    "costPrice": 111519,
+    "price": 135999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-s11-ultra-5g.svg",
+    "description": "Samsung Galaxy Tab S11 Ultra (5G) featuring MediaTek Dimensity 9400+, 14.6-inch Dynamic AMOLED 2X, 120Hz, 11600mAh battery, and 13MP Wide + 8MP Ultrawide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_458",
+    "sku": "TB-SAM-SMX730-128",
+    "name": "Galaxy Tab S11 (Wi-Fi)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "12GB",
+      "color": "Gray"
+    },
+    "costPrice": 65599,
+    "price": 79999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-s11-wi-fi.svg",
+    "description": "Samsung Galaxy Tab S11 (Wi-Fi) featuring MediaTek Dimensity 9400+, 11.0-inch Dynamic AMOLED 2X, 120Hz, 8400mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_459",
+    "sku": "TB-SAM-SMX920-256",
+    "name": "Galaxy Tab S10 Ultra (Wi-Fi)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "12GB",
+      "color": "Moonstone Gray"
+    },
+    "costPrice": 89379,
+    "price": 108999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-s10-ultra-wi-fi.svg",
+    "description": "Samsung Galaxy Tab S10 Ultra (Wi-Fi) featuring MediaTek Dimensity 9300+, 14.6-inch Dynamic AMOLED 2X, 120Hz, 11200mAh battery, and 13MP Wide + 8MP Ultrawide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_460",
+    "sku": "TB-SAM-SMX926-256",
+    "name": "Galaxy Tab S10 Ultra (5G)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "12GB",
+      "color": "Moonstone Gray"
+    },
+    "costPrice": 91751,
+    "price": 111891,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-s10-ultra-5g.svg",
+    "description": "Samsung Galaxy Tab S10 Ultra (5G) featuring MediaTek Dimensity 9300+, 14.6-inch Dynamic AMOLED 2X, 120Hz, 11200mAh battery, and 13MP Wide + 8MP Ultrawide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_461",
+    "sku": "TB-SAM-SMX820-256",
+    "name": "Galaxy Tab S10+ (Wi-Fi)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "12GB",
+      "color": "Moonstone Gray"
+    },
+    "costPrice": 65599,
+    "price": 79999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-s10-wi-fi.svg",
+    "description": "Samsung Galaxy Tab S10+ (Wi-Fi) featuring MediaTek Dimensity 9300+, 12.4-inch Dynamic AMOLED 2X, 120Hz, 10090mAh battery, and 13MP Wide + 8MP Ultrawide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_462",
+    "sku": "TB-SAM-SMX826-256",
+    "name": "Galaxy Tab S10+ (5G)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "12GB",
+      "color": "Moonstone Gray"
+    },
+    "costPrice": 77899,
+    "price": 94999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-s10-5g.svg",
+    "description": "Samsung Galaxy Tab S10+ (5G) featuring MediaTek Dimensity 9300+, 12.4-inch Dynamic AMOLED 2X, 120Hz, 10090mAh battery, and 13MP Wide + 8MP Ultrawide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_463",
+    "sku": "TB-SAM-SMX620-128",
+    "name": "Galaxy Tab S10 FE+ (Wi-Fi)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Gray"
+    },
+    "costPrice": 44279,
+    "price": 53999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-s10-fe-wi-fi.svg",
+    "description": "Samsung Galaxy Tab S10 FE+ (Wi-Fi) featuring Samsung Exynos 1580, 13.1-inch TFT LCD, 90Hz, 10090mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_464",
+    "sku": "TB-SAM-SMX626-256",
+    "name": "Galaxy Tab S10 FE+ (5G)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "12GB",
+      "color": "Gray"
+    },
+    "costPrice": 61499,
+    "price": 74999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-s10-fe-5g.svg",
+    "description": "Samsung Galaxy Tab S10 FE+ (5G) featuring Samsung Exynos 1580, 13.1-inch TFT LCD, 90Hz, 10090mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_465",
+    "sku": "TB-SAM-SMX520-128",
+    "name": "Galaxy Tab S10 FE (Wi-Fi)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Gray"
+    },
+    "costPrice": 32799,
+    "price": 39999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-s10-fe-wi-fi.svg",
+    "description": "Samsung Galaxy Tab S10 FE (Wi-Fi) featuring Samsung Exynos 1580, 10.9-inch TFT LCD, 90Hz, 8000mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_466",
+    "sku": "TB-SAM-SMX400-128",
+    "name": "Galaxy Tab S10 Lite (Wi-Fi)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "6GB",
+      "color": "Gray"
+    },
+    "costPrice": 26239,
+    "price": 31999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-s10-lite-wi-fi.svg",
+    "description": "Samsung Galaxy Tab S10 Lite (Wi-Fi) featuring Samsung Exynos 1380, 10.9-inch TFT LCD, 90Hz, 8000mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_467",
+    "sku": "TB-SAM-SMX610-128",
+    "name": "Galaxy Tab S9 FE+ (Wi-Fi)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Gray"
+    },
+    "costPrice": 35259,
+    "price": 42999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-s9-fe-wi-fi.svg",
+    "description": "Samsung Galaxy Tab S9 FE+ (Wi-Fi) featuring Samsung Exynos 1380, 12.4-inch TFT LCD, 90Hz, 10090mAh battery, and 8MP Wide + 8MP Ultrawide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_468",
+    "sku": "TB-SAM-SMX510-128",
+    "name": "Galaxy Tab S9 FE (Wi-Fi)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "6GB",
+      "color": "Gray"
+    },
+    "costPrice": 22574,
+    "price": 27529,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-s9-fe-wi-fi.svg",
+    "description": "Samsung Galaxy Tab S9 FE (Wi-Fi) featuring Samsung Exynos 1380, 10.9-inch TFT LCD, 90Hz, 8000mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_469",
+    "sku": "TB-SAM-SMX516-128",
+    "name": "Galaxy Tab S9 FE (5G)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "6GB",
+      "color": "Gray"
+    },
+    "costPrice": 29519,
+    "price": 35999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-s9-fe-5g.svg",
+    "description": "Samsung Galaxy Tab S9 FE (5G) featuring Samsung Exynos 1380, 10.9-inch TFT LCD, 90Hz, 8000mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_470",
+    "sku": "TB-SAM-SMX230-128",
+    "name": "Galaxy Tab A11+ (Wi-Fi)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "6GB",
+      "color": "Gray"
+    },
+    "costPrice": 18039,
+    "price": 21999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-a11-wi-fi.svg",
+    "description": "Samsung Galaxy Tab A11+ (Wi-Fi) featuring MediaTek Dimensity 7300, 11.0-inch TFT LCD, 90Hz, 7040mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_471",
+    "sku": "TB-SAM-SMX236-256",
+    "name": "Galaxy Tab A11+ (5G)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "color": "Gray"
+    },
+    "costPrice": 27059,
+    "price": 32999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-a11-5g.svg",
+    "description": "Samsung Galaxy Tab A11+ (5G) featuring MediaTek Dimensity 7300, 11.0-inch TFT LCD, 90Hz, 7040mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_472",
+    "sku": "TB-SAM-SMX133-64",
+    "name": "Galaxy Tab A11 (Wi-Fi)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "64GB",
+      "ram": "4GB",
+      "color": "Gray"
+    },
+    "costPrice": 14759,
+    "price": 17999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-a11-wi-fi.svg",
+    "description": "Samsung Galaxy Tab A11 (Wi-Fi) featuring MediaTek Helio G99, 8.7-inch TFT LCD, 90Hz, 5100mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_473",
+    "sku": "TB-SAM-SMX210-128",
+    "name": "Galaxy Tab A9+ (Wi-Fi)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Graphite"
+    },
+    "costPrice": 16399,
+    "price": 19999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-a9-wi-fi.svg",
+    "description": "Samsung Galaxy Tab A9+ (Wi-Fi) featuring Qualcomm Snapdragon 695, 11.0-inch TFT LCD, 90Hz, 7040mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_474",
+    "sku": "TB-SAM-SMX216-128",
+    "name": "Galaxy Tab A9+ (5G)",
+    "brand": "Samsung",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Graphite"
+    },
+    "costPrice": 22139,
+    "price": 26999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/samsung-galaxy-tab-a9-5g.svg",
+    "description": "Samsung Galaxy Tab A9+ (5G) featuring Qualcomm Snapdragon 695, 11.0-inch TFT LCD, 90Hz, 7040mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_475",
+    "sku": "TB-XIA-25097RP4-128",
+    "name": "Xiaomi Pad 8 (Wi-Fi)",
+    "brand": "Xiaomi",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Graphite Grey"
+    },
+    "costPrice": 28699,
+    "price": 34999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/xiaomi-xiaomi-pad-8-wi-fi.svg",
+    "description": "Xiaomi Xiaomi Pad 8 (Wi-Fi) featuring Qualcomm Snapdragon 8s Gen 4, 11.2-inch 3.2K IPS LCD, 144Hz, 9200mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_476",
+    "sku": "TB-XIA-25097RP4-256",
+    "name": "Xiaomi Pad 8 Nano Texture (Wi-Fi)",
+    "brand": "Xiaomi",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "12GB",
+      "color": "Graphite Grey"
+    },
+    "costPrice": 37719,
+    "price": 45999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/xiaomi-xiaomi-pad-8-nano-texture-wi-fi.svg",
+    "description": "Xiaomi Xiaomi Pad 8 Nano Texture (Wi-Fi) featuring Qualcomm Snapdragon 8s Gen 4, 11.2-inch 3.2K IPS LCD Nano Texture, 144Hz, 9200mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_477",
+    "sku": "TB-XIA-2410CRP4-128",
+    "name": "Xiaomi Pad 7 (Wi-Fi)",
+    "brand": "Xiaomi",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Graphite Grey"
+    },
+    "costPrice": 22139,
+    "price": 26999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/xiaomi-xiaomi-pad-7-wi-fi.svg",
+    "description": "Xiaomi Xiaomi Pad 7 (Wi-Fi) featuring Qualcomm Snapdragon 7+ Gen 3, 11.2-inch 3.2K IPS LCD, 144Hz, 8850mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_478",
+    "sku": "TB-XIA-2410CRP4-256",
+    "name": "Xiaomi Pad 7 Nano Texture (Wi-Fi)",
+    "brand": "Xiaomi",
+    "category": "tablet",
+    "variant": {
+      "storage": "256GB",
+      "ram": "12GB",
+      "color": "Graphite Grey"
+    },
+    "costPrice": 27879,
+    "price": 33999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/xiaomi-xiaomi-pad-7-nano-texture-wi-fi.svg",
+    "description": "Xiaomi Xiaomi Pad 7 Nano Texture (Wi-Fi) featuring Qualcomm Snapdragon 7+ Gen 3, 11.2-inch 3.2K IPS LCD Nano Texture, 144Hz, 8850mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_479",
+    "sku": "TB-XIA-23043RP3-128",
+    "name": "Xiaomi Pad 6 (Wi-Fi)",
+    "brand": "Xiaomi",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "6GB",
+      "color": "Gravity Gray"
+    },
+    "costPrice": 19679,
+    "price": 23999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/xiaomi-xiaomi-pad-6-wi-fi.svg",
+    "description": "Xiaomi Xiaomi Pad 6 (Wi-Fi) featuring Qualcomm Snapdragon 870, 11.0-inch WQHD+ IPS LCD, 144Hz, 8840mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_480",
+    "sku": "TB-XIA-25091RP0-128",
+    "name": "Redmi Pad 2 Pro (Wi-Fi)",
+    "brand": "Xiaomi",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Graphite Grey"
+    },
+    "costPrice": 22139,
+    "price": 26999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/xiaomi-redmi-pad-2-pro-wi-fi.svg",
+    "description": "Xiaomi Redmi Pad 2 Pro (Wi-Fi) featuring Qualcomm Snapdragon 7s Gen 4, 12.1-inch 2.5K IPS LCD, 120Hz, 12000mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_481",
+    "sku": "TB-XIA-25092RP0-128",
+    "name": "Redmi Pad 2 Pro 5G",
+    "brand": "Xiaomi",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Graphite Grey"
+    },
+    "costPrice": 24599,
+    "price": 29999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/xiaomi-redmi-pad-2-pro-5g.svg",
+    "description": "Xiaomi Redmi Pad 2 Pro 5G featuring Qualcomm Snapdragon 7s Gen 4, 12.1-inch 2.5K IPS LCD, 120Hz, 12000mAh battery, and 13MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_482",
+    "sku": "TB-XIA-25040RP0-128",
+    "name": "Redmi Pad 2 (Wi-Fi)",
+    "brand": "Xiaomi",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "4GB",
+      "color": "Graphite Grey"
+    },
+    "costPrice": 14759,
+    "price": 17999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/xiaomi-redmi-pad-2-wi-fi.svg",
+    "description": "Xiaomi Redmi Pad 2 (Wi-Fi) featuring MediaTek Helio G100-Ultra, 11.0-inch 2.5K IPS LCD, 90Hz, 9000mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_483",
+    "sku": "TB-XIA-25053RP5-128",
+    "name": "Redmi Pad 2 (Wi-Fi + 4G)",
+    "brand": "Xiaomi",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "6GB",
+      "color": "Graphite Grey"
+    },
+    "costPrice": 16399,
+    "price": 19999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/xiaomi-redmi-pad-2-wi-fi-4g.svg",
+    "description": "Xiaomi Redmi Pad 2 (Wi-Fi + 4G) featuring MediaTek Helio G100-Ultra, 11.0-inch 2.5K IPS LCD, 90Hz, 9000mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_484",
+    "sku": "TB-XIA-2405CRPF-128",
+    "name": "Redmi Pad Pro (Wi-Fi)",
+    "brand": "Xiaomi",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "6GB",
+      "color": "Graphite Grey"
+    },
+    "costPrice": 18357,
+    "price": 22386,
+    "reorderLevel": 8,
+    "image": "assets/images/products/xiaomi-redmi-pad-pro-wi-fi.svg",
+    "description": "Xiaomi Redmi Pad Pro (Wi-Fi) featuring Qualcomm Snapdragon 7s Gen 2, 12.1-inch 2.5K IPS LCD, 120Hz, 10000mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_485",
+    "sku": "TB-XIA-24074RPD-128",
+    "name": "Redmi Pad Pro 5G",
+    "brand": "Xiaomi",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "8GB",
+      "color": "Graphite Grey"
+    },
+    "costPrice": 20499,
+    "price": 24999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/xiaomi-redmi-pad-pro-5g.svg",
+    "description": "Xiaomi Redmi Pad Pro 5G featuring Qualcomm Snapdragon 7s Gen 2, 12.1-inch 2.5K IPS LCD, 120Hz, 10000mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_486",
+    "sku": "TB-XIA-23073RPB-128",
+    "name": "Redmi Pad SE (Wi-Fi)",
+    "brand": "Xiaomi",
+    "category": "tablet",
+    "variant": {
+      "storage": "128GB",
+      "ram": "4GB",
+      "color": "Graphite Gray"
+    },
+    "costPrice": 9839,
+    "price": 11999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/xiaomi-redmi-pad-se-wi-fi.svg",
+    "description": "Xiaomi Redmi Pad SE (Wi-Fi) featuring Qualcomm Snapdragon 680, 11.0-inch FHD+ IPS LCD, 90Hz, 8000mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_487",
+    "sku": "TB-XIA-24076RP1-64",
+    "name": "Redmi Pad SE 4G",
+    "brand": "Xiaomi",
+    "category": "tablet",
+    "variant": {
+      "storage": "64GB",
+      "ram": "4GB",
+      "color": "Forest Green"
+    },
+    "costPrice": 9019,
+    "price": 10999,
+    "reorderLevel": 8,
+    "image": "assets/images/products/xiaomi-redmi-pad-se-4g.svg",
+    "description": "Xiaomi Redmi Pad SE 4G featuring MediaTek Helio G85, 8.7-inch HD+ IPS LCD, 90Hz, 6650mAh battery, and 8MP Wide camera.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_488",
+    "sku": "LP-APP-MGN63HNA-256",
+    "name": "MacBook Air M1 (2020)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "color": "Space Grey",
+      "processor": "Apple M1 (8-Core CPU, 7-Core GPU)",
+      "gpu": "Integrated 7-Core Apple GPU"
+    },
+    "costPrice": 51652,
+    "price": 62990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-air-m1-2020.svg",
+    "description": "Apple MacBook Air M1 (2020) powered by Apple M1 (8-Core CPU, 7-Core GPU) with Integrated 7-Core Apple GPU, 13.3-inch Retina IPS, 60Hz, and 49.9Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_489",
+    "sku": "LP-APP-MYD82HNA-256",
+    "name": "MacBook Pro 13 M1 (2020)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "color": "Space Grey",
+      "processor": "Apple M1 (8-Core CPU, 8-Core GPU)",
+      "gpu": "Integrated 8-Core Apple GPU"
+    },
+    "costPrice": 69692,
+    "price": 84990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-pro-13-m1-2020.svg",
+    "description": "Apple MacBook Pro 13 M1 (2020) powered by Apple M1 (8-Core CPU, 8-Core GPU) with Integrated 8-Core Apple GPU, 13.3-inch Retina IPS, 60Hz, and 58.2Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_490",
+    "sku": "LP-APP-MKGP3HNA-512",
+    "name": "MacBook Pro 14 M1 Pro (2021)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Space Grey",
+      "processor": "Apple M1 Pro",
+      "gpu": "Integrated 14/16-Core Apple GPU"
+    },
+    "costPrice": 110692,
+    "price": 134990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-pro-14-m1-pro-2021.svg",
+    "description": "Apple MacBook Pro 14 M1 Pro (2021) powered by Apple M1 Pro with Integrated 14/16-Core Apple GPU, 14.2-inch Liquid Retina XDR Mini-LED, 120Hz, and 70Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_491",
+    "sku": "LP-APP-MK1A3HNA-1",
+    "name": "MacBook Pro 16 M1 Max (2021)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "1TB",
+      "ram": "32GB",
+      "color": "Space Grey",
+      "processor": "Apple M1 Max",
+      "gpu": "Integrated 32-Core Apple GPU"
+    },
+    "costPrice": 184492,
+    "price": 224990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-pro-16-m1-max-2021.svg",
+    "description": "Apple MacBook Pro 16 M1 Max (2021) powered by Apple M1 Max with Integrated 32-Core Apple GPU, 16.2-inch Liquid Retina XDR Mini-LED, 120Hz, and 100Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_492",
+    "sku": "LP-APP-MLXW3HNA-256",
+    "name": "MacBook Air M2 (2022)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "color": "Midnight",
+      "processor": "Apple M2",
+      "gpu": "Integrated 8/10-Core Apple GPU"
+    },
+    "costPrice": 61492,
+    "price": 74990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-air-m2-2022.svg",
+    "description": "Apple MacBook Air M2 (2022) powered by Apple M2 with Integrated 8/10-Core Apple GPU, 13.6-inch Liquid Retina IPS, 60Hz, and 52.6Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_493",
+    "sku": "LP-APP-MQKP3HNA-256",
+    "name": "MacBook Air 15 M2 (2023)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "color": "Midnight",
+      "processor": "Apple M2",
+      "gpu": "Integrated 10-Core Apple GPU"
+    },
+    "costPrice": 73792,
+    "price": 89990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-air-15-m2-2023.svg",
+    "description": "Apple MacBook Air 15 M2 (2023) powered by Apple M2 with Integrated 10-Core Apple GPU, 15.3-inch Liquid Retina IPS, 60Hz, and 66.5Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_494",
+    "sku": "LP-APP-MPHE3HNA-512",
+    "name": "MacBook Pro 14 M2 Pro (2023)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Space Grey",
+      "processor": "Apple M2 Pro",
+      "gpu": "Integrated 16/19-Core Apple GPU"
+    },
+    "costPrice": 118892,
+    "price": 144990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-pro-14-m2-pro-2023.svg",
+    "description": "Apple MacBook Pro 14 M2 Pro (2023) powered by Apple M2 Pro with Integrated 16/19-Core Apple GPU, 14.2-inch Liquid Retina XDR Mini-LED, 120Hz, and 70Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_495",
+    "sku": "LP-APP-MTL73HNA-512",
+    "name": "MacBook Pro 14 M3 (2023)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "8GB",
+      "color": "Space Grey",
+      "processor": "Apple M3",
+      "gpu": "Integrated 10-Core Apple GPU"
+    },
+    "costPrice": 102492,
+    "price": 124990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-pro-14-m3-2023.svg",
+    "description": "Apple MacBook Pro 14 M3 (2023) powered by Apple M3 with Integrated 10-Core Apple GPU, 14.2-inch Liquid Retina XDR Mini-LED, 120Hz, and 70Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_496",
+    "sku": "LP-APP-MUW63HNA-1",
+    "name": "MacBook Pro 16 M3 Max (2023)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "1TB",
+      "ram": "36GB",
+      "color": "Space Black",
+      "processor": "Apple M3 Max",
+      "gpu": "Integrated 30/40-Core Apple GPU"
+    },
+    "costPrice": 213192,
+    "price": 259990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-pro-16-m3-max-2023.svg",
+    "description": "Apple MacBook Pro 16 M3 Max (2023) powered by Apple M3 Max with Integrated 30/40-Core Apple GPU, 16.2-inch Liquid Retina XDR Mini-LED, 120Hz, and 100Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_497",
+    "sku": "LP-APP-MRXN3HNA-256",
+    "name": "MacBook Air 13 M3 (2024)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "256GB",
+      "ram": "16GB",
+      "color": "Midnight",
+      "processor": "Apple M3",
+      "gpu": "Integrated 8/10-Core Apple GPU"
+    },
+    "costPrice": 73792,
+    "price": 89990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-air-13-m3-2024.svg",
+    "description": "Apple MacBook Air 13 M3 (2024) powered by Apple M3 with Integrated 8/10-Core Apple GPU, 13.6-inch Liquid Retina IPS, 60Hz, and 52.6Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_498",
+    "sku": "LP-APP-MRYU3HNA-256",
+    "name": "MacBook Air 15 M3 (2024)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "256GB",
+      "ram": "16GB",
+      "color": "Midnight",
+      "processor": "Apple M3",
+      "gpu": "Integrated 10-Core Apple GPU"
+    },
+    "costPrice": 86092,
+    "price": 104990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-air-15-m3-2024.svg",
+    "description": "Apple MacBook Air 15 M3 (2024) powered by Apple M3 with Integrated 10-Core Apple GPU, 15.3-inch Liquid Retina IPS, 60Hz, and 66.5Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_499",
+    "sku": "LP-APP-MW2U3HNA-512",
+    "name": "MacBook Pro 14 M4 (2024)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Space Black",
+      "processor": "Apple M4",
+      "gpu": "Integrated 10-Core Apple GPU"
+    },
+    "costPrice": 122992,
+    "price": 149990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-pro-14-m4-2024.svg",
+    "description": "Apple MacBook Pro 14 M4 (2024) powered by Apple M4 with Integrated 10-Core Apple GPU, 14.2-inch Liquid Retina XDR Mini-LED, 120Hz, and 72.4Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_500",
+    "sku": "LP-APP-MX2X3HNA-512",
+    "name": "MacBook Pro 16 M4 Pro (2024)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "24GB",
+      "color": "Space Black",
+      "processor": "Apple M4 Pro",
+      "gpu": "Integrated 20-Core Apple GPU"
+    },
+    "costPrice": 184492,
+    "price": 224990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-pro-16-m4-pro-2024.svg",
+    "description": "Apple MacBook Pro 16 M4 Pro (2024) powered by Apple M4 Pro with Integrated 20-Core Apple GPU, 16.2-inch Liquid Retina XDR Mini-LED, 120Hz, and 100Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_501",
+    "sku": "LP-APP-MC6T4HNA-256",
+    "name": "MacBook Air 13 M4 (2025)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "256GB",
+      "ram": "16GB",
+      "color": "Sky Blue",
+      "processor": "Apple M4",
+      "gpu": "Integrated 8/10-Core Apple GPU"
+    },
+    "costPrice": 75432,
+    "price": 91990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-air-13-m4-2025.svg",
+    "description": "Apple MacBook Air 13 M4 (2025) powered by Apple M4 with Integrated 8/10-Core Apple GPU, 13.6-inch Liquid Retina IPS, 60Hz, and 53.8Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_502",
+    "sku": "LP-APP-MC7A4HNA-256",
+    "name": "MacBook Air 15 M4 (2025)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "256GB",
+      "ram": "16GB",
+      "color": "Sky Blue",
+      "processor": "Apple M4",
+      "gpu": "Integrated 10-Core Apple GPU"
+    },
+    "costPrice": 94292,
+    "price": 114990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-air-15-m4-2025.svg",
+    "description": "Apple MacBook Air 15 M4 (2025) powered by Apple M4 with Integrated 10-Core Apple GPU, 15.3-inch Liquid Retina IPS, 60Hz, and 66.5Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_503",
+    "sku": "LP-APP-MD4P4HNA-512",
+    "name": "MacBook Pro 14 M5 (2025)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Space Black",
+      "processor": "Apple M5",
+      "gpu": "Integrated 10-Core Apple GPU"
+    },
+    "costPrice": 133652,
+    "price": 162990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-pro-14-m5-2025.svg",
+    "description": "Apple MacBook Pro 14 M5 (2025) powered by Apple M5 with Integrated 10-Core Apple GPU, 14.2-inch Liquid Retina XDR Mini-LED, 120Hz, and 72.4Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_504",
+    "sku": "LP-APP-ME2A4HNA-512",
+    "name": "MacBook Air 13 M5 (2026)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Sky Blue",
+      "processor": "Apple M5",
+      "gpu": "Integrated 10-Core Apple GPU"
+    },
+    "costPrice": 98318,
+    "price": 119900,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-air-13-m5-2026.svg",
+    "description": "Apple MacBook Air 13 M5 (2026) powered by Apple M5 with Integrated 10-Core Apple GPU, 13.6-inch Liquid Retina IPS, 60Hz, and 54Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_505",
+    "sku": "LP-APP-ME8X4HNA-1",
+    "name": "MacBook Pro 16 M5 Max (2026)",
+    "brand": "Apple",
+    "category": "laptop",
+    "variant": {
+      "storage": "1TB",
+      "ram": "48GB",
+      "color": "Space Black",
+      "processor": "Apple M5 Max",
+      "gpu": "Integrated 40-Core Apple GPU"
+    },
+    "costPrice": 327918,
+    "price": 399900,
+    "reorderLevel": 5,
+    "image": "assets/images/products/apple-macbook-pro-16-m5-max-2026.svg",
+    "description": "Apple MacBook Pro 16 M5 Max (2026) powered by Apple M5 Max with Integrated 40-Core Apple GPU, 16.2-inch Liquid Retina XDR Mini-LED, 120Hz, and 100Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_506",
+    "sku": "LP-HP-15EG0103-512",
+    "name": "HP Pavilion 15 (2020)",
+    "brand": "HP",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "8GB",
+      "color": "Natural Silver",
+      "processor": "Intel Core i5-1135G7",
+      "gpu": "Intel Iris Xe Graphics"
+    },
+    "costPrice": 36892,
+    "price": 44990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/hp-hp-pavilion-15-2020.svg",
+    "description": "HP HP Pavilion 15 (2020) powered by Intel Core i5-1135G7 with Intel Iris Xe Graphics, 15.6-inch FHD IPS Anti-Glare, 60Hz, and 41Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_507",
+    "sku": "LP-HP-13AY0045-512",
+    "name": "HP Envy x360 13 (2021)",
+    "brand": "HP",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "8GB",
+      "color": "Nightfall Black",
+      "processor": "AMD Ryzen 5 5600U",
+      "gpu": "AMD Radeon Graphics"
+    },
+    "costPrice": 45092,
+    "price": 54990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/hp-hp-envy-x360-13-2021.svg",
+    "description": "HP HP Envy x360 13 (2021) powered by AMD Ryzen 5 5600U with AMD Radeon Graphics, 13.3-inch FHD IPS Touch, 60Hz, and 51Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_508",
+    "sku": "LP-HP-16E0076A-512",
+    "name": "HP Victus 16 (2021)",
+    "brand": "HP",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "8GB",
+      "color": "Mica Silver",
+      "processor": "AMD Ryzen 5 5600H",
+      "gpu": "NVIDIA GeForce RTX 3050 (4GB)"
+    },
+    "costPrice": 43452,
+    "price": 52990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/hp-hp-victus-16-2021.svg",
+    "description": "HP HP Victus 16 (2021) powered by AMD Ryzen 5 5600H with NVIDIA GeForce RTX 3050 (4GB), 16.1-inch FHD IPS, 144Hz, and 70Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_509",
+    "sku": "LP-HP-13BE1002-512",
+    "name": "HP Pavilion Aero 13 (2022)",
+    "brand": "HP",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Pale Rose Gold",
+      "processor": "AMD Ryzen 7 5825U",
+      "gpu": "AMD Radeon Graphics"
+    },
+    "costPrice": 48372,
+    "price": 58990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/hp-hp-pavilion-aero-13-2022.svg",
+    "description": "HP HP Pavilion Aero 13 (2022) powered by AMD Ryzen 7 5825U with AMD Radeon Graphics, 13.3-inch WUXGA IPS (100% sRGB), 60Hz, and 43Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_510",
+    "sku": "LP-HP-16WF0055-512",
+    "name": "HP Omen 16 (2023)",
+    "brand": "HP",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Shadow Black",
+      "processor": "Intel Core i7-13700HX",
+      "gpu": "NVIDIA GeForce RTX 4060 (8GB)"
+    },
+    "costPrice": 86092,
+    "price": 104990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/hp-hp-omen-16-2023.svg",
+    "description": "HP HP Omen 16 (2023) powered by Intel Core i7-13700HX with NVIDIA GeForce RTX 4060 (8GB), 16.1-inch QHD IPS, 240Hz, and 83Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_511",
+    "sku": "LP-HP-14EW1082-512",
+    "name": "HP Pavilion Plus 14 OLED (2024)",
+    "brand": "HP",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Natural Silver",
+      "processor": "Intel Core Ultra 7 155H",
+      "gpu": "Intel Arc Graphics"
+    },
+    "costPrice": 63952,
+    "price": 77990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/hp-hp-pavilion-plus-14-oled-2024.svg",
+    "description": "HP HP Pavilion Plus 14 OLED (2024) powered by Intel Core Ultra 7 155H with Intel Arc Graphics, 14-inch 2.8K OLED, 120Hz, and 68Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_512",
+    "sku": "LP-HP-15FA1317-512",
+    "name": "HP Victus 15 (2024)",
+    "brand": "HP",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Performance Blue",
+      "processor": "Intel Core i5-13420H",
+      "gpu": "NVIDIA GeForce RTX 4050 (6GB)"
+    },
+    "costPrice": 54932,
+    "price": 66990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/hp-hp-victus-15-2024.svg",
+    "description": "HP HP Victus 15 (2024) powered by Intel Core i5-13420H with NVIDIA GeForce RTX 4050 (6GB), 15.6-inch FHD IPS, 144Hz, and 70Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_513",
+    "sku": "LP-HP-14FH0029-512",
+    "name": "HP OmniBook Ultra Flip 14 (2025)",
+    "brand": "HP",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Eclipse Gray",
+      "processor": "Intel Core Ultra 7 258V",
+      "gpu": "Intel Arc 140V Graphics"
+    },
+    "costPrice": 110692,
+    "price": 134990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/hp-hp-omnibook-ultra-flip-14-2025.svg",
+    "description": "HP HP OmniBook Ultra Flip 14 (2025) powered by Intel Core Ultra 7 258V with Intel Arc 140V Graphics, 14-inch 2.8K OLED Touch, 120Hz, and 64Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_514",
+    "sku": "LP-HP-16AH0089-1",
+    "name": "HP Omen Max 16 (2025)",
+    "brand": "HP",
+    "category": "laptop",
+    "variant": {
+      "storage": "1TB",
+      "ram": "32GB",
+      "color": "Shadow Black",
+      "processor": "Intel Core Ultra 9 275HX",
+      "gpu": "NVIDIA GeForce RTX 5080 (16GB)"
+    },
+    "costPrice": 188592,
+    "price": 229990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/hp-hp-omen-max-16-2025.svg",
+    "description": "HP HP Omen Max 16 (2025) powered by Intel Core Ultra 9 275HX with NVIDIA GeForce RTX 5080 (16GB), 16-inch WQXGA OLED, 240Hz, and 83Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_515",
+    "sku": "LP-HP-14FE1012-512",
+    "name": "HP OmniBook X 14 AI (2026)",
+    "brand": "HP",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Meteor Silver",
+      "processor": "Snapdragon X2 Elite",
+      "gpu": "Qualcomm Adreno GPU"
+    },
+    "costPrice": 94292,
+    "price": 114990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/hp-hp-omnibook-x-14-ai-2026.svg",
+    "description": "HP HP OmniBook X 14 AI (2026) powered by Snapdragon X2 Elite with Qualcomm Adreno GPU, 14-inch 2.2K IPS Touch, 120Hz, and 59Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_516",
+    "sku": "LP-LEN-81YM002T-512",
+    "name": "Lenovo IdeaPad Slim 5 (2020)",
+    "brand": "Lenovo",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "8GB",
+      "color": "Graphite Grey",
+      "processor": "AMD Ryzen 7 4700U",
+      "gpu": "AMD Radeon Graphics"
+    },
+    "costPrice": 34432,
+    "price": 41990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/lenovo-lenovo-ideapad-slim-5-2020.svg",
+    "description": "Lenovo Lenovo IdeaPad Slim 5 (2020) powered by AMD Ryzen 7 4700U with AMD Radeon Graphics, 14-inch FHD IPS Anti-Glare, 60Hz, and 57Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_517",
+    "sku": "LP-LEN-82JW00E2-512",
+    "name": "Lenovo Legion 5 (2021)",
+    "brand": "Lenovo",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Phantom Blue",
+      "processor": "AMD Ryzen 7 5800H",
+      "gpu": "NVIDIA GeForce RTX 3060 (6GB)"
+    },
+    "costPrice": 65592,
+    "price": 79990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/lenovo-lenovo-legion-5-2021.svg",
+    "description": "Lenovo Lenovo Legion 5 (2021) powered by AMD Ryzen 7 5800H with NVIDIA GeForce RTX 3060 (6GB), 15.6-inch WQHD IPS, 165Hz, and 80Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_518",
+    "sku": "LP-LEN-21CB006Q-512",
+    "name": "Lenovo ThinkPad X1 Carbon Gen 10 (2022)",
+    "brand": "Lenovo",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Deep Black Carbon Weave",
+      "processor": "Intel Core i7-1260P",
+      "gpu": "Intel Iris Xe Graphics"
+    },
+    "costPrice": 98392,
+    "price": 119990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/lenovo-lenovo-thinkpad-x1-carbon-gen-10-2022.svg",
+    "description": "Lenovo Lenovo ThinkPad X1 Carbon Gen 10 (2022) powered by Intel Core i7-1260P with Intel Iris Xe Graphics, 14-inch WUXGA IPS Low Power, 60Hz, and 57Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_519",
+    "sku": "LP-LEN-82XV00F7-512",
+    "name": "Lenovo LOQ 15 (2023)",
+    "brand": "Lenovo",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Storm Grey",
+      "processor": "Intel Core i5-13420H",
+      "gpu": "NVIDIA GeForce RTX 4050 (6GB)"
+    },
+    "costPrice": 51652,
+    "price": 62990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/lenovo-lenovo-loq-15-2023.svg",
+    "description": "Lenovo Lenovo LOQ 15 (2023) powered by Intel Core i5-13420H with NVIDIA GeForce RTX 4050 (6GB), 15.6-inch FHD IPS, 144Hz, and 60Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_520",
+    "sku": "LP-LEN-83DV007G-512",
+    "name": "Lenovo LOQ 15 Gen 9 (2024)",
+    "brand": "Lenovo",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Luna Grey",
+      "processor": "Intel Core i7-13650HX",
+      "gpu": "NVIDIA GeForce RTX 4060 (8GB)"
+    },
+    "costPrice": 69692,
+    "price": 84990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/lenovo-lenovo-loq-15-gen-9-2024.svg",
+    "description": "Lenovo Lenovo LOQ 15 Gen 9 (2024) powered by Intel Core i7-13650HX with NVIDIA GeForce RTX 4060 (8GB), 15.6-inch FHD IPS (100% sRGB), 144Hz, and 60Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_521",
+    "sku": "LP-LEN-83D2001G-512",
+    "name": "Lenovo IdeaPad Pro 5 OLED (2024)",
+    "brand": "Lenovo",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Arctic Grey",
+      "processor": "Intel Core Ultra 7 155H",
+      "gpu": "Intel Arc Graphics"
+    },
+    "costPrice": 65592,
+    "price": 79990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/lenovo-lenovo-ideapad-pro-5-oled-2024.svg",
+    "description": "Lenovo Lenovo IdeaPad Pro 5 OLED (2024) powered by Intel Core Ultra 7 155H with Intel Arc Graphics, 14-inch 2.8K OLED, 120Hz, and 84Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_522",
+    "sku": "LP-LEN-83ED002R-512",
+    "name": "Lenovo Yoga Slim 7x (2024)",
+    "brand": "Lenovo",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Cosmic Blue",
+      "processor": "Snapdragon X Elite X1E-78-100",
+      "gpu": "Qualcomm Adreno GPU"
+    },
+    "costPrice": 81992,
+    "price": 99990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/lenovo-lenovo-yoga-slim-7x-2024.svg",
+    "description": "Lenovo Lenovo Yoga Slim 7x (2024) powered by Snapdragon X Elite X1E-78-100 with Qualcomm Adreno GPU, 14.5-inch 3K PureSight OLED Touch, 90Hz, and 70Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_523",
+    "sku": "LP-LEN-83F5001C-1",
+    "name": "Lenovo Legion Pro 7i Gen 10 (2025)",
+    "brand": "Lenovo",
+    "category": "laptop",
+    "variant": {
+      "storage": "1TB",
+      "ram": "32GB",
+      "color": "Eclipse Black",
+      "processor": "Intel Core Ultra 9 275HX",
+      "gpu": "NVIDIA GeForce RTX 5080 (16GB)"
+    },
+    "costPrice": 196792,
+    "price": 239990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/lenovo-lenovo-legion-pro-7i-gen-10-2025.svg",
+    "description": "Lenovo Lenovo Legion Pro 7i Gen 10 (2025) powered by Intel Core Ultra 9 275HX with NVIDIA GeForce RTX 5080 (16GB), 16-inch WQXGA OLED, 240Hz, and 99.9Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_524",
+    "sku": "LP-LEN-21NS0012-512",
+    "name": "Lenovo ThinkPad X1 Carbon Gen 13 Aura (2025)",
+    "brand": "Lenovo",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "32GB",
+      "color": "Black",
+      "processor": "Intel Core Ultra 7 258V",
+      "gpu": "Intel Arc 140V Graphics"
+    },
+    "costPrice": 151692,
+    "price": 184990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/lenovo-lenovo-thinkpad-x1-carbon-gen-13-aura-2025.svg",
+    "description": "Lenovo Lenovo ThinkPad X1 Carbon Gen 13 Aura (2025) powered by Intel Core Ultra 7 258V with Intel Arc 140V Graphics, 14-inch 2.8K OLED Anti-Glare, 120Hz, and 57Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_525",
+    "sku": "LP-LEN-83JG0021-512",
+    "name": "Lenovo LOQ 15 Gen 10 (2026)",
+    "brand": "Lenovo",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Luna Grey",
+      "processor": "AMD Ryzen AI 7 350",
+      "gpu": "NVIDIA GeForce RTX 5060 (8GB)"
+    },
+    "costPrice": 86092,
+    "price": 104990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/lenovo-lenovo-loq-15-gen-10-2026.svg",
+    "description": "Lenovo Lenovo LOQ 15 Gen 10 (2026) powered by AMD Ryzen AI 7 350 with NVIDIA GeForce RTX 5060 (8GB), 15.6-inch WQHD IPS, 165Hz, and 60Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_526",
+    "sku": "LP-ASU-GA401IUH-512",
+    "name": "Asus ROG Zephyrus G14 (2020)",
+    "brand": "Asus",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Moonlight White",
+      "processor": "AMD Ryzen 7 4800HS",
+      "gpu": "NVIDIA GeForce GTX 1660 Ti (6GB)"
+    },
+    "costPrice": 61492,
+    "price": 74990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/asus-asus-rog-zephyrus-g14-2020.svg",
+    "description": "Asus Asus ROG Zephyrus G14 (2020) powered by AMD Ryzen 7 4800HS with NVIDIA GeForce GTX 1660 Ti (6GB), 14-inch FHD IPS, 120Hz, and 76Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_527",
+    "sku": "LP-ASU-UX3402ZA-512",
+    "name": "Asus Zenbook 14 OLED (2022)",
+    "brand": "Asus",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Ponder Blue",
+      "processor": "Intel Core i5-1240P",
+      "gpu": "Intel Iris Xe Graphics"
+    },
+    "costPrice": 51652,
+    "price": 62990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/asus-asus-zenbook-14-oled-2022.svg",
+    "description": "Asus Asus Zenbook 14 OLED (2022) powered by Intel Core i5-1240P with Intel Iris Xe Graphics, 14-inch 2.8K OLED, 90Hz, and 75Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_528",
+    "sku": "LP-ASU-FA577NUL-512",
+    "name": "Asus TUF Gaming A15 (2023)",
+    "brand": "Asus",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Mecha Gray",
+      "processor": "AMD Ryzen 7 7735HS",
+      "gpu": "NVIDIA GeForce RTX 4050 (6GB)"
+    },
+    "costPrice": 61492,
+    "price": 74990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/asus-asus-tuf-gaming-a15-2023.svg",
+    "description": "Asus Asus TUF Gaming A15 (2023) powered by AMD Ryzen 7 7735HS with NVIDIA GeForce RTX 4050 (6GB), 15.6-inch FHD IPS, 144Hz, and 90Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_529",
+    "sku": "LP-ASU-S5506MAM-512",
+    "name": "Asus Vivobook S 15 OLED (2024)",
+    "brand": "Asus",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Neutral Black",
+      "processor": "Intel Core Ultra 7 155H",
+      "gpu": "Intel Arc Graphics"
+    },
+    "costPrice": 65592,
+    "price": 79990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/asus-asus-vivobook-s-15-oled-2024.svg",
+    "description": "Asus Asus Vivobook S 15 OLED (2024) powered by Intel Core Ultra 7 155H with Intel Arc Graphics, 15.6-inch 3K OLED, 120Hz, and 75Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_530",
+    "sku": "LP-ASU-GU605MIQ-1",
+    "name": "Asus ROG Zephyrus G16 (2024)",
+    "brand": "Asus",
+    "category": "laptop",
+    "variant": {
+      "storage": "1TB",
+      "ram": "16GB",
+      "color": "Eclipse Gray",
+      "processor": "Intel Core Ultra 9 185H",
+      "gpu": "NVIDIA GeForce RTX 4070 (8GB)"
+    },
+    "costPrice": 139392,
+    "price": 169990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/asus-asus-rog-zephyrus-g16-2024.svg",
+    "description": "Asus Asus ROG Zephyrus G16 (2024) powered by Intel Core Ultra 9 185H with NVIDIA GeForce RTX 4070 (8GB), 16-inch 2.5K ROG Nebula OLED, 240Hz, and 90Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_531",
+    "sku": "LP-ASU-UX5406SA-512",
+    "name": "Asus Zenbook S 14 OLED (2025)",
+    "brand": "Asus",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Zumaia Gray",
+      "processor": "Intel Core Ultra 7 258V",
+      "gpu": "Intel Arc 140V Graphics"
+    },
+    "costPrice": 97572,
+    "price": 118990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/asus-asus-zenbook-s-14-oled-2025.svg",
+    "description": "Asus Asus Zenbook S 14 OLED (2025) powered by Intel Core Ultra 7 258V with Intel Arc 140V Graphics, 14-inch 3K Lumina OLED, 120Hz, and 72Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_532",
+    "sku": "LP-ASU-G635LXRW-2",
+    "name": "Asus ROG Strix SCAR 16 (2025)",
+    "brand": "Asus",
+    "category": "laptop",
+    "variant": {
+      "storage": "2TB",
+      "ram": "32GB",
+      "color": "Off Black",
+      "processor": "Intel Core Ultra 9 275HX",
+      "gpu": "NVIDIA GeForce RTX 5090 (24GB)"
+    },
+    "costPrice": 270592,
+    "price": 329990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/asus-asus-rog-strix-scar-16-2025.svg",
+    "description": "Asus Asus ROG Strix SCAR 16 (2025) powered by Intel Core Ultra 9 275HX with NVIDIA GeForce RTX 5090 (24GB), 16-inch 2.5K Mini-LED Nebula HDR, 240Hz, and 90Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_533",
+    "sku": "LP-ASU-K3605ZUR-512",
+    "name": "Asus Vivobook 16X (2026)",
+    "brand": "Asus",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Indie Black",
+      "processor": "Intel Core 7 240H",
+      "gpu": "NVIDIA GeForce RTX 4050 (6GB)"
+    },
+    "costPrice": 69692,
+    "price": 84990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/asus-asus-vivobook-16x-2026.svg",
+    "description": "Asus Asus Vivobook 16X (2026) powered by Intel Core 7 240H with NVIDIA GeForce RTX 4050 (6GB), 16-inch WUXGA IPS, 144Hz, and 70Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_534",
+    "sku": "LP-ACE-A51556-512",
+    "name": "Acer Aspire 5 (2020)",
+    "brand": "Acer",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "8GB",
+      "color": "Pure Silver",
+      "processor": "Intel Core i5-1135G7",
+      "gpu": "Intel Iris Xe Graphics"
+    },
+    "costPrice": 30332,
+    "price": 36990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/acer-acer-aspire-5-2020.svg",
+    "description": "Acer Acer Aspire 5 (2020) powered by Intel Core i5-1135G7 with Intel Iris Xe Graphics, 15.6-inch FHD IPS, 60Hz, and 48Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_535",
+    "sku": "LP-ACE-AN51558-512",
+    "name": "Acer Nitro 5 (2022)",
+    "brand": "Acer",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "8GB",
+      "color": "Obsidian Black",
+      "processor": "Intel Core i5-12500H",
+      "gpu": "NVIDIA GeForce RTX 3050 (4GB)"
+    },
+    "costPrice": 43452,
+    "price": 52990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/acer-acer-nitro-5-2022.svg",
+    "description": "Acer Acer Nitro 5 (2022) powered by Intel Core i5-12500H with NVIDIA GeForce RTX 3050 (4GB), 15.6-inch FHD IPS, 144Hz, and 57.5Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_536",
+    "sku": "LP-ACE-SFG1471-512",
+    "name": "Acer Swift Go 14 OLED (2023)",
+    "brand": "Acer",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Pure Silver",
+      "processor": "Intel Core i5-13500H",
+      "gpu": "Intel Iris Xe Graphics"
+    },
+    "costPrice": 48372,
+    "price": 58990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/acer-acer-swift-go-14-oled-2023.svg",
+    "description": "Acer Acer Swift Go 14 OLED (2023) powered by Intel Core i5-13500H with Intel Iris Xe Graphics, 14-inch 2.8K OLED, 90Hz, and 65Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_537",
+    "sku": "LP-ACE-PHN1672-512",
+    "name": "Acer Predator Helios Neo 16 (2024)",
+    "brand": "Acer",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Abyssal Black",
+      "processor": "Intel Core i7-14700HX",
+      "gpu": "NVIDIA GeForce RTX 4060 (8GB)"
+    },
+    "costPrice": 81992,
+    "price": 99990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/acer-acer-predator-helios-neo-16-2024.svg",
+    "description": "Acer Acer Predator Helios Neo 16 (2024) powered by Intel Core i7-14700HX with NVIDIA GeForce RTX 4060 (8GB), 16-inch WQXGA IPS, 165Hz, and 90Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_538",
+    "sku": "LP-ACE-ANV1552-512",
+    "name": "Acer Nitro V 15 (2025)",
+    "brand": "Acer",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Obsidian Black",
+      "processor": "Intel Core i7-13620H",
+      "gpu": "NVIDIA GeForce RTX 4050 (6GB)"
+    },
+    "costPrice": 59032,
+    "price": 71990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/acer-acer-nitro-v-15-2025.svg",
+    "description": "Acer Acer Nitro V 15 (2025) powered by Intel Core i7-13620H with NVIDIA GeForce RTX 4050 (6GB), 15.6-inch FHD IPS, 144Hz, and 57Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_539",
+    "sku": "LP-ACE-SF1451-512",
+    "name": "Acer Swift 14 AI (2025)",
+    "brand": "Acer",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Steam Blue",
+      "processor": "Intel Core Ultra 7 256V",
+      "gpu": "Intel Arc 140V Graphics"
+    },
+    "costPrice": 77892,
+    "price": 94990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/acer-acer-swift-14-ai-2025.svg",
+    "description": "Acer Acer Swift 14 AI (2025) powered by Intel Core Ultra 7 256V with Intel Arc 140V Graphics, 14-inch 2.8K OLED, 90Hz, and 65Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_540",
+    "sku": "LP-DEL-D560372W-512",
+    "name": "Dell Inspiron 15 5502 (2020)",
+    "brand": "Dell",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "8GB",
+      "color": "Platinum Silver",
+      "processor": "Intel Core i5-1135G7",
+      "gpu": "Intel Iris Xe Graphics"
+    },
+    "costPrice": 36072,
+    "price": 43990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/dell-dell-inspiron-15-5502-2020.svg",
+    "description": "Dell Dell Inspiron 15 5502 (2020) powered by Intel Core i5-1135G7 with Intel Iris Xe Graphics, 15.6-inch FHD WVA Anti-Glare, 60Hz, and 53Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_541",
+    "sku": "LP-DEL-D560037W-512",
+    "name": "Dell XPS 13 9310 (2021)",
+    "brand": "Dell",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Platinum Silver",
+      "processor": "Intel Core i7-1185G7",
+      "gpu": "Intel Iris Xe Graphics"
+    },
+    "costPrice": 81992,
+    "price": 99990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/dell-dell-xps-13-9310-2021.svg",
+    "description": "Dell Dell XPS 13 9310 (2021) powered by Intel Core i7-1185G7 with Intel Iris Xe Graphics, 13.4-inch FHD+ InfinityEdge, 60Hz, and 52Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_542",
+    "sku": "LP-DEL-GN553075-512",
+    "name": "Dell G15 5530 (2023)",
+    "brand": "Dell",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Dark Shadow Gray",
+      "processor": "Intel Core i7-13650HX",
+      "gpu": "NVIDIA GeForce RTX 4060 (8GB)"
+    },
+    "costPrice": 73792,
+    "price": 89990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/dell-dell-g15-5530-2023.svg",
+    "description": "Dell Dell G15 5530 (2023) powered by Intel Core i7-13650HX with NVIDIA GeForce RTX 4060 (8GB), 15.6-inch FHD WVA, 165Hz, and 86Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_543",
+    "sku": "LP-DEL-OXN93451-512",
+    "name": "Dell XPS 13 9345 (2024)",
+    "brand": "Dell",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Graphite",
+      "processor": "Snapdragon X Elite X1E-80-100",
+      "gpu": "Qualcomm Adreno GPU"
+    },
+    "costPrice": 98392,
+    "price": 119990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/dell-dell-xps-13-9345-2024.svg",
+    "description": "Dell Dell XPS 13 9345 (2024) powered by Snapdragon X Elite X1E-80-100 with Qualcomm Adreno GPU, 13.4-inch 3K Tandem OLED Touch, 60Hz, and 55Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_544",
+    "sku": "LP-ALI-ANM16R20-1",
+    "name": "Alienware m16 R2 (2024)",
+    "brand": "Alienware",
+    "category": "laptop",
+    "variant": {
+      "storage": "1TB",
+      "ram": "16GB",
+      "color": "Dark Metallic Moon",
+      "processor": "Intel Core Ultra 7 155H",
+      "gpu": "NVIDIA GeForce RTX 4070 (8GB)"
+    },
+    "costPrice": 135292,
+    "price": 164990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/alienware-alienware-m16-r2-2024.svg",
+    "description": "Alienware Alienware m16 R2 (2024) powered by Intel Core Ultra 7 155H with NVIDIA GeForce RTX 4070 (8GB), 16-inch QHD+ ComfortView Plus, 240Hz, and 90Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_545",
+    "sku": "LP-ALI-AA162500-1",
+    "name": "Alienware 16 Area-51 (2025)",
+    "brand": "Alienware",
+    "category": "laptop",
+    "variant": {
+      "storage": "1TB",
+      "ram": "32GB",
+      "color": "Liquid Teal",
+      "processor": "Intel Core Ultra 9 275HX",
+      "gpu": "NVIDIA GeForce RTX 5080 (16GB)"
+    },
+    "costPrice": 213192,
+    "price": 259990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/alienware-alienware-16-area-51-2025.svg",
+    "description": "Alienware Alienware 16 Area-51 (2025) powered by Intel Core Ultra 9 275HX with NVIDIA GeForce RTX 5080 (16GB), 16-inch QHD+ IPS, 240Hz, and 96Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_546",
+    "sku": "LP-SAM-NP930XED-512",
+    "name": "Samsung Galaxy Book2 Pro (2022)",
+    "brand": "Samsung",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Graphite",
+      "processor": "Intel Core i7-1260P",
+      "gpu": "Intel Iris Xe Graphics"
+    },
+    "costPrice": 57392,
+    "price": 69990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/samsung-samsung-galaxy-book2-pro-2022.svg",
+    "description": "Samsung Samsung Galaxy Book2 Pro (2022) powered by Intel Core i7-1260P with Intel Iris Xe Graphics, 13.3-inch FHD AMOLED, 60Hz, and 63Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_547",
+    "sku": "LP-SAM-NP960QFG-512",
+    "name": "Samsung Galaxy Book3 Pro 360 (2023)",
+    "brand": "Samsung",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Graphite",
+      "processor": "Intel Core i7-1360P",
+      "gpu": "Intel Iris Xe Graphics"
+    },
+    "costPrice": 90192,
+    "price": 109990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/samsung-samsung-galaxy-book3-pro-360-2023.svg",
+    "description": "Samsung Samsung Galaxy Book3 Pro 360 (2023) powered by Intel Core i7-1360P with Intel Iris Xe Graphics, 16-inch 3K Dynamic AMOLED 2X Touch, 120Hz, and 76Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_548",
+    "sku": "LP-SAM-NP940XGK-512",
+    "name": "Samsung Galaxy Book4 Pro (2024)",
+    "brand": "Samsung",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Moonstone Gray",
+      "processor": "Intel Core Ultra 7 155H",
+      "gpu": "Intel Arc Graphics"
+    },
+    "costPrice": 86092,
+    "price": 104990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/samsung-samsung-galaxy-book4-pro-2024.svg",
+    "description": "Samsung Samsung Galaxy Book4 Pro (2024) powered by Intel Core Ultra 7 155H with Intel Arc Graphics, 14-inch 3K Dynamic AMOLED 2X Touch, 120Hz, and 63Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_549",
+    "sku": "LP-SAM-NP960QHA-512",
+    "name": "Samsung Galaxy Book5 Pro 360 (2025)",
+    "brand": "Samsung",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Gray",
+      "processor": "Intel Core Ultra 7 258V",
+      "gpu": "Intel Arc 140V Graphics"
+    },
+    "costPrice": 114792,
+    "price": 139990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/samsung-samsung-galaxy-book5-pro-360-2025.svg",
+    "description": "Samsung Samsung Galaxy Book5 Pro 360 (2025) powered by Intel Core Ultra 7 258V with Intel Arc 140V Graphics, 16-inch 3K Dynamic AMOLED 2X Touch, 120Hz, and 76Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_550",
+    "sku": "LP-SAM-NP940XHA-512",
+    "name": "Samsung Galaxy Book6 Pro (2026)",
+    "brand": "Samsung",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Moonstone Gray",
+      "processor": "Intel Core Ultra 7 358V",
+      "gpu": "Intel Arc Graphics"
+    },
+    "costPrice": 114792,
+    "price": 139990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/samsung-samsung-galaxy-book6-pro-2026.svg",
+    "description": "Samsung Samsung Galaxy Book6 Pro (2026) powered by Intel Core Ultra 7 358V with Intel Arc Graphics, 14-inch 3K Dynamic AMOLED 2X Touch, 120Hz, and 65Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_551",
+    "sku": "LP-MSI-B10MW220-512",
+    "name": "MSI Modern 14 (2020)",
+    "brand": "MSI",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "8GB",
+      "color": "Carbon Gray",
+      "processor": "Intel Core i5-10210U",
+      "gpu": "Intel UHD Graphics"
+    },
+    "costPrice": 30332,
+    "price": 36990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/msi-msi-modern-14-2020.svg",
+    "description": "MSI MSI Modern 14 (2020) powered by Intel Core i5-10210U with Intel UHD Graphics, 14-inch FHD IPS, 60Hz, and 52Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_552",
+    "sku": "LP-MSI-12UC636I-512",
+    "name": "MSI Katana GF66 (2022)",
+    "brand": "MSI",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "8GB",
+      "color": "Black",
+      "processor": "Intel Core i5-12450H",
+      "gpu": "NVIDIA GeForce RTX 3050 (4GB)"
+    },
+    "costPrice": 43452,
+    "price": 52990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/msi-msi-katana-gf66-2022.svg",
+    "description": "MSI MSI Katana GF66 (2022) powered by Intel Core i5-12450H with NVIDIA GeForce RTX 3050 (4GB), 15.6-inch FHD IPS, 144Hz, and 53.5Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_553",
+    "sku": "LP-MSI-A13VF128-512",
+    "name": "MSI Cyborg 15 (2024)",
+    "brand": "MSI",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Translucent Black",
+      "processor": "Intel Core i7-13620H",
+      "gpu": "NVIDIA GeForce RTX 4060 (8GB)"
+    },
+    "costPrice": 65592,
+    "price": 79990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/msi-msi-cyborg-15-2024.svg",
+    "description": "MSI MSI Cyborg 15 (2024) powered by Intel Core i7-13620H with NVIDIA GeForce RTX 4060 (8GB), 15.6-inch FHD IPS, 144Hz, and 53.5Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_554",
+    "sku": "LP-MSI-A2XWJG09-2",
+    "name": "MSI Titan 18 HX AI (2025)",
+    "brand": "MSI",
+    "category": "laptop",
+    "variant": {
+      "storage": "2TB",
+      "ram": "64GB",
+      "color": "Core Black",
+      "processor": "Intel Core Ultra 9 285HX",
+      "gpu": "NVIDIA GeForce RTX 5090 (24GB)"
+    },
+    "costPrice": 348492,
+    "price": 424990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/msi-msi-titan-18-hx-ai-2025.svg",
+    "description": "MSI MSI Titan 18 HX AI (2025) powered by Intel Core Ultra 9 285HX with NVIDIA GeForce RTX 5090 (24GB), 18-inch UHD+ Mini-LED, 120Hz, and 99.9Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_555",
+    "sku": "LP-MIC-5BT00014-256",
+    "name": "Microsoft Surface Laptop 4 (2021)",
+    "brand": "Microsoft",
+    "category": "laptop",
+    "variant": {
+      "storage": "256GB",
+      "ram": "8GB",
+      "color": "Platinum",
+      "processor": "AMD Ryzen 5 4680U",
+      "gpu": "AMD Radeon Graphics"
+    },
+    "costPrice": 57392,
+    "price": 69990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/microsoft-microsoft-surface-laptop-4-2021.svg",
+    "description": "Microsoft Microsoft Surface Laptop 4 (2021) powered by AMD Ryzen 5 4680U with AMD Radeon Graphics, 13.5-inch PixelSense Touch, 60Hz, and 47.4Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_556",
+    "sku": "LP-MIC-ZGP00023-256",
+    "name": "Microsoft Surface Laptop 7 Copilot+ (2024)",
+    "brand": "Microsoft",
+    "category": "laptop",
+    "variant": {
+      "storage": "256GB",
+      "ram": "16GB",
+      "color": "Platinum",
+      "processor": "Snapdragon X Plus / X Elite",
+      "gpu": "Qualcomm Adreno GPU"
+    },
+    "costPrice": 81172,
+    "price": 98990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/microsoft-microsoft-surface-laptop-7-copilot-2024.svg",
+    "description": "Microsoft Microsoft Surface Laptop 7 Copilot+ (2024) powered by Snapdragon X Plus / X Elite with Qualcomm Adreno GPU, 13.8-inch PixelSense Flow Touch, 120Hz, and 54Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_557",
+    "sku": "LP-LG-16Z90RGA-512",
+    "name": "LG Gram 16 (2023)",
+    "brand": "LG",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Obsidian Black",
+      "processor": "Intel Core i7-1360P",
+      "gpu": "Intel Iris Xe Graphics"
+    },
+    "costPrice": 76252,
+    "price": 92990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/lg-lg-gram-16-2023.svg",
+    "description": "LG LG Gram 16 (2023) powered by Intel Core i7-1360P with Intel Iris Xe Graphics, 16-inch WQXGA IPS Anti-Glare, 60Hz, and 80Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_558",
+    "sku": "LP-LG-16Z90SPA-512",
+    "name": "LG Gram Pro 16 (2025)",
+    "brand": "LG",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Essence White",
+      "processor": "Intel Core Ultra 7 255H",
+      "gpu": "Intel Arc Graphics"
+    },
+    "costPrice": 102492,
+    "price": 124990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/lg-lg-gram-pro-16-2025.svg",
+    "description": "LG LG Gram Pro 16 (2025) powered by Intel Core Ultra 7 255H with Intel Arc Graphics, 16-inch WQXGA+ IPS VRR, 144Hz, and 77Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_559",
+    "sku": "LP-XIA-JYU4485I-512",
+    "name": "Xiaomi Notebook Pro 120G (2022)",
+    "brand": "Xiaomi",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Lustrous Gray",
+      "processor": "Intel Core i5-12450H",
+      "gpu": "NVIDIA GeForce MX550 (2GB)"
+    },
+    "costPrice": 43452,
+    "price": 52990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/xiaomi-xiaomi-notebook-pro-120g-2022.svg",
+    "description": "Xiaomi Xiaomi Notebook Pro 120G (2022) powered by Intel Core i5-12450H with NVIDIA GeForce MX550 (2GB), 14-inch 2.5K IPS, 120Hz, and 56Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_560",
+    "sku": "LP-REA-RMNB1001-512",
+    "name": "Realme Book Slim (2021)",
+    "brand": "Realme",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "8GB",
+      "color": "Real Blue",
+      "processor": "Intel Core i5-1135G7",
+      "gpu": "Intel Iris Xe Graphics"
+    },
+    "costPrice": 32792,
+    "price": 39990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/realme-realme-book-slim-2021.svg",
+    "description": "Realme Realme Book Slim (2021) powered by Intel Core i5-1135G7 with Intel Iris Xe Graphics, 14-inch 2K IPS (3:2), 60Hz, and 54Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_561",
+    "sku": "LP-INF-YL613-512",
+    "name": "Infinix INBook Y4 Max (2024)",
+    "brand": "Infinix",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Silver",
+      "processor": "Intel Core i5-1335U",
+      "gpu": "Intel Iris Xe Graphics"
+    },
+    "costPrice": 30332,
+    "price": 36990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/infinix-infinix-inbook-y4-max-2024.svg",
+    "description": "Infinix Infinix INBook Y4 Max (2024) powered by Intel Core i5-1335U with Intel Iris Xe Graphics, 16-inch FHD+ IPS, 60Hz, and 70Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_562",
+    "sku": "LP-INF-GL613-512",
+    "name": "Infinix GT Book (2024)",
+    "brand": "Infinix",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Mecha Gray",
+      "processor": "Intel Core i5-13420H",
+      "gpu": "NVIDIA GeForce RTX 4050 (6GB)"
+    },
+    "costPrice": 51652,
+    "price": 62990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/infinix-infinix-gt-book-2024.svg",
+    "description": "Infinix Infinix GT Book (2024) powered by Intel Core i5-13420H with NVIDIA GeForce RTX 4050 (6GB), 16-inch FHD+ IPS, 120Hz, and 70Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_563",
+    "sku": "LP-MOT-MB60U7-512",
+    "name": "Motorola Motobook 60 (2025)",
+    "brand": "Motorola",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "16GB",
+      "color": "Pantone Bronze Green",
+      "processor": "Intel Core 7 240H",
+      "gpu": "Intel Graphics"
+    },
+    "costPrice": 50832,
+    "price": 61990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/motorola-motorola-motobook-60-2025.svg",
+    "description": "Motorola Motorola Motobook 60 (2025) powered by Intel Core 7 240H with Intel Graphics, 14-inch 2.8K OLED, 120Hz, and 60Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_564",
+    "sku": "LP-GIG-G5KFE3IN-512",
+    "name": "Gigabyte G5 KF (2023)",
+    "brand": "Gigabyte",
+    "category": "laptop",
+    "variant": {
+      "storage": "512GB",
+      "ram": "8GB",
+      "color": "Matte Black",
+      "processor": "Intel Core i5-12500H",
+      "gpu": "NVIDIA GeForce RTX 4060 (8GB)"
+    },
+    "costPrice": 56572,
+    "price": 68990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/gigabyte-gigabyte-g5-kf-2023.svg",
+    "description": "Gigabyte Gigabyte G5 KF (2023) powered by Intel Core i5-12500H with NVIDIA GeForce RTX 4060 (8GB), 15.6-inch FHD IPS, 144Hz, and 54Wh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_565",
+    "sku": "LP-JIO-NB1112MM-64",
+    "name": "Reliance JioBook 11 (2023)",
+    "brand": "Jio",
+    "category": "laptop",
+    "variant": {
+      "storage": "64GB eMMC",
+      "ram": "4GB",
+      "color": "Jio Blue",
+      "processor": "MediaTek MT8788 Octa-Core",
+      "gpu": "ARM Mali-G72 MP3"
+    },
+    "costPrice": 10577,
+    "price": 12899,
+    "reorderLevel": 5,
+    "image": "assets/images/products/jio-reliance-jiobook-11-2023.svg",
+    "description": "Jio Reliance JioBook 11 (2023) powered by MediaTek MT8788 Octa-Core with ARM Mali-G72 MP3, 11.6-inch HD Anti-Glare, 60Hz, and 4000mAh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
+  },
+  {
+    "id": "prd_566",
+    "sku": "LP-PRI-PB4G2024-64",
+    "name": "Primebook 4G / Wifi (2024)",
+    "brand": "Primebook",
+    "category": "laptop",
+    "variant": {
+      "storage": "64GB eMMC",
+      "ram": "4GB",
+      "color": "Black",
+      "processor": "MediaTek MT8788 Octa-Core",
+      "gpu": "ARM Mali-G72 MP3"
+    },
+    "costPrice": 9832,
+    "price": 11990,
+    "reorderLevel": 5,
+    "image": "assets/images/products/primebook-primebook-4g-wifi-2024.svg",
+    "description": "Primebook Primebook 4G / Wifi (2024) powered by MediaTek MT8788 Octa-Core with ARM Mali-G72 MP3, 11.6-inch HD IPS, 60Hz, and 4000mAh.",
+    "active": true,
+    "createdAt": "2025-06-01T00:00:00.000Z",
+    "createdBy": "usr_001"
   }
 ];
 
@@ -8472,55 +11972,74 @@
     const stores = built.stores;
 
     // Build sparse stock ledger
-    // HO holds all 399 products; Zones hold all 399; Districts, Taluks, and Stores hold realistic selections.
+    // HO holds all 566 products; Zones hold all 566; Districts, Taluks, and Stores hold realistic selections.
     const stock = [];
     const physicalByPrd = {};
     PRODUCTS.forEach(function (p) { physicalByPrd[p.id] = 0; });
 
     const baselineIds = PRODUCTS.slice(0, 15).map(function (p) { return p.id; });
+    const phoneList = PRODUCTS.filter(function (p) { return p.category === 'smartphone'; });
+    const laptopList = PRODUCTS.filter(function (p) { return p.category === 'laptop'; });
+    const tabletList = PRODUCTS.filter(function (p) { return p.category === 'tablet'; });
 
     offices.forEach(function (o, oIdx) {
       if (o.type === 'head') {
         // HO holds all products
         PRODUCTS.forEach(function (p) {
-          const qty = 100;
+          const qty = p.category === 'laptop' ? 50 : 100;
           stock.push({ officeId: o.id, productId: p.id, qty: qty });
           physicalByPrd[p.id] += qty;
         });
       } else if (o.type === 'zone') {
         // Zones hold all products
         PRODUCTS.forEach(function (p) {
-          const qty = 25;
+          const qty = p.category === 'laptop' ? 15 : 25;
           stock.push({ officeId: o.id, productId: p.id, qty: qty });
           physicalByPrd[p.id] += qty;
         });
       } else if (o.type === 'district') {
-        // Districts hold baseline 15 products + 10 rotating smartphones
+        // Districts hold baseline 15 products + rotating phones, laptops, tablets
         baselineIds.forEach(function (pId) {
           const qty = 12;
           stock.push({ officeId: o.id, productId: pId, qty: qty });
           physicalByPrd[pId] += qty;
         });
-        for (let i = 0; i < 10; i++) {
-          const pIdx = 15 + ((oIdx * 7 + i * 13) % (PRODUCTS.length - 15));
-          const p = PRODUCTS[pIdx];
-          const qty = 8;
-          stock.push({ officeId: o.id, productId: p.id, qty: qty });
-          physicalByPrd[p.id] += qty;
+        for (let i = 0; i < 8; i++) {
+          const p = phoneList[(oIdx * 7 + i * 13) % phoneList.length];
+          stock.push({ officeId: o.id, productId: p.id, qty: 8 });
+          physicalByPrd[p.id] += 8;
+        }
+        for (let i = 0; i < 4; i++) {
+          const p = laptopList[(oIdx * 3 + i * 5) % laptopList.length];
+          stock.push({ officeId: o.id, productId: p.id, qty: 5 });
+          physicalByPrd[p.id] += 5;
+        }
+        for (let i = 0; i < 4; i++) {
+          const p = tabletList[(oIdx * 5 + i * 7) % tabletList.length];
+          stock.push({ officeId: o.id, productId: p.id, qty: 6 });
+          physicalByPrd[p.id] += 6;
         }
       } else if (o.type === 'taluk') {
-        // Taluks hold baseline 15 products + 5 rotating smartphones
+        // Taluks hold baseline 15 products + rotating phones, laptops, tablets
         baselineIds.forEach(function (pId) {
           const qty = 6;
           stock.push({ officeId: o.id, productId: pId, qty: qty });
           physicalByPrd[pId] += qty;
         });
-        for (let i = 0; i < 5; i++) {
-          const pIdx = 15 + ((oIdx * 11 + i * 17) % (PRODUCTS.length - 15));
-          const p = PRODUCTS[pIdx];
-          const qty = 4;
-          stock.push({ officeId: o.id, productId: p.id, qty: qty });
-          physicalByPrd[p.id] += qty;
+        for (let i = 0; i < 4; i++) {
+          const p = phoneList[(oIdx * 11 + i * 17) % phoneList.length];
+          stock.push({ officeId: o.id, productId: p.id, qty: 4 });
+          physicalByPrd[p.id] += 4;
+        }
+        for (let i = 0; i < 2; i++) {
+          const p = laptopList[(oIdx * 7 + i * 3) % laptopList.length];
+          stock.push({ officeId: o.id, productId: p.id, qty: 2 });
+          physicalByPrd[p.id] += 2;
+        }
+        for (let i = 0; i < 2; i++) {
+          const p = tabletList[(oIdx * 3 + i * 11) % tabletList.length];
+          stock.push({ officeId: o.id, productId: p.id, qty: 3 });
+          physicalByPrd[p.id] += 3;
         }
       } else {
         // Stores
@@ -8530,11 +12049,22 @@
           stock.push({ officeId: o.id, productId: pId, qty: qty });
           physicalByPrd[pId] += qty;
         });
-        // Each store also stocks 4 rotating smartphones
-        for (let i = 0; i < 4; i++) {
-          const pIdx = 15 + ((oIdx * 5 + i * 23) % (PRODUCTS.length - 15));
-          const p = PRODUCTS[pIdx];
+        // Each store also stocks rotating phones, laptops, tablets
+        for (let i = 0; i < 3; i++) {
+          const p = phoneList[(oIdx * 5 + i * 23) % phoneList.length];
           const qty = isDemoStore ? 5 : ((oIdx * 3 + i * 7) % 6);
+          stock.push({ officeId: o.id, productId: p.id, qty: qty });
+          physicalByPrd[p.id] += qty;
+        }
+        for (let i = 0; i < 2; i++) {
+          const p = laptopList[(oIdx * 2 + i * 13) % laptopList.length];
+          const qty = isDemoStore ? 3 : ((oIdx * 5 + i * 3) % 4);
+          stock.push({ officeId: o.id, productId: p.id, qty: qty });
+          physicalByPrd[p.id] += qty;
+        }
+        for (let i = 0; i < 2; i++) {
+          const p = tabletList[(oIdx * 7 + i * 5) % tabletList.length];
+          const qty = isDemoStore ? 4 : ((oIdx * 2 + i * 9) % 5);
           stock.push({ officeId: o.id, productId: p.id, qty: qty });
           physicalByPrd[p.id] += qty;
         }

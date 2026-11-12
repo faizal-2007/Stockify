@@ -74,7 +74,7 @@
    * @returns {string}
    */
   function suggestSku(category, brand, name, storage, color) {
-    const catMap = { smartphone: 'SP', smartwatch: 'SW', tablet: 'TB' };
+    const catMap = { smartphone: 'SP', smartwatch: 'SW', tablet: 'TB', laptop: 'LP' };
     const prefix = catMap[category] || 'XX';
     const br = (brand || '').toUpperCase().replace(/\s+/g, '').slice(0, 3);
     const nm = (name  || '').toUpperCase().replace(/\s+/g, '').slice(0, 6);

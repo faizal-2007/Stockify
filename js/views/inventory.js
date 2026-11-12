@@ -115,8 +115,9 @@
     const categories = [
       { id: 'all', label: 'All' },
       { id: 'smartphone', label: 'Phones' },
-      { id: 'smartwatch', label: 'Watches' },
+      { id: 'laptop', label: 'Laptops' },
       { id: 'tablet', label: 'Tablets' },
+      { id: 'smartwatch', label: 'Watches' },
     ];
     categories.forEach(function (cat) {
       const chip = document.createElement('button');
