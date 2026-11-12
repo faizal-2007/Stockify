@@ -236,8 +236,45 @@ Newest first. One entry per task.
 
 - Issues found: None.
 
+### Session: 2026-11-12 (Login Portal, Command Chain Governance & 759 Karnataka Employees)
+- What was done:
+  - Populated complete multi-tier employee directory for all 756 Karnataka offices (759 total employees):
+    - 4 Head Office central administrators (Managing Director Mohammed Faizal, Central Logistics Head Ayesha Banu, Chief Inventory Controller Rajesh Nayak, Retail POS Auditor Sneha Kulkarni).
+    - 4 Zonal Directors (Bengaluru, Belagavi, Kalaburagi, Mysuru Divisions).
+    - 31 District Inventory Managers.
+    - 240 Taluk Logistics Officers.
+    - 480 Retail Store Leads.
+  - Enhanced Login Portal (`login.html`):
+    - Dual-mode interface: Standard "Employee Sign In" with password verification and "Quick Demo Switcher" with 1-click role cards.
+    - Password input with show/hide toggle (eye icon).
+    - Default credentials supported (`usr_001` with `Stockify@123`).
+    - "Forgot Password?" modal: employees submit reset requests directly to Head Office (Mohammed Faizal) with optional reason notes.
+    - Deactivated accounts blocked from authentication with a descriptive warning.
+  - Implemented Head Office Command Chain Authority & User Governance (`js/services/auth.js` & `js/views/employees.js`):
+    - Head Office exclusive view at `#/employees` accessible via sidebar (`users` icon).
+    - Tab 1 (Employee Directory): filter by authority tier, hierarchical location optgroups, status (active/deactivated), and search. Action buttons to Alter Password directly, Edit Details, or Deactivate/Reactivate accounts.
+    - Tab 2 (Password Reset Requests): table of submitted requests with requester details, office, timestamp, and notes. Actions for Head Office to "Reset Password" (opens modal to set new password and resolve request) or "Dismiss".
+    - "Add New Employee" modal: Head Office can provision new administrators and employees across any office in the network.
+  - Business Intelligence Reports Hierarchical Filtering (`js/views/reports.js`):
+    - Added "Employees & Personnel" report tab with KPI cards (Total Staff, Active Accounts, Administrative Leads, Store Leads), staff roster table, and CSV export.
+    - Grouped location filter into structured `<optgroup>`s: Head Office, Zonal Divisions (4), District Offices (31), Taluk Offices (240), and Retail Stores (480), enabling Head Office to drill down into any specific jurisdiction or entire subtree.
+  - Alerts & Notifications (`js/services/alerts.js`):
+    - Head Office alerted of pending password reset requests with deep-link navigation to `#/employees?tab=requests`.
+  - Comprehensive Test Suite (`tests/test_employee_governance.js`):
+    - 29/29 tests pass covering password validation, email login, forgot password requests, Head Office reset resolution, user creation, permission checks, account deactivation, and scoped reports.
+  - Total automated tests across all suites: 166 passed, 0 failed.
+
+- Tests run / result:
+  - Full Regression Audit (`tests/test_full_regression.js`): 45/45 PASS.
+  - Phase 5 Verification (`tests/test_phase5.js`): 60/60 PASS.
+  - Phase 6 Verification (`tests/test_phase6.js`): 32/32 PASS.
+  - Employee Governance & Auth (`tests/test_employee_governance.js`): 29/29 PASS.
+  - Total tests passing: 166 passed, 0 failed.
+
+- Issues found: None. Storage usage safely within quota (~3.5 MB of 5 MB).
+
 ## 9. Next step
-Project fully updated with complete smartphones, laptops, and tablets datasets across all categories. Ready to stage and commit to Git.
+Project fully updated with complete login portal password security, forgot password workflows to Head Office, full command chain user governance, 759 Karnataka employees, and scoped reports. Ready to stage and commit to Git.
 
 ## 10. Completion checklist (for the very end)
 - [x] All 6 phases completed & verified

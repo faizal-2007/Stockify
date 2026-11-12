@@ -421,12 +421,86 @@
     return { rows, totals };
   }
 
+  /**
+   * 6. Employee & Admin Roster Report
+   * Personnel roster, assignment hierarchy, and status audit across offices.
+   * @param {Object} [filters] - { officeId, role, status, search }
+   * @returns {{ rows: Array, totals: Object }}
+   */
+  function employeeReport(filters) {
+    const scopedIds = new Set(getScopedOfficeIds(filters && filters.officeId));
+    const allUsers = storage.get('users') || [];
+    const allOffices = storage.get('offices') || [];
+    const offMap = new Map();
+    allOffices.forEach(function (o) { offMap.set(o.id, o); });
+
+    let users = allUsers.filter(function (u) {
+      return scopedIds.has(u.officeId);
+    });
+
+    const f = filters || {};
+    if (f.role && f.role !== 'all') {
+      users = users.filter(function (u) { return u.role === f.role; });
+    }
+    if (f.status === 'active') {
+      users = users.filter(function (u) { return u.active !== false; });
+    } else if (f.status === 'inactive') {
+      users = users.filter(function (u) { return u.active === false; });
+    }
+    if (f.search && f.search.trim()) {
+      const q = f.search.trim().toLowerCase();
+      users = users.filter(function (u) {
+        const off = offMap.get(u.officeId);
+        return (u.name && u.name.toLowerCase().includes(q)) ||
+               (u.email && u.email.toLowerCase().includes(q)) ||
+               (u.id && u.id.toLowerCase().includes(q)) ||
+               (u.designation && u.designation.toLowerCase().includes(q)) ||
+               (off && off.name.toLowerCase().includes(q)) ||
+               (off && off.city.toLowerCase().includes(q));
+      });
+    }
+
+    const rows = users.map(function (u) {
+      const off = offMap.get(u.officeId);
+      return {
+        id: u.id,
+        name: u.name,
+        role: u.role,
+        roleLabel: u.role === 'head' ? 'Head Office Admin' : (u.role === 'zone' ? 'Zonal Director' : (u.role === 'district' ? 'District Manager' : (u.role === 'taluk' ? 'Taluk Officer' : 'Store Manager'))),
+        officeId: u.officeId,
+        officeName: off ? off.name : '',
+        officeCode: off ? off.code : '',
+        officeType: off ? off.type : '',
+        city: off ? off.city : '',
+        email: u.email || '',
+        phone: u.phone || '',
+        designation: u.designation || '',
+        active: u.active !== false,
+        statusLabel: u.active !== false ? 'Active' : 'Inactive',
+      };
+    });
+
+    const totals = {
+      totalStaff: rows.length,
+      activeStaff: rows.filter(function (r) { return r.active; }).length,
+      inactiveStaff: rows.filter(function (r) { return !r.active; }).length,
+      headCount: rows.filter(function (r) { return r.role === 'head'; }).length,
+      zoneCount: rows.filter(function (r) { return r.role === 'zone'; }).length,
+      districtCount: rows.filter(function (r) { return r.role === 'district'; }).length,
+      talukCount: rows.filter(function (r) { return r.role === 'taluk'; }).length,
+      storeCount: rows.filter(function (r) { return r.role === 'store'; }).length,
+    };
+
+    return { rows, totals };
+  }
+
   window.Stockify.services.reports = {
     stockByOfficeAndCategory,
     stockAgeing,
     salesByProductStorePeriod,
     allocationTurnaround,
     lowAndOutOfStock,
+    employeeReport,
   };
 })();
 

@@ -18,6 +18,7 @@
     { id: 'sales-period', label: 'Sales by Product & Period' },
     { id: 'turnaround',   label: 'Allocation Turnaround' },
     { id: 'low-stock',    label: 'Low & Out of Stock' },
+    { id: 'employees',    label: 'Employees & Personnel' },
   ];
 
   /**
@@ -83,10 +84,26 @@
     // Office filter
     const officeFilterWrap = dom.h('div', { className: 'flex flex-col gap-1' });
     officeFilterWrap.appendChild(dom.h('label', { className: 'text-xs text-muted' }, 'Location'));
-    const officeSelect = dom.h('select', { className: 'select', style: 'min-width: 180px;' });
-    officeSelect.appendChild(dom.h('option', { value: '' }, 'Entire Subtree'));
-    allOffices.forEach(function (o) {
-      officeSelect.appendChild(dom.h('option', { value: o.id }, o.name + ' (' + o.city + ')'));
+    const officeSelect = dom.h('select', { className: 'select', style: 'min-width: 220px;' });
+    officeSelect.appendChild(dom.h('option', { value: '' }, 'Entire Subtree (' + allOffices.length + ' locations)'));
+
+    const officeGroups = [
+      { type: 'head', label: 'Head Office' },
+      { type: 'zone', label: 'Zonal Divisions' },
+      { type: 'district', label: 'District Offices' },
+      { type: 'taluk', label: 'Taluk Offices' },
+      { type: 'store', label: 'Retail Stores' }
+    ];
+
+    officeGroups.forEach(function (g) {
+      const groupOffices = allOffices.filter(function (o) { return o.type === g.type; });
+      if (groupOffices.length > 0) {
+        const optgroup = dom.h('optgroup', { label: g.label + ' (' + groupOffices.length + ')' });
+        groupOffices.forEach(function (o) {
+          optgroup.appendChild(dom.h('option', { value: o.id }, o.name + (o.city ? ' · ' + o.city : '')));
+        });
+        officeSelect.appendChild(optgroup);
+      }
     });
     officeFilterWrap.appendChild(officeSelect);
     filterCard.appendChild(officeFilterWrap);
@@ -141,7 +158,7 @@
       const isDateNeeded = activeTab === 'sales-period' || activeTab === 'turnaround';
       dateFromWrap.style.display = isDateNeeded ? 'flex' : 'none';
       dateToWrap.style.display = isDateNeeded ? 'flex' : 'none';
-      catFilterWrap.style.display = (activeTab === 'turnaround' || activeTab === 'stock-office') ? 'none' : 'flex';
+      catFilterWrap.style.display = (activeTab === 'turnaround' || activeTab === 'stock-office' || activeTab === 'employees') ? 'none' : 'flex';
     }
 
     let currentExportHandler = null;
@@ -165,6 +182,8 @@
         renderTurnaroundReport({ officeId, dateFrom, dateTo, q });
       } else if (activeTab === 'low-stock') {
         renderLowStockReport({ officeId, category, q });
+      } else if (activeTab === 'employees') {
+        renderEmployeeReport({ officeId, search: q });
       }
     }
 
@@ -576,6 +595,82 @@
         const csvStr = csv.toCSV(exportData);
         csv.download(csvStr, 'Stockify_Low_Stock_Audit_' + new Date().toISOString().slice(0, 10) + '.csv');
         toast.show('Low stock audit exported to CSV.', 'success');
+      };
+    }
+
+    // ── 6. Employees & Personnel Report ──
+    function renderEmployeeReport(filters) {
+      const res = reportsSvc.employeeReport(filters);
+      let rows = res.rows;
+
+      summaryCard.appendChild(createSummaryItem('Total Personnel', format.number(res.totals.totalStaff), 'Staff across selected jurisdiction'));
+      summaryCard.appendChild(createSummaryItem('Active Staff', format.number(res.totals.activeStaff), format.number(res.totals.inactiveStaff) + ' inactive / deactivated'));
+      summaryCard.appendChild(createSummaryItem('Administrative Leads', format.number(res.totals.headCount + res.totals.zoneCount + res.totals.districtCount), 'HO, Zonal & District managers'));
+      summaryCard.appendChild(createSummaryItem('Store & Taluk Leads', format.number(res.totals.talukCount + res.totals.storeCount), 'Field officers & store leads'));
+
+      if (rows.length === 0) {
+        tableWrap.appendChild(dom.h('div', { className: 'card empty-state' }, 'No personnel match your filters.'));
+        return;
+      }
+
+      const table = dom.h('table', { className: 'table' });
+      table.appendChild(dom.h('thead', {},
+        dom.h('tr', {},
+          dom.h('th', {}, 'Emp ID'),
+          dom.h('th', {}, 'Employee Name'),
+          dom.h('th', {}, 'Role & Jurisdiction'),
+          dom.h('th', {}, 'Office Location'),
+          dom.h('th', {}, 'Contact Email'),
+          dom.h('th', {}, 'Phone Number'),
+          dom.h('th', { style: 'text-align: center;' }, 'Status')
+        )
+      ));
+
+      const tbody = dom.h('tbody', {});
+      rows.forEach(function (r) {
+        const roleBadgeClass = r.role === 'head' ? 'badge--primary' : (r.role === 'zone' ? 'badge--info' : (r.role === 'district' ? 'badge--warning' : 'badge--neutral'));
+        tbody.appendChild(dom.h('tr', {},
+          dom.h('td', { style: 'font-family: monospace; font-size: var(--font-size-xs); font-weight: 600;' }, r.id),
+          dom.h('td', {},
+            dom.h('div', { style: 'font-weight: 600; color: var(--text);' }, r.name),
+            dom.h('div', { style: 'font-size: var(--font-size-xs); color: var(--text-muted);' }, r.designation || r.roleLabel)
+          ),
+          dom.h('td', {},
+            dom.h('span', { className: 'badge ' + roleBadgeClass }, r.roleLabel)
+          ),
+          dom.h('td', {},
+            dom.h('div', { style: 'font-weight: 500;' }, r.officeName),
+            dom.h('div', { style: 'font-size: var(--font-size-xs); color: var(--text-muted);' }, (r.city ? r.city + ' · ' : '') + r.officeCode)
+          ),
+          dom.h('td', { style: 'font-size: var(--font-size-sm); color: var(--text-muted);' }, r.email),
+          dom.h('td', { style: 'font-size: var(--font-size-sm); color: var(--text-muted);' }, r.phone),
+          dom.h('td', { style: 'text-align: center;' },
+            dom.h('span', { className: 'badge ' + (r.active ? 'badge--success' : 'badge--danger') }, r.statusLabel)
+          )
+        ));
+      });
+      table.appendChild(tbody);
+      tableWrap.appendChild(table);
+
+      currentExportHandler = function () {
+        const exportData = rows.map(function (r) {
+          return {
+            'Employee ID': r.id,
+            'Name': r.name,
+            'Role': r.roleLabel,
+            'Designation': r.designation,
+            'Office Code': r.officeCode,
+            'Office Name': r.officeName,
+            'Office Type': r.officeType,
+            'City': r.city,
+            'Email': r.email,
+            'Phone': r.phone,
+            'Status': r.statusLabel
+          };
+        });
+        const csvStr = csv.toCSV(exportData);
+        csv.download(csvStr, 'Stockify_Employee_Report_' + new Date().toISOString().slice(0, 10) + '.csv');
+        toast.show('Employee report exported to CSV.', 'success');
       };
     }
 

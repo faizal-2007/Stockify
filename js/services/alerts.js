@@ -63,6 +63,22 @@
       route: '#/allocations?status=requested',
     });
 
+    // 5. Password Reset Requests (for Head Office administrators)
+    if (role === 'head') {
+      const pwReqs = storage.get('password_requests') || [];
+      const pendingPw = pwReqs.filter(function (r) { return r.status === 'pending'; }).length;
+      alerts.push({
+        id: 'password-requests',
+        type: 'warning',
+        title: 'Password Reset Requests',
+        count: pendingPw,
+        message: pendingPw > 0
+          ? pendingPw + ' employee password reset request' + (pendingPw === 1 ? '' : 's') + ' pending approval'
+          : 'All employee password requests resolved',
+        route: '#/employees?tab=requests',
+      });
+    }
+
     return alerts;
   }
 
@@ -74,7 +90,12 @@
    */
   function getUnreadCount(officeId, role) {
     const counts = selectors.getAlertCounts(officeId, role);
-    return counts.outOfStock + counts.inTransitLong + counts.pendingRequests;
+    let total = counts.outOfStock + counts.inTransitLong + counts.pendingRequests;
+    if (role === 'head') {
+      const pwReqs = storage.get('password_requests') || [];
+      total += pwReqs.filter(function (r) { return r.status === 'pending'; }).length;
+    }
+    return total;
   }
 
   window.Stockify.services.alerts = { getAlerts, getUnreadCount };

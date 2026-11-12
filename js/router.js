@@ -25,6 +25,7 @@
     { pattern: /^#\/network$/,                   view: 'network',        roles: ['head','zone','district'] },
     { pattern: /^#\/sales$/,                     view: 'sales',          roles: null   },
     { pattern: /^#\/reports$/,                   view: 'reports',        roles: null   },
+    { pattern: /^#\/employees$/,                 view: 'employees',      roles: ['head'] },
     { pattern: /^#\/activity$/,                  view: 'activity',       roles: null   },
     { pattern: /^#\/settings$/,                  view: 'settings',       roles: null   },
   ];
@@ -35,9 +36,10 @@
    * @returns {{ route: Object, params: Object }|null}
    */
   function matchRoute(hash) {
+    const cleanHash = (hash || '').split('?')[0];
     for (let i = 0; i < ROUTES.length; i++) {
       const route = ROUTES[i];
-      const m     = hash.match(route.pattern);
+      const m     = cleanHash.match(route.pattern);
       if (m) {
         const params = {};
         if (route.param && m[1]) params[route.param] = m[1];

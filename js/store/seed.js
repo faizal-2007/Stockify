@@ -11947,21 +11947,80 @@
   }
 
   // ─────────────────────────────────────────
-  // USERS (Multi-tier demo accounts across Karnataka)
+  // USERS & EMPLOYEES (Multi-tier roster for all 756 offices across Karnataka)
   // ─────────────────────────────────────────
-  const USERS = [
-    { id: 'usr_001', name: 'Mohammed Faizal', role: 'head', officeId: 'off_001', initials: 'MF' },
-    { id: 'usr_002', name: 'Priya Rajan', role: 'zone', officeId: 'off_002', initials: 'PR' },
-    { id: 'usr_003', name: 'Rahul Mehta', role: 'zone', officeId: 'off_003', initials: 'RM' },
-    { id: 'usr_004', name: 'Anjali Singh', role: 'zone', officeId: 'off_004', initials: 'AS' },
-    { id: 'usr_005', name: 'Karthik Suresh', role: 'zone', officeId: 'off_005', initials: 'KS' },
-    { id: 'usr_006', name: 'Deepa Nair', role: 'district', officeId: 'off_031', initials: 'DN' },
-    { id: 'usr_007', name: 'Vikram Sharma', role: 'district', officeId: 'off_006', initials: 'VS' },
-    { id: 'usr_008', name: 'Rohan Gowda', role: 'taluk', officeId: 'off_232', initials: 'RG' },
-    { id: 'usr_009', name: 'Arjun Kumar', role: 'store', officeId: 'off_667', initials: 'AK' },
-    { id: 'usr_010', name: 'Meena Pandian', role: 'store', officeId: 'off_668', initials: 'MP' },
-    { id: 'usr_011', name: 'Suresh Patil', role: 'store', officeId: 'off_277', initials: 'SP' },
-  ];
+  function buildKarnatakaEmployees(offices) {
+    const baseUsers = [
+      { id: 'usr_001', name: 'Mohammed Faizal', role: 'head', officeId: 'off_001', initials: 'MF', email: 'faizal@stockify.in', phone: '+91 98450 11001', designation: 'Managing Director & Head of Chain', password: 'Stockify@123', active: true },
+      { id: 'usr_002', name: 'Priya Rajan', role: 'zone', officeId: 'off_002', initials: 'PR', email: 'priya.rajan@stockify.in', phone: '+91 98450 11002', designation: 'Zonal Director (Bengaluru Division)', password: 'Stockify@123', active: true },
+      { id: 'usr_003', name: 'Rahul Mehta', role: 'zone', officeId: 'off_003', initials: 'RM', email: 'rahul.mehta@stockify.in', phone: '+91 98450 11003', designation: 'Zonal Director (Belagavi Division)', password: 'Stockify@123', active: true },
+      { id: 'usr_004', name: 'Anjali Singh', role: 'zone', officeId: 'off_004', initials: 'AS', email: 'anjali.singh@stockify.in', phone: '+91 98450 11004', designation: 'Zonal Director (Kalaburagi Division)', password: 'Stockify@123', active: true },
+      { id: 'usr_005', name: 'Karthik Suresh', role: 'zone', officeId: 'off_005', initials: 'KS', email: 'karthik.suresh@stockify.in', phone: '+91 98450 11005', designation: 'Zonal Director (Mysuru Division)', password: 'Stockify@123', active: true },
+      { id: 'usr_006', name: 'Deepa Nair', role: 'district', officeId: 'off_031', initials: 'DN', email: 'deepa.nair@stockify.in', phone: '+91 98450 11006', designation: 'District Manager (Dakshina Kannada)', password: 'Stockify@123', active: true },
+      { id: 'usr_007', name: 'Vikram Sharma', role: 'district', officeId: 'off_006', initials: 'VS', email: 'vikram.sharma@stockify.in', phone: '+91 98450 11007', designation: 'District Manager (Bengaluru Urban)', password: 'Stockify@123', active: true },
+      { id: 'usr_008', name: 'Rohan Gowda', role: 'taluk', officeId: 'off_232', initials: 'RG', email: 'rohan.gowda@stockify.in', phone: '+91 98450 11008', designation: 'Taluk Officer (Mangaluru Taluk)', password: 'Stockify@123', active: true },
+      { id: 'usr_009', name: 'Arjun Kumar', role: 'store', officeId: 'off_667', initials: 'AK', email: 'arjun.kumar@stockify.in', phone: '+91 98450 11009', designation: 'Store Manager (Mangaluru Store 1)', password: 'Stockify@123', active: true },
+      { id: 'usr_010', name: 'Meena Pandian', role: 'store', officeId: 'off_668', initials: 'MP', email: 'meena.pandian@stockify.in', phone: '+91 98450 11010', designation: 'Store Manager (Mangaluru Store 2)', password: 'Stockify@123', active: true },
+      { id: 'usr_011', name: 'Suresh Patil', role: 'store', officeId: 'off_277', initials: 'SP', email: 'suresh.patil@stockify.in', phone: '+91 98450 11011', designation: 'Store Manager (Bengaluru Store 1)', password: 'Stockify@123', active: true },
+    ];
+
+    const assignedOffices = new Set(baseUsers.map(function (u) { return u.officeId; }));
+    const allUsers = baseUsers.slice();
+
+    // Add 3 Head Office central admins
+    allUsers.push(
+      { id: 'usr_012', name: 'Ayesha Banu', role: 'head', officeId: 'off_001', initials: 'AB', email: 'ayesha.banu@stockify.in', phone: '+91 98450 11012', designation: 'Central Operations & Logistics Head', password: 'Stockify@123', active: true },
+      { id: 'usr_013', name: 'Rajesh Nayak', role: 'head', officeId: 'off_001', initials: 'RN', email: 'rajesh.nayak@stockify.in', phone: '+91 98450 11013', designation: 'Chief Inventory & Allocation Controller', password: 'Stockify@123', active: true },
+      { id: 'usr_014', name: 'Sneha Kulkarni', role: 'head', officeId: 'off_001', initials: 'SK', email: 'sneha.kulkarni@stockify.in', phone: '+91 98450 11014', designation: 'Retail Performance & POS Auditor', password: 'Stockify@123', active: true }
+    );
+
+    const firstNames = ['Anand', 'Basavaraj', 'Chetan', 'Darshan', 'Girish', 'Harish', 'Jagadish', 'Kiran', 'Lokesh', 'Manjunath', 'Naveen', 'Pradeep', 'Raghu', 'Santhosh', 'Umesh', 'Vinay', 'Ashwini', 'Bhavya', 'Chaithra', 'Divya', 'Geetha', 'Keerthi', 'Lakshmi', 'Mamatha', 'Poornima', 'Rashmi', 'Shwetha', 'Vidya'];
+    const lastNames = ['Gowda', 'Shetty', 'Hegde', 'Rao', 'Patil', 'Kulkarni', 'Bhat', 'Kamath', 'Naik', 'Pujari', 'Mesta', 'Acharya', 'Deshmukh', 'Kashyap', 'Prasad', 'Reddy', 'Urs', 'Muthappa'];
+
+    function getInitials(name) {
+      const parts = name.trim().split(/\s+/);
+      if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+      return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+    }
+
+    let nextUserNum = 15;
+    for (let i = 0; i < offices.length; i++) {
+      const off = offices[i];
+      if (assignedOffices.has(off.id)) continue;
+      assignedOffices.add(off.id);
+
+      const fn = firstNames[(nextUserNum * 7) % firstNames.length];
+      const ln = lastNames[(nextUserNum * 13) % lastNames.length];
+      const empName = off.manager && !off.manager.includes('Manager') && !off.manager.includes('Officer') && !off.manager.includes('Lead')
+        ? off.manager
+        : (fn + ' ' + ln);
+
+      const cleanSlug = empName.toLowerCase().replace(/[^a-z0-9]+/g, '.').replace(/^\.|\.$/g, '');
+      const email = cleanSlug + '.' + off.code.toLowerCase().replace(/[^a-z0-9]+/g, '') + '@stockify.in';
+      const phone = '+91 9845' + String(10000 + (nextUserNum % 90000));
+
+      let desig = 'Retail Store Lead';
+      if (off.type === 'zone') desig = 'Zonal Operations Director';
+      else if (off.type === 'district') desig = 'District Inventory Manager';
+      else if (off.type === 'taluk') desig = 'Taluk Logistics Officer';
+      else if (off.type === 'store') desig = 'Retail Store Manager';
+
+      allUsers.push({
+        id: 'usr_' + String(nextUserNum++).padStart(3, '0'),
+        name: empName,
+        role: off.type === 'head' ? 'head' : off.type,
+        officeId: off.id,
+        initials: getInitials(empName),
+        email: email,
+        phone: phone,
+        designation: desig + ' (' + off.name + ')',
+        password: 'Stockify@123',
+        active: true,
+      });
+    }
+
+    return allUsers;
+  }
 
   // ─────────────────────────────────────────
   // SEED FUNCTION
@@ -11970,6 +12029,7 @@
     const built = buildKarnatakaOffices();
     const offices = built.offices;
     const stores = built.stores;
+    const users = buildKarnatakaEmployees(offices);
 
     // Build sparse stock ledger
     // HO holds all 566 products; Zones hold all 566; Districts, Taluks, and Stores hold realistic selections.
@@ -12284,9 +12344,46 @@
       };
     });
 
+    // Initial pending password reset requests for Head Office governance
+    const seedPasswordRequests = [
+      {
+        id: 'pr_0001',
+        userId: 'usr_009',
+        userName: 'Arjun Kumar',
+        userEmail: 'arjun.kumar@stockify.in',
+        role: 'store',
+        officeId: 'off_667',
+        officeName: 'Mangaluru Store 1',
+        city: 'Mangaluru',
+        note: 'Forgot password after POS register hardware update.',
+        requestedAt: ago(1),
+        status: 'pending',
+        resolvedAt: null,
+        resolvedBy: null,
+        newPassword: null,
+      },
+      {
+        id: 'pr_0002',
+        userId: 'usr_008',
+        userName: 'Rohan Gowda',
+        userEmail: 'rohan.gowda@stockify.in',
+        role: 'taluk',
+        officeId: 'off_232',
+        officeName: 'Mangaluru Taluk',
+        city: 'Mangaluru',
+        note: 'Requesting temporary password reset for inventory audit.',
+        requestedAt: ago(2),
+        status: 'pending',
+        resolvedAt: null,
+        resolvedBy: null,
+        newPassword: null,
+      }
+    ];
+
     // Save everything to storage
     storage.set('offices', offices);
-    storage.set('users', USERS);
+    storage.set('users', users);
+    storage.set('password_requests', seedPasswordRequests);
     storage.set('products', PRODUCTS);
     storage.set('stock', stock);
     storage.set('allocations', seedAllocations);
@@ -12295,7 +12392,8 @@
     storage.set('targets', targets);
 
     storage.set('counters', {
-      user: USERS.length,
+      user: users.length,
+      passwordRequest: seedPasswordRequests.length,
       office: offices.length,
       product: PRODUCTS.length,
       allocation: seedAllocations.length,
@@ -12313,7 +12411,7 @@
     storage.remove('session');
     storage.markSeeded();
 
-    console.info('[Seed] Karnataka hierarchy loaded successfully: ' + offices.length + ' offices, ' + PRODUCTS.length + ' products, ' + stock.length + ' stock rows.');
+    console.info('[Seed] Karnataka hierarchy loaded successfully: ' + offices.length + ' offices, ' + users.length + ' employees, ' + PRODUCTS.length + ' products, ' + stock.length + ' stock rows.');
   }
 
   function reseed() {
